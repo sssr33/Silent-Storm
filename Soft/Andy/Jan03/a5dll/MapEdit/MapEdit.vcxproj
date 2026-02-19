@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="FastDebug|Win32">
+      <Configuration>FastDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDll|Win32">
+      <Configuration>ReleaseDll</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <SccProjectName>"$/A5/MapEdit", ARKAAAAA</SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>.</SccLocalPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{CADDA180-C3ED-31D5-8C70-4F37C7C86F5A}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDll|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='FastDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDll|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='FastDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.36518.2</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='FastDebug|Win32'">
+    <OutDir>../Binary/$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDll|Win32'">
+    <OutDir>../Binary/$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>../Binary/$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>../Binary/$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='FastDebug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;FAST_DEBUG;WIN32;_WINDOWS;_MAPEDIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\FastDebug/</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalOptions>/IGNORE:4102 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>dxguid.lib;dinput8.lib;d3dx9.lib;d3d9.lib;shlwapi.lib;fmodvc.lib;s3tc.lib;Msimg32.lib;LifeStudioHeadAPI.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>D:\Program Files\Microsoft Visual Studio\VC98\STLport-4.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\FastDebug/MapEdit.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDll|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm300 /Ow %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_MAPEDIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\ReleaseDll/</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/IGNORE:4102 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>dxguid.lib;dinput8.lib;d3dx9.lib;d3d9.lib;shlwapi.lib;fmodvc.lib;s3tc.lib;Msimg32.lib;LifeStudioHeadAPI.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding />
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\ReleaseDll/MapEdit.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_MAPEDIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/IGNORE:4102 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>dxguid.lib;dinput8.lib;d3dx9.lib;d3d9.lib;shlwapi.lib;fmodvc.lib;s3tc.lib;Msimg32.lib;LifeStudioHeadAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>D:\Program Files\Microsoft Visual Studio\VC98\STLport-4.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/MapEdit.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm300 /Ow %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_MAPEDIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\ReleaseDll/</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/IGNORE:4102 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>dxguid.lib;dinput8.lib;d3dx9.lib;d3d9.lib;shlwapi.lib;fmodvc.lib;s3tc.lib;Msimg32.lib;LifeStudioHeadAPI.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\ReleaseDll/MapEdit.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="2DEditor.h" />
+    <ClInclude Include="AIGeometryFormat.h" />
+    <ClInclude Include="AnalyseData.h" />
+    <ClInclude Include="AnimItemsDlg.h" />
+    <ClInclude Include="Attributes.h" />
+    <ClInclude Include="CameraAnimDlg.h" />
+    <ClInclude Include="CellarLayer.h" />
+    <ClInclude Include="ChapterFrame.h" />
+    <ClInclude Include="ChapterSectorDlg.h" />
+    <ClInclude Include="ChapterView.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="ChildView.h" />
+    <ClInclude Include="ChooseDBDlg.h" />
+    <ClInclude Include="CtrlObjectInspector.h" />
+    <ClInclude Include="dbDefs.h" />
+    <ClInclude Include="DbInl.h" />
+    <ClInclude Include="DBWysiwygUndo.h" />
+    <ClInclude Include="DialogSequnce.h" />
+    <ClInclude Include="DiplomacyEditDlg.h" />
+    <ClInclude Include="DiplomacyFrame.h" />
+    <ClInclude Include="DiplomacyView.h" />
+    <ClInclude Include="ExpImpDialogs.h" />
+    <ClInclude Include="Export.h" />
+    <ClInclude Include="ExportAcks.h" />
+    <ClInclude Include="ExportScenario.h" />
+    <ClInclude Include="FinalElem.h" />
+    <ClInclude Include="FinDBCmd.h" />
+    <ClInclude Include="FindDialog.h" />
+    <ClInclude Include="FindTextDlg.h" />
+    <ClInclude Include="FinTypeDlg.h" />
+    <ClInclude Include="Floor.h" />
+    <ClInclude Include="FloorDB.h" />
+    <ClInclude Include="FloorLayer.h" />
+    <ClInclude Include="FragmentDialog.h" />
+    <ClInclude Include="FragmentSelUndo.h" />
+    <ClInclude Include="GameFrm.h" />
+    <ClInclude Include="GameView.h" />
+    <ClInclude Include="GeometryPage.h" />
+    <ClInclude Include="GlobalMapView.h" />
+    <ClInclude Include="history.h" />
+    <ClInclude Include="IconView.h" />
+    <ClInclude Include="iMapEditor.h" />
+    <ClInclude Include="Items4PersDB.h" />
+    <ClInclude Include="ItemsDBCmd.h" />
+    <ClInclude Include="ItemsListDlg.h" />
+    <ClInclude Include="ItemsMgr.h" />
+    <ClInclude Include="IWysiwyg.h" />
+    <ClInclude Include="LadderDlg.h" />
+    <ClInclude Include="LayerCtrl.h" />
+    <ClInclude Include="LayerList.h" />
+    <ClInclude Include="Layers.h" />
+    <ClInclude Include="ListProp.h" />
+    <ClInclude Include="LuaEditor.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MapEdit.h" />
+    <ClInclude Include="MaterialEditPage.h" />
+    <ClInclude Include="MaterialSetEditDlg.h" />
+    <ClInclude Include="MEDragDrop.h" />
+    <ClInclude Include="MEParams.h" />
+    <ClInclude Include="MESerialize.h" />
+    <ClInclude Include="MEUndoRedo.h" />
+    <ClInclude Include="MEUserSettings.h" />
+    <ClInclude Include="NameAndFolder.h" />
+    <ClInclude Include="NewHoleDlg.h" />
+    <ClInclude Include="NewSectorDlg.h" />
+    <ClInclude Include="ObjBrowserConstants.h" />
+    <ClInclude Include="ObjBrowserContainer.h" />
+    <ClInclude Include="ObjBrowserDescription.h" />
+    <ClInclude Include="ObjBrowserDlg.h" />
+    <ClInclude Include="ObjBrowserFrame.h" />
+    <ClInclude Include="ObjectBrowser.h" />
+    <ClInclude Include="ObjectBrowserSpin.h" />
+    <ClInclude Include="ObjectDB.h" />
+    <ClInclude Include="ObjectMgr.h" />
+    <ClInclude Include="ObjSelectionUndo.h" />
+    <ClInclude Include="ObjUpdateHandlers.h" />
+    <ClInclude Include="OIBrowEdit.h" />
+    <ClInclude Include="OIColorEdit.h" />
+    <ClInclude Include="OICombo.h" />
+    <ClInclude Include="OIDlg.h" />
+    <ClInclude Include="OIEdit.h" />
+    <ClInclude Include="OIList.h" />
+    <ClInclude Include="OIParamsEdit.h" />
+    <ClInclude Include="OIPiecesEdit.h" />
+    <ClInclude Include="OIRelEdit.h" />
+    <ClInclude Include="OISubPartsEdit.h" />
+    <ClInclude Include="PaintBar.h" />
+    <ClInclude Include="ParamsFrm.h" />
+    <ClInclude Include="ParamsView.h" />
+    <ClInclude Include="PieceEditDlg.h" />
+    <ClInclude Include="PiecesEditDlg.h" />
+    <ClInclude Include="PiecesInfoView.h" />
+    <ClInclude Include="PlacableDB.h" />
+    <ClInclude Include="PlacableItemsDlg.h" />
+    <ClInclude Include="Placement.h" />
+    <ClInclude Include="PlacementDefs.h" />
+    <ClInclude Include="preferences.h" />
+    <ClInclude Include="PropMap.h" />
+    <ClInclude Include="PropMapTypedef.h" />
+    <ClInclude Include="PropView.h" />
+    <ClInclude Include="RectsDBCmd.H" />
+    <ClInclude Include="RectsLayer.h" />
+    <ClInclude Include="RectTrack.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RoomsDB.h" />
+    <ClInclude Include="RoomsLayer.h" />
+    <ClInclude Include="RouteDlg.h" />
+    <ClInclude Include="RPGItemsContainerDlg.h" />
+    <ClInclude Include="ScenarioDB.h" />
+    <ClInclude Include="ScenarioFrame.h" />
+    <ClInclude Include="ScenarioView.h" />
+    <ClInclude Include="ScenarioXLS.h" />
+    <ClInclude Include="ScriptEditDlg.h" />
+    <ClInclude Include="SectorCtrl.h" />
+    <ClInclude Include="SGData.h" />
+    <ClInclude Include="SharedEditing.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="stl_user_config.h" />
+    <ClInclude Include="StoreItemsDB.h" />
+    <ClInclude Include="StoreItemsDlg.h" />
+    <ClInclude Include="SubPartsView.h" />
+    <ClInclude Include="SubTemplateFlagsDlg.h" />
+    <ClInclude Include="SubTemplateUndo.h" />
+    <ClInclude Include="SyntaxColorizer.h" />
+    <ClInclude Include="templ.h" />
+    <ClInclude Include="TemplateView.h" />
+    <ClInclude Include="TemplDBCmd.H" />
+    <ClInclude Include="TemplMgr.h" />
+    <ClInclude Include="TerrainExportDlg.h" />
+    <ClInclude Include="TerrainLayer.h" />
+    <ClInclude Include="TerrainProp.h" />
+    <ClInclude Include="TerrainUndo.h" />
+    <ClInclude Include="TerrSpotDB.h" />
+    <ClInclude Include="TerrSpotUndo.h" />
+    <ClInclude Include="TexSpotPage.h" />
+    <ClInclude Include="TextEditor.h" />
+    <ClInclude Include="TreeDBCmd.H" />
+    <ClInclude Include="TreeSelItemDlg.h" />
+    <ClInclude Include="TreeVDialogs.h" />
+    <ClInclude Include="TreeView.h" />
+    <ClInclude Include="TreeWnd.h" />
+    <ClInclude Include="UIContainer.h" />
+    <ClInclude Include="UIControls.h" />
+    <ClInclude Include="UIFrame.h" />
+    <ClInclude Include="UIView.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="UnitDB.h" />
+    <ClInclude Include="UnitUndo.h" />
+    <ClInclude Include="Unit_ObjDraw.h" />
+    <ClInclude Include="UserSettingsSetup.h" />
+    <ClInclude Include="Variant.h" />
+    <ClInclude Include="VariantsDBCmd.h" />
+    <ClInclude Include="Walls.h" />
+    <ClInclude Include="WallsDBCmd.h" />
+    <ClInclude Include="WallsLayer.h" />
+    <ClInclude Include="WallSpotDlg.h" />
+    <ClInclude Include="WaypointDB.h" />
+    <ClInclude Include="WaypointDlg.h" />
+    <ClInclude Include="wEditor.h" />
+    <ClInclude Include="weInterface.h" />
+    <ClInclude Include="WysiwygBar.h" />
+    <ClInclude Include="WysiwygCamera.h" />
+    <ClInclude Include="WysiwygClipboard.h" />
+    <ClInclude Include="WysiwygFragmentSel.h" />
+    <ClInclude Include="WysiwygLadderSel.h" />
+    <ClInclude Include="WysiwygMaterial.h" />
+    <ClInclude Include="WysiwygMovingSel.h" />
+    <ClInclude Include="WysiwygObjectSel.h" />
+    <ClInclude Include="WysiwygRoute.h" />
+    <ClInclude Include="WysiwygSelection.h" />
+    <ClInclude Include="WysiwygSelectionImpl.h" />
+    <ClInclude Include="WysiwygSphereHMap.h" />
+    <ClInclude Include="WysiwygSpotSel.h" />
+    <ClInclude Include="WysiwygSubTemplateSel.h" />
+    <ClInclude Include="WysiwygTerrain.h" />
+    <ClInclude Include="WysiwygTerrSpot.h" />
+    <ClInclude Include="WysiwygUndo.h" />
+    <ClInclude Include="WysiwygUnitSel.h" />
+    <ClInclude Include="WysiwygWaypointSel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2DEditor.cpp" />
+    <ClCompile Include="AnalyseData.cpp" />
+    <ClCompile Include="AnimItemsDlg.cpp" />
+    <ClCompile Include="Attributes.cpp" />
+    <ClCompile Include="BasicDB.cpp" />
+    <ClCompile Include="CameraAnimDlg.cpp" />
+    <ClCompile Include="CellarLayer.cpp" />
+    <ClCompile Include="ChapterFrame.cpp" />
+    <ClCompile Include="ChapterSectorDlg.cpp" />
+    <ClCompile Include="ChapterView.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="ChooseDBDlg.cpp" />
+    <ClCompile Include="CreateScenarioXLS.cpp" />
+    <ClCompile Include="CtrlObjectInspector.cpp" />
+    <ClCompile Include="db.cpp" />
+    <ClCompile Include="DialogSequnce.cpp" />
+    <ClCompile Include="DiplomacyEditDlg.cpp" />
+    <ClCompile Include="DiplomacyFrame.cpp" />
+    <ClCompile Include="DiplomacyView.cpp" />
+    <ClCompile Include="ExpImpDialogs.cpp" />
+    <ClCompile Include="Export.cpp" />
+    <ClCompile Include="ExportAcks.cpp" />
+    <ClCompile Include="ExportAIDoors.cpp" />
+    <ClCompile Include="ExportGeometry.cpp" />
+    <ClCompile Include="ExportScenario.cpp" />
+    <ClCompile Include="FinalElem.cpp" />
+    <ClCompile Include="FinDBCmd.cpp" />
+    <ClCompile Include="FindDialog.cpp" />
+    <ClCompile Include="FindTextDlg.cpp" />
+    <ClCompile Include="FinTypeDlg.cpp" />
+    <ClCompile Include="Floor.cpp" />
+    <ClCompile Include="FloorLayer.cpp" />
+    <ClCompile Include="FragmentDialog.cpp" />
+    <ClCompile Include="FragmentSelUndo.cpp" />
+    <ClCompile Include="GameFrm.cpp" />
+    <ClCompile Include="GameView.cpp" />
+    <ClCompile Include="GeometryPage.cpp" />
+    <ClCompile Include="GlobalMapView.cpp" />
+    <ClCompile Include="IconView.cpp" />
+    <ClCompile Include="iMapEditor.cpp" />
+    <ClCompile Include="Items4PersDB.cpp" />
+    <ClCompile Include="ItemsDBCmd.cpp" />
+    <ClCompile Include="ItemsListDlg.cpp" />
+    <ClCompile Include="ItemsMgr.cpp" />
+    <ClCompile Include="IWysiwyg.cpp" />
+    <ClCompile Include="LadderDlg.cpp" />
+    <ClCompile Include="LayerCtrl.cpp" />
+    <ClCompile Include="LayerList.cpp" />
+    <ClCompile Include="LayerListBar.cpp" />
+    <ClCompile Include="Layers.cpp" />
+    <ClCompile Include="ListProp.cpp" />
+    <ClCompile Include="LuaEditor.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MapEdit.cpp" />
+    <ClCompile Include="MaterialEditPage.cpp" />
+    <ClCompile Include="MaterialSetEditDlg.cpp" />
+    <ClCompile Include="MEDragDrop.cpp" />
+    <ClCompile Include="MESerialize.cpp" />
+    <ClCompile Include="MEUndoRedo.cpp" />
+    <ClCompile Include="MEUserSettings.cpp" />
+    <ClCompile Include="NameAndFolder.cpp" />
+    <ClCompile Include="NewHoleDlg.cpp" />
+    <ClCompile Include="NewSectorDlg.cpp" />
+    <ClCompile Include="ObjBrowserContainer.cpp" />
+    <ClCompile Include="ObjBrowserDescription.cpp" />
+    <ClCompile Include="ObjBrowserDlg.cpp" />
+    <ClCompile Include="ObjBrowserFrame.cpp" />
+    <ClCompile Include="ObjDescription.cpp" />
+    <ClCompile Include="ObjectBrowser.cpp" />
+    <ClCompile Include="ObjectBrowserSpin.cpp" />
+    <ClCompile Include="ObjectDB.cpp" />
+    <ClCompile Include="ObjectMgr.cpp" />
+    <ClCompile Include="ObjSelectionUndo.cpp" />
+    <ClCompile Include="ObjUpdateHandlers.cpp" />
+    <ClCompile Include="OIBrowEdit.cpp" />
+    <ClCompile Include="OIColorEdit.cpp" />
+    <ClCompile Include="OICombo.cpp" />
+    <ClCompile Include="OIDlg.cpp" />
+    <ClCompile Include="OIEdit.cpp" />
+    <ClCompile Include="OIList.cpp" />
+    <ClCompile Include="OIParamsEdit.cpp" />
+    <ClCompile Include="OIPiecesEdit.cpp" />
+    <ClCompile Include="OIRelEdit.cpp" />
+    <ClCompile Include="OISubPartsEdit.cpp" />
+    <ClCompile Include="PaintBar.cpp" />
+    <ClCompile Include="ParamsFrm.cpp" />
+    <ClCompile Include="ParamsView.cpp" />
+    <ClCompile Include="PieceEditDlg.cpp" />
+    <ClCompile Include="PiecesEditDlg.cpp" />
+    <ClCompile Include="PiecesInfoView.cpp" />
+    <ClCompile Include="PlacableDB.cpp" />
+    <ClCompile Include="PlacableItemsDlg.cpp" />
+    <ClCompile Include="Placement.cpp" />
+    <ClCompile Include="PlacementBuilding.cpp" />
+    <ClCompile Include="preferences.cpp" />
+    <ClCompile Include="PropView.cpp" />
+    <ClCompile Include="ReadScenarioXLS.cpp" />
+    <ClCompile Include="RectDBCmd.cpp" />
+    <ClCompile Include="RectsLayer.cpp" />
+    <ClCompile Include="RectTrack.cpp" />
+    <ClCompile Include="ResDescription.cpp" />
+    <ClCompile Include="RoomsLayer.cpp" />
+    <ClCompile Include="RouteDlg.cpp" />
+    <ClCompile Include="RPGItemsContainerDlg.cpp" />
+    <ClCompile Include="ScenarioDB.cpp" />
+    <ClCompile Include="ScenarioFrame.cpp" />
+    <ClCompile Include="ScenarioView.cpp" />
+    <ClCompile Include="ScenarioXLS.cpp" />
+    <ClCompile Include="ScriptEditDlg.cpp" />
+    <ClCompile Include="SectorCtrl.cpp" />
+    <ClCompile Include="SharedEditing.cpp" />
+    <ClCompile Include="sst2F0.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='FastDebug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDll|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StoreItemsDB.cpp" />
+    <ClCompile Include="StoreItemsDlg.cpp" />
+    <ClCompile Include="SubPartsView.cpp" />
+    <ClCompile Include="SubTemplateFlagsDlg.cpp" />
+    <ClCompile Include="SubTemplateUndo.cpp" />
+    <ClCompile Include="SyntaxColorizer.cpp" />
+    <ClCompile Include="templ.cpp" />
+    <ClCompile Include="TemplDB.cpp" />
+    <ClCompile Include="TemplMgr.cpp" />
+    <ClCompile Include="TerrainExportDlg.cpp" />
+    <ClCompile Include="TerrainLayer.cpp" />
+    <ClCompile Include="TerrainProp.cpp" />
+    <ClCompile Include="TerrainUndo.cpp" />
+    <ClCompile Include="TerrSpotUndo.cpp" />
+    <ClCompile Include="TexSpotPage.cpp" />
+    <ClCompile Include="TextEditor.cpp" />
+    <ClCompile Include="TextureLayer.cpp" />
+    <ClCompile Include="TreeSelItemDlg.cpp" />
+    <ClCompile Include="TreeVDialogs.cpp" />
+    <ClCompile Include="TreeView.cpp" />
+    <ClCompile Include="TreeWnd.cpp" />
+    <ClCompile Include="UIContainer.cpp" />
+    <ClCompile Include="UIControls.cpp" />
+    <ClCompile Include="UIControlTracker.cpp" />
+    <ClCompile Include="UIFrame.cpp" />
+    <ClCompile Include="UIToolBar.cpp" />
+    <ClCompile Include="UIView.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="UnitDB.cpp" />
+    <ClCompile Include="UnitUndo.cpp" />
+    <ClCompile Include="Unit_ObjDraw.cpp" />
+    <ClCompile Include="Variant.cpp" />
+    <ClCompile Include="Walls.cpp" />
+    <ClCompile Include="WallsLayer.cpp" />
+    <ClCompile Include="WallSpotDlg.cpp" />
+    <ClCompile Include="WaypointDB.cpp" />
+    <ClCompile Include="WaypointDlg.cpp" />
+    <ClCompile Include="wEditor.cpp" />
+    <ClCompile Include="weObject.cpp" />
+    <ClCompile Include="weSubTemplate.cpp" />
+    <ClCompile Include="weUnit.cpp" />
+    <ClCompile Include="WysiwygBar.cpp" />
+    <ClCompile Include="WysiwygCamera.cpp" />
+    <ClCompile Include="WysiwygClipboard.cpp" />
+    <ClCompile Include="WysiwygFragmentSel.cpp" />
+    <ClCompile Include="WysiwygLadderSel.cpp" />
+    <ClCompile Include="WysiwygMaterial.cpp" />
+    <ClCompile Include="WysiwygMovingSel.cpp" />
+    <ClCompile Include="WysiwygObjectSel.cpp" />
+    <ClCompile Include="WysiwygRoute.cpp" />
+    <ClCompile Include="WysiwygSelection.cpp" />
+    <ClCompile Include="WysiwygSphereHMap.cpp" />
+    <ClCompile Include="WysiwygSpotSel.cpp" />
+    <ClCompile Include="WysiwygSubTemplateSel.cpp" />
+    <ClCompile Include="WysiwygTerrain.cpp" />
+    <ClCompile Include="WysiwygTerrSpot.cpp" />
+    <ClCompile Include="WysiwygUndo.cpp" />
+    <ClCompile Include="WysiwygUnitSel.cpp" />
+    <ClCompile Include="WysiwygWaypointSel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="MapEdit.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MapEdit.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bitmaps.bmp" />
+    <Image Include="res\copyvariant.bmp" />
+    <Image Include="res\delvariant.bmp" />
+    <Image Include="res\down.ico" />
+    <Image Include="res\editmode.bmp" />
+    <Image Include="res\finvariant.bmp" />
+    <Image Include="res\gridvariant.bmp" />
+    <Image Include="res\ico00001.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\layer_add.ico" />
+    <Image Include="res\layer_del.ico" />
+    <Image Include="res\Link.bmp" />
+    <Image Include="res\MapEdit.ico" />
+    <Image Include="res\newvariant.bmp" />
+    <Image Include="res\paintbar.bmp" />
+    <Image Include="res\palette.bmp" />
+    <Image Include="res\PrjWsp1.bmp" />
+    <Image Include="res\template.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
+    <Image Include="res\TtemplateBar.bmp" />
+    <Image Include="res\uicontrols.bmp" />
+    <Image Include="res\unitvariant.bmp" />
+    <Image Include="res\up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MapEdit.rgs" />
+    <None Include="res\erase.cur" />
+    <None Include="res\floors.cur" />
+    <None Include="res\hand.cur" />
+    <None Include="res\MapEdit.rc2" />
+    <None Include="res\MapEdit.tip" />
+    <None Include="res\plus.cur" />
+    <None Include="res\rects.cur" />
+    <None Include="res\selection.cur" />
+    <None Include="res\solids.cur" />
+    <None Include="res\wall.cur" />
+    <None Include="res\zoom.cur" />
+    <None Include="RPGItemPrefs.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\!!!BUILD\ZERO_CHECK.vcxproj">
+      <Project>{89a8a2af-9056-3119-b0a1-87a589209c83}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\DBFormat\DBFormat.vcxproj">
+      <Project>{7a11deba-4dac-331d-83bc-a3bb7f44d5fa}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\FileIO\FileIO.vcxproj">
+      <Project>{2a23875e-4630-36b7-a476-060e97910e70}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\FModSound\FModSound.vcxproj">
+      <Project>{3d3de62f-1a11-3c7b-86bf-ec8ece8b9be2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Image\Image.vcxproj">
+      <Project>{363a9453-d51c-3b2f-9bc3-168f77ff722d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Input\Input.vcxproj">
+      <Project>{bf807f3a-c4f2-355c-b9e8-6cd146aeffa9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoryMngr\MemoryMngr.vcxproj">
+      <Project>{d4add8f2-3e39-3b00-a1a6-178b7afe98db}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Misc\Misc.vcxproj">
+      <Project>{1c8b4324-98c7-34a6-85e7-8ca5d904e0a0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenDynamix\OpenDynamix.vcxproj">
+      <Project>{257a16c0-4282-4192-b8d5-b925ff4953bd}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Scintilla\Scintilla.vcxproj">
+      <Project>{538dddf6-55ea-4b2b-9f7d-19b1d998e052}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Script\Script.vcxproj">
+      <Project>{4758c2bd-c390-39f2-8e1a-ab250692b947}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

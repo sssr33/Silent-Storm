@@ -1,0 +1,1976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Gfx">
+      <UniqueIdentifier>{2494dad4-300c-41e7-a5cb-0173a5000eb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{67aa689b-075a-4100-9c46-212baf492a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Realisation">
+      <UniqueIdentifier>{6e545d38-6559-4a6d-b877-df339ccf84f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Decals">
+      <UniqueIdentifier>{6ed0d749-fffa-4579-bc7b-0df40825b743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{b6647984-a235-4013-857d-720cd43025b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Mission">
+      <UniqueIdentifier>{cc42e377-e6a7-4f49-8231-c2253d43fa17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Mission\Panels">
+      <UniqueIdentifier>{63c48ed3-07dc-4edf-aea4-60f18c32d3e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Mission\Trackers">
+      <UniqueIdentifier>{4fa1760b-e64b-4719-92b4-66a59d3d9564}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\MapEditor">
+      <UniqueIdentifier>{f41134d3-3f15-4d2f-b955-84dc43fb59fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\ChapterMap">
+      <UniqueIdentifier>{a912e9ac-7b42-42ad-82b2-2e476a68983d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\GlobalMap">
+      <UniqueIdentifier>{a5726e68-8467-451f-b954-223a39f0c218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\MainMenu">
+      <UniqueIdentifier>{1ff66584-869e-4ea7-a6a8-bbf17434fb8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\InterMission">
+      <UniqueIdentifier>{128caa8d-b491-42da-934e-07c1ddd1309c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\SideMenu">
+      <UniqueIdentifier>{ca52fcb5-6d77-4f5f-a240-3a95a3f9d499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\CluesMenu">
+      <UniqueIdentifier>{1dc60a91-d6db-4001-887a-3b98bb32e0e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\OptionsMenu">
+      <UniqueIdentifier>{0c24bc7a-8e9d-4d9b-9dbe-07dda68b3d14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\AIView">
+      <UniqueIdentifier>{9063f8d0-1755-4c39-bfbe-37b4c98223e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\InGameMenu">
+      <UniqueIdentifier>{70737408-dc1e-4690-ab91-b7839f4d6c03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\TeamMngMenu">
+      <UniqueIdentifier>{e53cb5ba-bbf3-4b82-83f0-f4f9f5318489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\ShowClue">
+      <UniqueIdentifier>{54ed3033-9b92-4e17-bfb7-cb8fcc5b02af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\SaveLoadMenu">
+      <UniqueIdentifier>{fc7949c3-dc48-4112-8523-78c610f2194a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\CharGen">
+      <UniqueIdentifier>{02447fb2-9717-4170-b93e-0b2f0d7d5593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\HeroMenu">
+      <UniqueIdentifier>{fe6b4823-a328-4012-bd45-8c061ffe0ed5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\ExitMenu">
+      <UniqueIdentifier>{fa303c5b-fca5-4d6f-b5c4-638c68f8762d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\FaceGen">
+      <UniqueIdentifier>{803199b8-a858-4e73-863a-d416184e9120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\LoseFake">
+      <UniqueIdentifier>{016697f7-2587-47a8-8b3d-2ee166786270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPGSystem">
+      <UniqueIdentifier>{5487f5e1-aea0-490c-a2d0-a54a94742840}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPGSystem\MissionGame">
+      <UniqueIdentifier>{f92ffed9-d77f-49e8-b335-9cea033be866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPGSystem\GlobalGame">
+      <UniqueIdentifier>{ef09cbc3-c896-4568-999c-8d769c1ee950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPGSystem\GlobalGame\Implementation">
+      <UniqueIdentifier>{a08e9273-5f70-4372-9199-cbca0220cf1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{362cf8cd-000d-4225-9e27-8a819458391a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Tracers">
+      <UniqueIdentifier>{a6d57305-d17d-4b0b-9e7c-6f7fb5becfe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Pathfinding">
+      <UniqueIdentifier>{959a3b6f-f715-4ca6-abd4-3b0c2c6b4070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Geometry">
+      <UniqueIdentifier>{acd587ac-bf20-42c6-b885-758ed7006f62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Commanders">
+      <UniqueIdentifier>{85d23928-90c6-4a97-8e50-7d07d6264a6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Commanders\Action">
+      <UniqueIdentifier>{273fbc2a-6fce-4eca-a603-9294f14f8389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{3b1ede53-06e5-4d51-8ee9-74a660860dd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{1a8639fd-af5e-4bb5-876e-7618e627ad54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{518be482-dba5-4e39-876f-74ca32a483e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\MapBuild">
+      <UniqueIdentifier>{d991daa2-8584-47b6-886b-307304c3bb10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\WMain">
+      <UniqueIdentifier>{9dbb4bb7-39d6-4eda-b556-1f2f688542e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\UnitLogic">
+      <UniqueIdentifier>{6d754834-b86f-46b5-9c47-a277cceaef72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Events">
+      <UniqueIdentifier>{2bb3e055-49b3-4ef8-87a6-efa303c2b9db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Acknowledgement">
+      <UniqueIdentifier>{30fff49f-ff77-459b-9b1b-11810c3ce2a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{cecc3597-e660-4bf8-821a-572567877ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Skinning">
+      <UniqueIdentifier>{a55fe816-8c7e-474b-9b7d-36a87b7e9155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Text">
+      <UniqueIdentifier>{6b591590-c68f-4101-a79d-d5293d75339e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\GBuildings">
+      <UniqueIdentifier>{67eccf45-35e7-4aaf-9dc3-425a27349221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\MemBuilder">
+      <UniqueIdentifier>{2496a4c8-6f29-4bdf-8d4d-9dd38594e1e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Textures">
+      <UniqueIdentifier>{de8fa97d-6e8f-4ef5-81f2-79d0f9ab95cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\GTerrain">
+      <UniqueIdentifier>{b4d8f2cd-777a-4d39-83db-47c7a6fb764a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\GTerrain\SW">
+      <UniqueIdentifier>{2fc6df91-d92b-4992-b4b1-aa9cb9c53b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{d8e51928-262a-4d3c-a23e-400402b321b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particles">
+      <UniqueIdentifier>{0f35b2bf-5af7-408d-8803-20cf831d31ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DScene">
+      <UniqueIdentifier>{0e0ba40f-0934-42f0-a3b4-d3f4808446c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{0179d842-9344-458f-a0d1-bac30b93d3c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildings">
+      <UniqueIdentifier>{85661e8f-455d-4bdd-8d80-73cca5aa085f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildings\Stability">
+      <UniqueIdentifier>{aa5cb617-b4a9-434a-9ab2-abb22cf6906f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Terrain">
+      <UniqueIdentifier>{b33bf004-1b59-4370-ab0f-7a6294220979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{fcbfb3e9-da82-4fa6-888e-640511962341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Controls">
+      <UniqueIdentifier>{12864a27-bdd3-4980-97b0-0800b2459181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Controls\ScreenShot">
+      <UniqueIdentifier>{d29239a1-cfaa-4c2e-85e9-b5b8ff9485a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{dd892317-e392-4dea-813c-40853e01b644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LSHead">
+      <UniqueIdentifier>{95e13d22-adad-4989-bec6-ba75f0ba0daa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenario">
+      <UniqueIdentifier>{afc2038a-b005-4f1c-8340-b4b269185f90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{e87f4f8c-d6c6-44f6-b832-3f14e01d86b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GPixelFormat.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="Gfx.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxBuffers.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxBuffersInternal.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxEffects.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxInternal.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxRender.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxShaders.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxShadersDescr.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxUtils.h">
+      <Filter>Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="GDecalInfo.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GGeometry.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GInit.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GMaterial.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GParticleInfo.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GPostProcessors.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GRenderModes.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GSceneUtils.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GTextureLoader.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GCombiner.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GDecal.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GGeometryUtil.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GLightmap.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GLightmapCalc.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GRenderCore.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GRenderExecute.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GRenderFactor.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GRenderLight.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GSceneInternal.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GSceneParticles.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GShadowMap.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GShadowVolume.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GTransparent.h">
+      <Filter>Scene\Realisation</Filter>
+    </ClInclude>
+    <ClInclude Include="GDecalGeometry.h">
+      <Filter>Scene\Decals</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="iCommonUI.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="iMain.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="iMapEditor.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="iRadTest.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="iSaveManager.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="BSchemaViewer.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iActionDecorator.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iDesktopWindow.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iGameStates.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iMission.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iMissionDlgUI.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iMissionExec.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iMissionInternal.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iMissionMovieUI.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iMissionTrailerUI.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iMissionUI.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iUnitIconBar.h">
+      <Filter>Interface\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="iCharacterPanel.h">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="iInventoryPanel.h">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="iLogPanel.h">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="iPerksPanel.h">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="iStorePanel.h">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="iTopPanel.h">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="iUnitPanel.h">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTracker.h">
+      <Filter>Interface\Mission\Trackers</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTracker.h">
+      <Filter>Interface\Mission\Trackers</Filter>
+    </ClInclude>
+    <ClInclude Include="MELayers.h">
+      <Filter>Interface\MapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="METerrain.h">
+      <Filter>Interface\MapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="iChapterMap.h">
+      <Filter>Interface\ChapterMap</Filter>
+    </ClInclude>
+    <ClInclude Include="iChapterMapUI.h">
+      <Filter>Interface\ChapterMap</Filter>
+    </ClInclude>
+    <ClInclude Include="iGlobalMap.h">
+      <Filter>Interface\GlobalMap</Filter>
+    </ClInclude>
+    <ClInclude Include="iGlobalMapUI.h">
+      <Filter>Interface\GlobalMap</Filter>
+    </ClInclude>
+    <ClInclude Include="iMainMenu.h">
+      <Filter>Interface\MainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iRenderWorld.h">
+      <Filter>Interface\MainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iInterMission.h">
+      <Filter>Interface\InterMission</Filter>
+    </ClInclude>
+    <ClInclude Include="iSideMenu.h">
+      <Filter>Interface\SideMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iCluesMenu.h">
+      <Filter>Interface\CluesMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iOptionsMenu.h">
+      <Filter>Interface\OptionsMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iAIViewer.h">
+      <Filter>Interface\AIView</Filter>
+    </ClInclude>
+    <ClInclude Include="iInGameMenu.h">
+      <Filter>Interface\InGameMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iTeamMngMenu.h">
+      <Filter>Interface\TeamMngMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iShowClue.h">
+      <Filter>Interface\ShowClue</Filter>
+    </ClInclude>
+    <ClInclude Include="iSaveLoad.h">
+      <Filter>Interface\SaveLoadMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iCharGen.h">
+      <Filter>Interface\CharGen</Filter>
+    </ClInclude>
+    <ClInclude Include="iHeroMenu.h">
+      <Filter>Interface\HeroMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iExitMenu.h">
+      <Filter>Interface\ExitMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="iFaceGen.h">
+      <Filter>Interface\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="iLoseFake.h">
+      <Filter>Interface\LoseFake</Filter>
+    </ClInclude>
+    <ClInclude Include="ChapterInfo.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalInfo.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGDiplomacy.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGGame.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGGlobal.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGItemInfo.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGObject.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGUnitInfo.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="rpgCheatConstants.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="rpgPerk.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="rpgPerkConstants.h">
+      <Filter>RPGSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGAllCriticals.h">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGAttackMech.h">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGCritical.h">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGToHit.h">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGUnitMission.h">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGVision.h">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGItem.h">
+      <Filter>RPGSystem\GlobalGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGMerc.h">
+      <Filter>RPGSystem\GlobalGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGUnit.h">
+      <Filter>RPGSystem\GlobalGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGItemSet.h">
+      <Filter>RPGSystem\GlobalGame\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="BSPCollider.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiCollider.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiCollidersCommon.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiHeight.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiInterval.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiMap.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiStability.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiVision.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="aiVoxelRender.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="phCollider.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="BSPtree.h">
+      <Filter>AI\Tracers</Filter>
+    </ClInclude>
+    <ClInclude Include="aiRender.h">
+      <Filter>AI\Tracers</Filter>
+    </ClInclude>
+    <ClInclude Include="aiTrace.h">
+      <Filter>AI\Tracers</Filter>
+    </ClInclude>
+    <ClInclude Include="aiColourer.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiDoorCollider.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiGrid.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiGridSet.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiLocker.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiMapProxy.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiMoves.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiMovesCalcer.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiMovesEnumerator.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiMultiMoves.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiNearestPosition.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiPMConst.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiPassCalcJob.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiPassCalcer.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiPath.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiPathTable.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiPosition.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiSimpleWaveSearch.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiWaveSearch.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiWayConstraints.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="aiObject.h">
+      <Filter>AI\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="aiObjectLoader.h">
+      <Filter>AI\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="aiTerrain.h">
+      <Filter>AI\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="aiVolumeCalcer.h">
+      <Filter>AI\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="AILog.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiBehaviourRecognizer.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiCommander.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiControl.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiCriterion.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiInventory.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiIterator.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiJob.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiPlayer.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiRoute.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiScaleConverter.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiSignal.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiTacticalCommander.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiTaskCommander.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiUnit.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiWaypoint.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiWeapon.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aistate.h">
+      <Filter>AI\Commanders</Filter>
+    </ClInclude>
+    <ClInclude Include="aiAction.h">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="aiAttackAction.h">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="aiCompoundAction.h">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="aiMoveAction.h">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Bound.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="DG.H">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="DiscretePos.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="FontFormat.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceConst.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Interpolate.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="MemObject.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="OcTree.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="PolyUtils.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Pool.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="RectLayout.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="RectPacker.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperCollider.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Sync.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumeContainer.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="GAnimBase.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="GAnimFormat.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="GAnimParticles.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="GAnimPath.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="GAnimTerrain.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="GAnimation.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryUnit.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="wInterface.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="wInterfaceVisitors.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="wTSFlags.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="wUICommands.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitCommands.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="MapBuild.h">
+      <Filter>World\MapBuild</Filter>
+    </ClInclude>
+    <ClInclude Include="MapBuildTerrain.h">
+      <Filter>World\MapBuild</Filter>
+    </ClInclude>
+    <ClInclude Include="MapBuildingInfo.h">
+      <Filter>World\MapBuild</Filter>
+    </ClInclude>
+    <ClInclude Include="wBuilding.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wBullet.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wDebris.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wDecal.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wDynObject.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wExplTracker.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wGrenade.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wKnife.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wMain.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wMainMoves.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wMainPath.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wMainTrace.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wMine.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wMisc.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wOSBase.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wObject.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wPlayer.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wRocket.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wTerrain.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wTurnBased.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitGroup.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wVision.h">
+      <Filter>World\WMain</Filter>
+    </ClInclude>
+    <ClInclude Include="wAnimation.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wDumbUnit.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wEActiveItem.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitAttack.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitAttackExec.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitExec.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitMove.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitQueue.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitServer.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitSounds.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wUnitStates.h">
+      <Filter>World\UnitLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="eventPlayer.h">
+      <Filter>World\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="eventUnit.h">
+      <Filter>World\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="wAck.h">
+      <Filter>World\Acknowledgement</Filter>
+    </ClInclude>
+    <ClInclude Include="wAckBase.h">
+      <Filter>World\Acknowledgement</Filter>
+    </ClInclude>
+    <ClInclude Include="wDialog.h">
+      <Filter>World\Acknowledgement</Filter>
+    </ClInclude>
+    <ClInclude Include="G2DView.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GAnimLight.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GMatShare.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GMemBuilder.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GResource.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GSkeleton.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GView.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GBind.h">
+      <Filter>Graphics\Skinning</Filter>
+    </ClInclude>
+    <ClInclude Include="GFileSkin.h">
+      <Filter>Graphics\Skinning</Filter>
+    </ClInclude>
+    <ClInclude Include="GMesh.h">
+      <Filter>Graphics\Skinning</Filter>
+    </ClInclude>
+    <ClInclude Include="GFont.h">
+      <Filter>Graphics\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="GLocale.h">
+      <Filter>Graphics\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="GText.h">
+      <Filter>Graphics\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="GBuilding.h">
+      <Filter>Graphics\GBuildings</Filter>
+    </ClInclude>
+    <ClInclude Include="GObjectInfo.h">
+      <Filter>Graphics\GBuildings</Filter>
+    </ClInclude>
+    <ClInclude Include="GMemFormat.h">
+      <Filter>Graphics\MemBuilder</Filter>
+    </ClInclude>
+    <ClInclude Include="GTexture.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="mmpFormat.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="GTerrain.h">
+      <Filter>Graphics\GTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="GTerrainTexture.h">
+      <Filter>Graphics\GTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="2DSceneSW.h">
+      <Filter>Graphics\GTerrain\SW</Filter>
+    </ClInclude>
+    <ClInclude Include="SWRectLayout.h">
+      <Filter>Graphics\GTerrain\SW</Filter>
+    </ClInclude>
+    <ClInclude Include="SWTexture.h">
+      <Filter>Graphics\GTerrain\SW</Filter>
+    </ClInclude>
+    <ClInclude Include="RWGame.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="RWSound.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GGrass.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="GParticleFormat.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="GParticles.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="GPointLightGlow.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="2DScene.h">
+      <Filter>2DScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GClipper.h">
+      <Filter>2DScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GRects.h">
+      <Filter>2DScene</Filter>
+    </ClInclude>
+    <ClInclude Include="A5Script.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptCallLUA.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptCommon.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptDialog.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptDiplomacy.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptObject.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptPosition.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptPtr.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptRoute.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptScenario.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptSequence.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptTemplate.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptUnit.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptUnitGroup.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptVector.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingClip.h">
+      <Filter>Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingGrid.h">
+      <Filter>Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingInfo.h">
+      <Filter>Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingPart.h">
+      <Filter>Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeBuilding.h">
+      <Filter>Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeBuildingInternal.h">
+      <Filter>Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingSchema.h">
+      <Filter>Buildings\Stability</Filter>
+    </ClInclude>
+    <ClInclude Include="RodJunction.h">
+      <Filter>Buildings\Stability</Filter>
+    </ClInclude>
+    <ClInclude Include="rod.h">
+      <Filter>Buildings\Stability</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainInfo.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Cursor.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIBaseCtrls.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UICommCtrls.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UIEvents.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UIInterface.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UIML.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMLHandlers.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UIWindow.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UIWrap.h">
+      <Filter>UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenShot.h">
+      <Filter>UI\Controls\ScreenShot</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEffect.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundFormat.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="LSController.h">
+      <Filter>LSHead</Filter>
+    </ClInclude>
+    <ClInclude Include="LSHead.h">
+      <Filter>LSHead</Filter>
+    </ClInclude>
+    <ClInclude Include="scCommands.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="scFlowChart.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="scFlowChartItems.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="scScenarioTracker.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="Specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_user_config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Gfx.cpp">
+      <Filter>Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxBuffers.cpp">
+      <Filter>Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxEffects.cpp">
+      <Filter>Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxInternal.cpp">
+      <Filter>Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxRender.cpp">
+      <Filter>Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxShaders.cpp">
+      <Filter>Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxUtils.cpp">
+      <Filter>Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="GGeometry.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GInit.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GMaterial.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GParticleInfo.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GPostProcessors.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GSceneUtils.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GCombiner.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GDecal.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GGeometryUtil.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GLightmap.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GLightmapCalc.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GRenderCore.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GRenderExecute.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GRenderFactor.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GRenderLight.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GSceneInternal.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GSceneParticles.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GShadowMap.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GShadowVolume.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GTransparent.cpp">
+      <Filter>Scene\Realisation</Filter>
+    </ClCompile>
+    <ClCompile Include="GDecalGeometry.cpp">
+      <Filter>Scene\Decals</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="iCommonUI.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="iMain.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="iRadTest.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="iSaveManager.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="BSchemaViewer.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iDesktopWindow.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iGameStates.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iMission.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iMissionDlgUI.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iMissionExec.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iMissionInternal.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iMissionMovieUI.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iMissionTrailerUI.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iMissionUI.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iUnitIconBar.cpp">
+      <Filter>Interface\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="iCharacterPanel.cpp">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="iInventoryPanel.cpp">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="iLogPanel.cpp">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="iPerksPanel.cpp">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="iStorePanel.cpp">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="iTopPanel.cpp">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="iUnitPanel.cpp">
+      <Filter>Interface\Mission\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTracker.cpp">
+      <Filter>Interface\Mission\Trackers</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTracker.cpp">
+      <Filter>Interface\Mission\Trackers</Filter>
+    </ClCompile>
+    <ClCompile Include="iChapterMap.cpp">
+      <Filter>Interface\ChapterMap</Filter>
+    </ClCompile>
+    <ClCompile Include="iChapterMapUI.cpp">
+      <Filter>Interface\ChapterMap</Filter>
+    </ClCompile>
+    <ClCompile Include="iGlobalMap.cpp">
+      <Filter>Interface\GlobalMap</Filter>
+    </ClCompile>
+    <ClCompile Include="iGlobalMapUI.cpp">
+      <Filter>Interface\GlobalMap</Filter>
+    </ClCompile>
+    <ClCompile Include="iMainMenu.cpp">
+      <Filter>Interface\MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iRenderWorld.cpp">
+      <Filter>Interface\MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iInterMission.cpp">
+      <Filter>Interface\InterMission</Filter>
+    </ClCompile>
+    <ClCompile Include="iSideMenu.cpp">
+      <Filter>Interface\SideMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iCluesMenu.cpp">
+      <Filter>Interface\CluesMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iOptionsMenu.cpp">
+      <Filter>Interface\OptionsMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iAIViewer.cpp">
+      <Filter>Interface\AIView</Filter>
+    </ClCompile>
+    <ClCompile Include="iInGameMenu.cpp">
+      <Filter>Interface\InGameMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iTeamMngMenu.cpp">
+      <Filter>Interface\TeamMngMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iShowClue.cpp">
+      <Filter>Interface\ShowClue</Filter>
+    </ClCompile>
+    <ClCompile Include="iSaveLoad.cpp">
+      <Filter>Interface\SaveLoadMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iCharGen.cpp">
+      <Filter>Interface\CharGen</Filter>
+    </ClCompile>
+    <ClCompile Include="iHeroMenu.cpp">
+      <Filter>Interface\HeroMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iExitMenu.cpp">
+      <Filter>Interface\ExitMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="iFaceGen.cpp">
+      <Filter>Interface\FaceGen</Filter>
+    </ClCompile>
+    <ClCompile Include="iLoseFake.cpp">
+      <Filter>Interface\LoseFake</Filter>
+    </ClCompile>
+    <ClCompile Include="ChapterInfo.cpp">
+      <Filter>RPGSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalInfo.cpp">
+      <Filter>RPGSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGDiplomacy.cpp">
+      <Filter>RPGSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="rpgPerk.cpp">
+      <Filter>RPGSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGAttackMech.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGBuilding.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGCritical.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGGame.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGObject.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGStatInfo.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGToHit.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGUnitMission.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGVision.cpp">
+      <Filter>RPGSystem\MissionGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGGlobal.cpp">
+      <Filter>RPGSystem\GlobalGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGInventory.cpp">
+      <Filter>RPGSystem\GlobalGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGMerc.cpp">
+      <Filter>RPGSystem\GlobalGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGUnit.cpp">
+      <Filter>RPGSystem\GlobalGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGItemSet.cpp">
+      <Filter>RPGSystem\GlobalGame\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="aiCollider.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="aiHeight.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="aiInterval.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="aiMap.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="aiStability.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="aiVision.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="aiVoxelRender.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="phCollider.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="BSPTree.cpp">
+      <Filter>AI\Tracers</Filter>
+    </ClCompile>
+    <ClCompile Include="aiRender.cpp">
+      <Filter>AI\Tracers</Filter>
+    </ClCompile>
+    <ClCompile Include="aiTrace.cpp">
+      <Filter>AI\Tracers</Filter>
+    </ClCompile>
+    <ClCompile Include="aiColourer.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiGrid.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiLocker.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiMoves.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiMovesCalcer.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiMultiMoves.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiNearestPosition.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiPassCalcJob.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiPassCalcer.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiPath.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiPosition.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="aiObject.cpp">
+      <Filter>AI\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="aiObjectLoader.cpp">
+      <Filter>AI\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="aiTerrain.cpp">
+      <Filter>AI\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="aiVolumeCalcer.cpp">
+      <Filter>AI\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="AILog.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiBehaviourRecognizer.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiCommander.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiControl.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiCriterion.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiInventory.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiIterator.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiJob.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiPlayer.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiRoute.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiScaleConverter.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiSignal.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiTacticalCommander.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiTaskCommander.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiUnit.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiWaypoint.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiWeapon.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aistate.cpp">
+      <Filter>AI\Commanders</Filter>
+    </ClCompile>
+    <ClCompile Include="aiAction.cpp">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="aiAttackAction.cpp">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="aiCompoundAction.cpp">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="aiMoveAction.cpp">
+      <Filter>AI\Commanders\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="DG.CPP">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="DiscretePos.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="FontFormat.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="MemObject.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="PolyUtils.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="RectPacker.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperCollider.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumeContainer.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="GAnimBase.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="GAnimFormat.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="GAnimParticles.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="GAnimPath.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="GAnimTerrain.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="GAnimation.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryUnit.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="wInterface.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="wInterfaceVisitors.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="wUICommands.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitCommands.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="MapBuild.cpp">
+      <Filter>World\MapBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="MapBuildTerrain.cpp">
+      <Filter>World\MapBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="wBuilding.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wBullet.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wDebris.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wDecal.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wExplTracker.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wGrenade.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wKnife.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wMain.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wMainMoves.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wMainPath.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wMainTrace.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wMine.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wMisc.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wOSBase.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wObject.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wPlayer.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wRocket.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wTerrain.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wTurnBased.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitGroup.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wVision.cpp">
+      <Filter>World\WMain</Filter>
+    </ClCompile>
+    <ClCompile Include="wAnimation.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wDumbUnit.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitAttack.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitAttackExec.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitExec.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitMove.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitQueue.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitServer.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wUnitStates.cpp">
+      <Filter>World\UnitLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wAck.cpp">
+      <Filter>World\Acknowledgement</Filter>
+    </ClCompile>
+    <ClCompile Include="wAckBase.cpp">
+      <Filter>World\Acknowledgement</Filter>
+    </ClCompile>
+    <ClCompile Include="wDialog.cpp">
+      <Filter>World\Acknowledgement</Filter>
+    </ClCompile>
+    <ClCompile Include="G2DView.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GAnimLight.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GMatShare.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GMemBuilder.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GResource.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GSkeleton.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GView.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GBind.cpp">
+      <Filter>Graphics\Skinning</Filter>
+    </ClCompile>
+    <ClCompile Include="GMesh.cpp">
+      <Filter>Graphics\Skinning</Filter>
+    </ClCompile>
+    <ClCompile Include="GFont.cpp">
+      <Filter>Graphics\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="GLocale.cpp">
+      <Filter>Graphics\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="GText.cpp">
+      <Filter>Graphics\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="GBuilding.cpp">
+      <Filter>Graphics\GBuildings</Filter>
+    </ClCompile>
+    <ClCompile Include="GObjectInfo.cpp">
+      <Filter>Graphics\GBuildings</Filter>
+    </ClCompile>
+    <ClCompile Include="GMemFormat.cpp">
+      <Filter>Graphics\MemBuilder</Filter>
+    </ClCompile>
+    <ClCompile Include="GTexture.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="GTerrain.cpp">
+      <Filter>Graphics\GTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="GTerrainTexture.cpp">
+      <Filter>Graphics\GTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="2DSceneSW.cpp">
+      <Filter>Graphics\GTerrain\SW</Filter>
+    </ClCompile>
+    <ClCompile Include="SWRectLayout.cpp">
+      <Filter>Graphics\GTerrain\SW</Filter>
+    </ClCompile>
+    <ClCompile Include="SWTexture.cpp">
+      <Filter>Graphics\GTerrain\SW</Filter>
+    </ClCompile>
+    <ClCompile Include="RWGame.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="RWSound.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="GGrass.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="GParticleFormat.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="GParticles.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="GPointLightGlow.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="2DScene.cpp">
+      <Filter>2DScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GClipper.cpp">
+      <Filter>2DScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GRects.cpp">
+      <Filter>2DScene</Filter>
+    </ClCompile>
+    <ClCompile Include="A5Script.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptFunctions.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptCommon.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptDialog.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptDiplomacy.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptObject.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptPosition.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptPtr.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptRoute.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptScenario.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptSequence.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptTemplate.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptUnit.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptUnitGroup.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptVector.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingClip.cpp">
+      <Filter>Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingGrid.cpp">
+      <Filter>Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingInfo.cpp">
+      <Filter>Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeBuilding.cpp">
+      <Filter>Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeBuildingInternal.cpp">
+      <Filter>Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingSchema.cpp">
+      <Filter>Buildings\Stability</Filter>
+    </ClCompile>
+    <ClCompile Include="RodJunction.cpp">
+      <Filter>Buildings\Stability</Filter>
+    </ClCompile>
+    <ClCompile Include="rod.cpp">
+      <Filter>Buildings\Stability</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainInfo.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIBaseCtrls.cpp">
+      <Filter>UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UICommCtrls.cpp">
+      <Filter>UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UIInterface.cpp">
+      <Filter>UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UIML.cpp">
+      <Filter>UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UIWindow.cpp">
+      <Filter>UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UIWrap.cpp">
+      <Filter>UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenShot.cpp">
+      <Filter>UI\Controls\ScreenShot</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEffect.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundFormat.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="LSController.cpp">
+      <Filter>LSHead</Filter>
+    </ClCompile>
+    <ClCompile Include="LSHead.cpp">
+      <Filter>LSHead</Filter>
+    </ClCompile>
+    <ClCompile Include="scCommands.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="scFlowChart.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="scFlowChartItems.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="scScenarioTracker.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="GfxShaders.txt">
+      <Filter>Gfx</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

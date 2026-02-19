@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DBFormat">
+      <UniqueIdentifier>{bc53034f-a68c-4fa0-87bc-9053e2160801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{f3604e9f-c8b6-402a-aa5e-20eef4401313}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DataAI.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataAck.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataCamera.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataDifficulty.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFormat.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataInterface.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataMap.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataPerk.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataRPG.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataRPGTmp.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataRpgConstants.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataScenario.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataScript.cpp">
+      <Filter>DBFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="DataConst.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataAI.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataAck.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataAnimation.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataCamera.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataDifficulty.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFormat.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataGeometry.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataInterface.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataLight.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataMap.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataObject.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataPerk.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataRPG.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataRPGTmp.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataRpgConstants.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataScenario.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataScript.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSound.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTerrain.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataText.h">
+      <Filter>DBFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="DataConst.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_user_config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

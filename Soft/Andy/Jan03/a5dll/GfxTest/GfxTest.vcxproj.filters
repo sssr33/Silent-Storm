@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{e9e7c34c-f1d2-4e05-957b-818b51cf1773}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;h</Extensions>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{ec3411b4-c078-4f7b-8a5f-80b2ad093f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{0a220a31-7aad-47c6-9b12-a9d096d14fab}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\main\Cache.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\Gfx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\GfxBuffers.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\GfxEffects.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\GfxInternal.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\GfxRender.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\GfxShaders.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\GfxUtils.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main\Transform.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="WinFrame.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Main\Cache.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GPixelFormat.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\Gfx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GfxBuffers.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GfxEffects.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GfxInternal.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GfxRender.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GfxShaders.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GfxShadersDescr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\GfxUtils.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\Transform.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="WinFrame.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Specific.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_user_config.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

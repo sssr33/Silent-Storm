@@ -1,0 +1,1286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{04a35fdd-d2bd-4900-a2e4-2627bfbb465f}</UniqueIdentifier>
+      <Extensions>cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d894f960-61a9-4e62-a6d6-48929bb23d4d}</UniqueIdentifier>
+      <Extensions>hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5ceabb7a-90ca-48c1-8a11-8f5b14d153b6}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Cursors">
+      <UniqueIdentifier>{71853253-27b9-4950-bd82-5c1ba8766f2d}</UniqueIdentifier>
+      <Extensions>cur</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Toolbars">
+      <UniqueIdentifier>{0d666ba0-df2a-417c-a076-89592ff3a6d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{a5da32dc-4bd8-45d0-82c2-a6ea0177a0e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectInspector">
+      <UniqueIdentifier>{f63e0a27-ae16-4782-acef-4cbb5265b564}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectInspector\TextEdit">
+      <UniqueIdentifier>{5490fcda-fe64-4b40-85ea-62f3f0e2fb7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectInspector\ParamsEdit">
+      <UniqueIdentifier>{ab4c998e-ca92-4b62-a1af-7772c8a16ded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectInspector\GeometryPiecesEdit">
+      <UniqueIdentifier>{dcc44e04-ae29-4c72-b7fd-635c867ae401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TemplateMgr">
+      <UniqueIdentifier>{06297c76-43bc-46dc-8e8e-6a22fc0fed27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TemplateView">
+      <UniqueIdentifier>{7e5c2af4-f97e-45e2-aad4-77f9134fedc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TemplateView\TerrainLayers">
+      <UniqueIdentifier>{41028743-b7b3-45a1-8e94-be981ceb8329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{2a6f5ab9-78f3-407d-a90f-fb195cb7a3d7}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
+    </Filter>
+    <Filter Include="Main\WEditor">
+      <UniqueIdentifier>{9cb35aca-a2cf-483c-8474-0827845faf14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\UndoRedo">
+      <UniqueIdentifier>{d01f2208-59b9-48ba-bd7e-6e6e46695f61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{cc2c932c-553e-4062-bafa-dbc855c0c215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wysiwyg">
+      <UniqueIdentifier>{d56ecb97-b77b-402e-8984-39d844de4f9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wysiwyg\ObjectProps">
+      <UniqueIdentifier>{f90294d8-e2c6-49c9-9a6c-27d61102a7c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wysiwyg\TerrainProps">
+      <UniqueIdentifier>{9dcb2f26-7614-4da1-ab43-ee18d436aef0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Chapter">
+      <UniqueIdentifier>{f7176b38-a10b-438c-8676-d991def4795e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{06c59d96-1aaa-4021-adad-0e84aa5d4edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPG">
+      <UniqueIdentifier>{8483bbaf-63fe-4407-81ee-0a7d45f65114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPG\Diplomacy">
+      <UniqueIdentifier>{e1c6b624-e58a-4f57-addd-200aee08a38d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPG\StoreDialog">
+      <UniqueIdentifier>{4a56e048-950b-418b-a488-8b57fdd59468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenario">
+      <UniqueIdentifier>{c44a6c3b-e417-4f48-9a49-ba4593624532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ExportImport">
+      <UniqueIdentifier>{ab8dc8b9-2a81-4fff-a281-f71a97b496d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ExportImport\Dialogs">
+      <UniqueIdentifier>{08d4bf5c-85c1-432e-8dec-15facd8457c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ExportImport\Scenario">
+      <UniqueIdentifier>{525a3450-7197-45d4-9be5-5f5b75e7d410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectBrowser">
+      <UniqueIdentifier>{53d1d63e-029b-4df1-994c-6e6fdbc494c8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AIGeometryFormat.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedEditing.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnalyseData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimItemsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChooseDBDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FinTypeDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FindDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IconView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OIDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParamsFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParamsView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PropView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeSelItemDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeVDialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="history.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="preferences.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_user_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DbInl.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="FinDBCmd.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="FloorDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Items4PersDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemsDBCmd.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="PlacableDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="RectsDBCmd.H">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomsDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplDBCmd.H">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrSpotDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeDBCmd.H">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="VariantsDBCmd.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="WallsDBCmd.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="WaypointDB.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="dbDefs.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="CtrlObjectInspector.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="DiplomacyEditDlg.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="OIBrowEdit.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="OIColorEdit.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="OICombo.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="OIList.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="OIRelEdit.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="OISubPartsEdit.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="Variant.h">
+      <Filter>ObjectInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="FindTextDlg.h">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaEditor.h">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="OIEdit.h">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="SyntaxColorizer.h">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor.h">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="OIParamsEdit.h">
+      <Filter>ObjectInspector\ParamsEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="SubTemplateFlagsDlg.h">
+      <Filter>ObjectInspector\ParamsEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="OIPiecesEdit.h">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="PieceEditDlg.h">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="PiecesEditDlg.h">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="PiecesInfoView.h">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="Attributes.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalElem.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemsMgr.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ListProp.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Placement.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="PlacementDefs.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="PropMap.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="PropMapTypedef.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplMgr.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Walls.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="templ.h">
+      <Filter>TemplateMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="2DEditor.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="CellarLayer.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildView.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="FloorLayer.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerCtrl.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerList.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="Layers.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="RectTrack.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="RectsLayer.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomsLayer.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateView.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit_ObjDraw.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="WallsLayer.h">
+      <Filter>TemplateView</Filter>
+    </ClInclude>
+    <ClInclude Include="NewHoleDlg.h">
+      <Filter>TemplateView\TerrainLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainExportDlg.h">
+      <Filter>TemplateView\TerrainLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainLayer.h">
+      <Filter>TemplateView\TerrainLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="DBWysiwygUndo.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="IWysiwyg.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MEDragDrop.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MEParams.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MESerialize.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MEUndoRedo.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MEUserSettings.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygCamera.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygClipboard.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygFragmentSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygLadderSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygMaterial.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygMovingSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygObjectSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygRoute.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygSelection.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygSelectionImpl.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygSphereHMap.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygSpotSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygSubTemplateSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygTerrSpot.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygTerrain.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygUnitSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygWaypointSel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="iMapEditor.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="wEditor.h">
+      <Filter>Main\WEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="weInterface.h">
+      <Filter>Main\WEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="FragmentSelUndo.h">
+      <Filter>Main\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSelectionUndo.h">
+      <Filter>Main\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="SubTemplateUndo.h">
+      <Filter>Main\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrSpotUndo.h">
+      <Filter>Main\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainUndo.h">
+      <Filter>Main\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitUndo.h">
+      <Filter>Main\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygUndo.h">
+      <Filter>Main\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="UIContainer.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIControls.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIFrame.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIView.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraAnimDlg.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="FragmentDialog.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryPage.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="LadderDlg.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialEditPage.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialSetEditDlg.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="PlacableItemsDlg.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="SubPartsView.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="TexSpotPage.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="UserSettingsSetup.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="WallSpotDlg.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="WysiwygBar.h">
+      <Filter>Wysiwyg</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjUpdateHandlers.h">
+      <Filter>Wysiwyg\ObjectProps</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMgr.h">
+      <Filter>Wysiwyg\ObjectProps</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainProp.h">
+      <Filter>Wysiwyg\TerrainProps</Filter>
+    </ClInclude>
+    <ClInclude Include="ChapterFrame.h">
+      <Filter>Chapter</Filter>
+    </ClInclude>
+    <ClInclude Include="ChapterSectorDlg.h">
+      <Filter>Chapter</Filter>
+    </ClInclude>
+    <ClInclude Include="ChapterView.h">
+      <Filter>Chapter</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalMapView.h">
+      <Filter>Chapter</Filter>
+    </ClInclude>
+    <ClInclude Include="NewSectorDlg.h">
+      <Filter>Chapter</Filter>
+    </ClInclude>
+    <ClInclude Include="SectorCtrl.h">
+      <Filter>Chapter</Filter>
+    </ClInclude>
+    <ClInclude Include="NameAndFolder.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="RouteDlg.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WaypointDlg.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemsListDlg.h">
+      <Filter>RPG</Filter>
+    </ClInclude>
+    <ClInclude Include="RPGItemsContainerDlg.h">
+      <Filter>RPG</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptEditDlg.h">
+      <Filter>RPG</Filter>
+    </ClInclude>
+    <ClInclude Include="DiplomacyFrame.h">
+      <Filter>RPG\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="DiplomacyView.h">
+      <Filter>RPG\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="StoreItemsDB.h">
+      <Filter>RPG\StoreDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="StoreItemsDlg.h">
+      <Filter>RPG\StoreDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportScenario.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="SGData.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioDB.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioFrame.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioView.h">
+      <Filter>Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="Export.h">
+      <Filter>ExportImport</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportAcks.h">
+      <Filter>ExportImport</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogSequnce.h">
+      <Filter>ExportImport\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpImpDialogs.h">
+      <Filter>ExportImport\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioXLS.h">
+      <Filter>ExportImport\Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBrowserConstants.h">
+      <Filter>ObjectBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBrowserContainer.h">
+      <Filter>ObjectBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBrowserDescription.h">
+      <Filter>ObjectBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBrowserDlg.h">
+      <Filter>ObjectBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBrowserFrame.h">
+      <Filter>ObjectBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBrowser.h">
+      <Filter>ObjectBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBrowserSpin.h">
+      <Filter>ObjectBrowser</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnalyseData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimItemsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChooseDBDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FinTypeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FindDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IconView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OIDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParamsFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParamsView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PropView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResDescription.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedEditing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeSelItemDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeVDialogs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="preferences.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicDB.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="FinDBCmd.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Items4PersDB.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemsDBCmd.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectDB.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="PlacableDB.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="RectDBCmd.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplDB.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitDB.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="WaypointDB.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="db.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="CtrlObjectInspector.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="DiplomacyEditDlg.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="OIBrowEdit.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="OIColorEdit.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="OICombo.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="OIList.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="OIRelEdit.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="OISubPartsEdit.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="Variant.cpp">
+      <Filter>ObjectInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="FindTextDlg.cpp">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaEditor.cpp">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="OIEdit.cpp">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="SyntaxColorizer.cpp">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditor.cpp">
+      <Filter>ObjectInspector\TextEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="OIParamsEdit.cpp">
+      <Filter>ObjectInspector\ParamsEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="SubTemplateFlagsDlg.cpp">
+      <Filter>ObjectInspector\ParamsEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="OIPiecesEdit.cpp">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceEditDlg.cpp">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="PiecesEditDlg.cpp">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="PiecesInfoView.cpp">
+      <Filter>ObjectInspector\GeometryPiecesEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="Attributes.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="FinalElem.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemsMgr.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ListProp.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Placement.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="PlacementBuilding.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplMgr.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Walls.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="templ.cpp">
+      <Filter>TemplateMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="2DEditor.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="CellarLayer.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildView.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="FloorLayer.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerCtrl.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerList.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerListBar.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="Layers.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="RectTrack.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="RectsLayer.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomsLayer.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit_ObjDraw.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="WallsLayer.cpp">
+      <Filter>TemplateView</Filter>
+    </ClCompile>
+    <ClCompile Include="NewHoleDlg.cpp">
+      <Filter>TemplateView\TerrainLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainExportDlg.cpp">
+      <Filter>TemplateView\TerrainLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainLayer.cpp">
+      <Filter>TemplateView\TerrainLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLayer.cpp">
+      <Filter>TemplateView\TerrainLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="IWysiwyg.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MEDragDrop.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MESerialize.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MEUndoRedo.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MEUserSettings.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygCamera.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygClipboard.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygFragmentSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygLadderSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygMaterial.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygMovingSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygObjectSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygRoute.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygSelection.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygSphereHMap.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygSpotSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygSubTemplateSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygTerrSpot.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygTerrain.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygUnitSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygWaypointSel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="iMapEditor.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="wEditor.cpp">
+      <Filter>Main\WEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="weObject.cpp">
+      <Filter>Main\WEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="weSubTemplate.cpp">
+      <Filter>Main\WEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="weUnit.cpp">
+      <Filter>Main\WEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="FragmentSelUndo.cpp">
+      <Filter>Main\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSelectionUndo.cpp">
+      <Filter>Main\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="SubTemplateUndo.cpp">
+      <Filter>Main\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrSpotUndo.cpp">
+      <Filter>Main\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainUndo.cpp">
+      <Filter>Main\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitUndo.cpp">
+      <Filter>Main\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygUndo.cpp">
+      <Filter>Main\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="UIContainer.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIControlTracker.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIControls.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIFrame.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIToolBar.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIView.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraAnimDlg.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="FragmentDialog.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryPage.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="LadderDlg.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialEditPage.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialSetEditDlg.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="PlacableItemsDlg.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="SubPartsView.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="TexSpotPage.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="WallSpotDlg.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="WysiwygBar.cpp">
+      <Filter>Wysiwyg</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDescription.cpp">
+      <Filter>Wysiwyg\ObjectProps</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjUpdateHandlers.cpp">
+      <Filter>Wysiwyg\ObjectProps</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMgr.cpp">
+      <Filter>Wysiwyg\ObjectProps</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainProp.cpp">
+      <Filter>Wysiwyg\TerrainProps</Filter>
+    </ClCompile>
+    <ClCompile Include="ChapterFrame.cpp">
+      <Filter>Chapter</Filter>
+    </ClCompile>
+    <ClCompile Include="ChapterSectorDlg.cpp">
+      <Filter>Chapter</Filter>
+    </ClCompile>
+    <ClCompile Include="ChapterView.cpp">
+      <Filter>Chapter</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalMapView.cpp">
+      <Filter>Chapter</Filter>
+    </ClCompile>
+    <ClCompile Include="NewSectorDlg.cpp">
+      <Filter>Chapter</Filter>
+    </ClCompile>
+    <ClCompile Include="SectorCtrl.cpp">
+      <Filter>Chapter</Filter>
+    </ClCompile>
+    <ClCompile Include="NameAndFolder.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="RouteDlg.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WaypointDlg.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemsListDlg.cpp">
+      <Filter>RPG</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGItemsContainerDlg.cpp">
+      <Filter>RPG</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptEditDlg.cpp">
+      <Filter>RPG</Filter>
+    </ClCompile>
+    <ClCompile Include="DiplomacyFrame.cpp">
+      <Filter>RPG\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="DiplomacyView.cpp">
+      <Filter>RPG\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreItemsDB.cpp">
+      <Filter>RPG\StoreDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreItemsDlg.cpp">
+      <Filter>RPG\StoreDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportScenario.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioDB.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioFrame.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioView.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="sst2F0.cpp">
+      <Filter>Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="Export.cpp">
+      <Filter>ExportImport</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportAIDoors.cpp">
+      <Filter>ExportImport</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportAcks.cpp">
+      <Filter>ExportImport</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportGeometry.cpp">
+      <Filter>ExportImport</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogSequnce.cpp">
+      <Filter>ExportImport\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpImpDialogs.cpp">
+      <Filter>ExportImport\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateScenarioXLS.cpp">
+      <Filter>ExportImport\Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadScenarioXLS.cpp">
+      <Filter>ExportImport\Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioXLS.cpp">
+      <Filter>ExportImport\Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBrowserContainer.cpp">
+      <Filter>ObjectBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBrowserDescription.cpp">
+      <Filter>ObjectBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBrowserDlg.cpp">
+      <Filter>ObjectBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBrowserFrame.cpp">
+      <Filter>ObjectBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBrowser.cpp">
+      <Filter>ObjectBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBrowserSpin.cpp">
+      <Filter>ObjectBrowser</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="MapEdit.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MapEdit.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Link.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\MapEdit.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PrjWsp1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmaps.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\copyvariant.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\delvariant.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\down.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\editmode.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\finvariant.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gridvariant.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\layer_add.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\layer_del.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\newvariant.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\palette.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\template.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\unitvariant.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\up.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files\Toolbars</Filter>
+    </Image>
+    <Image Include="res\TtemplateBar.bmp">
+      <Filter>Resource Files\Toolbars</Filter>
+    </Image>
+    <Image Include="res\paintbar.bmp">
+      <Filter>Resource Files\Toolbars</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files\Toolbars</Filter>
+    </Image>
+    <Image Include="res\uicontrols.bmp">
+      <Filter>Resource Files\Toolbars</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MapEdit.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="MapEdit.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\MapEdit.tip">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\erase.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\floors.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\hand.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\plus.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\rects.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\selection.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\solids.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\wall.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="res\zoom.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="RPGItemPrefs.htm" />
+  </ItemGroup>
+</Project>

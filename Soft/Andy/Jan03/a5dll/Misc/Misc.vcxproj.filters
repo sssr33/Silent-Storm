@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{051eb95a-5b28-4462-b5d9-0c184acb238c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{e57790dd-7264-4e27-b72e-203a832a9fde}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="2Darray.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic2.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicFactory.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShare.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="EventsBase.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Geom.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="HPTimer.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomGen.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Ring.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Set.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="StrProc.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Helper.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_user_config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Basic2.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicShare.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="EventsBase.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="HPTimer.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomGen.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="StrProc.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Image">
+      <UniqueIdentifier>{19899b47-51f9-48c3-9288-b105ca1b90fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{4561c9b4-7f95-4234-ac2e-b08d312c34a0}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Image.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageBMP.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageMMP.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageOperation.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImagePNG.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImagePack.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageTGA.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Image.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageBMP.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageMMP.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageOperation.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImagePNG.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImagePack.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageTGA.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="mmpFormat.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_user_config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
