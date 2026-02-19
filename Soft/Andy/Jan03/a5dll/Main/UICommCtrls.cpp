@@ -246,7 +246,7 @@ void CButton::RemoveState( int nID )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CWindow* CButton::GetState( int nID ) const
 {
-	hash_map<int,CObj<CWindow> >::const_iterator iTemp = statesMap.find( nID );
+	unordered_map<int,CObj<CWindow> >::const_iterator iTemp = statesMap.find( nID );
 	if ( iTemp != statesMap.end() )
 		return iTemp->second;
 
@@ -399,7 +399,7 @@ void CButton::Update( const STime &sTime, NGScene::I2DGameView *pView )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CButton::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 {
-	for ( hash_map<int,CObj<CWindow> >::iterator iTemp = statesMap.begin(); iTemp != statesMap.end(); iTemp++ )
+	for ( unordered_map<int,CObj<CWindow> >::iterator iTemp = statesMap.begin(); iTemp != statesMap.end(); iTemp++ )
 	{
 		if ( iTemp->first == nState )
 			iTemp->second->SetStyle( STYLE_VISIBLE, true );

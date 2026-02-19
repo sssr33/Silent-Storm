@@ -152,7 +152,7 @@ void GetItemsBindPlaces( vector<IRenderVisitor::SBoundMesh> *pRes, NRPG::IUnitMi
 		AttachItem( pRes, &rnd, UIT_PK_LEFT_HAND, pLeftHandItem->pModel, bIsPK );
 	}
 	bool bHeavy = false;
-	hash_map< int, int > slotItems; // номер слота либо -1 для активного оружия
+	unordered_map< int, int > slotItems; // номер слота либо -1 для активного оружия
 	NRPG::IInventoryItem *pActiveIItem = pInventory->GetActive();
 	NDb::CRPGItem *pActiveItem = 0;
 	if ( pActiveIItem )

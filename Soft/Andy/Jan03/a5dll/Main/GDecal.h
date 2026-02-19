@@ -46,7 +46,7 @@ class CDecalTarget : public CObjectBase
 {
 	OBJECT_NOCOPY_METHODS(CDecalTarget);
 public:
-	typedef hash_map<SSrcPosInfo, vector<CVec3>, SSrcPosInfoHash > CSrcPosHash;
+	typedef unordered_map<SSrcPosInfo, vector<CVec3>, SSrcPosInfoHash > CSrcPosHash;
 	ZDATA
 	SDecalMappingInfo mapInfo;
 	vector<SDecalTargetPart> targetParts;
@@ -77,7 +77,7 @@ public:
 	void Walk();
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-typedef hash_map<CPtr<CObjectBase>, bool, SPtrHash> CObjectBaseSet;
+typedef unordered_map<CPtr<CObjectBase>, bool, SPtrHash> CObjectBaseSet;
 class IDecalQuery : virtual public CObjectBase
 {
 public:
@@ -88,7 +88,7 @@ public:
 class CDecalsManager : public CObjectBase
 {
 	OBJECT_NOCOPY_METHODS(CDecalsManager);
-	typedef hash_map<SDecalTargetPart, vector<CPtr<CDecal> >, SDecalTargetPartHash> CPerUserHash;
+	typedef unordered_map<SDecalTargetPart, vector<CPtr<CDecal> >, SDecalTargetPartHash> CPerUserHash;
 	ZDATA
 	CPtr<IDecalQuery> pScene;
 	CPerUserHash decalsPerUser;

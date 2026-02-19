@@ -1616,7 +1616,7 @@ void CGScene::DrawSelection( CTransformStack *pTS, NGfx::CRenderContext *pRC, co
 	rc.SetColorWrite( NGfx::COLORWRITE_ALL );
 	rc.SetDepth( NGfx::DEPTH_NORMAL );
 	rc.SetStencil( NGfx::STENCIL_TESTINCR, 0 );//STENCIL_TESTDECR, 1 );
-	typedef hash_map<CVec4, list< CPtr<CSelection> >, SVec4Hash> CColorHash;
+	typedef unordered_map<CVec4, list< CPtr<CSelection> >, SVec4Hash> CColorHash;
 	CColorHash hashSel;
 	for ( list< CPtr<CSelection> >::iterator i = selections.begin(); i != selections.end(); ++i )
 		hashSel[ (*i)->GetColor() ].push_back( *i );
@@ -1645,7 +1645,7 @@ void CGScene::DrawPostProcess( CTransformStack *pTS, NGfx::CRenderContext *pRC, 
 	if ( postprocessors.empty() )
 		return;
 	UpdateSet( &postprocessors, this );
-	typedef hash_map<CPtr<IPostProcess>, vector<IPostProcess::SObject>, SPtrHash> CPostHash;
+	typedef unordered_map<CPtr<IPostProcess>, vector<IPostProcess::SObject>, SPtrHash> CPostHash;
 	CPostHash postHash;
 	for ( list< CPtr<CPostProcessBinder> >::iterator i = postprocessors.begin(); i != postprocessors.end(); ++i )
 		(*i)->Store( &postHash[ (*i)->GetPostProcessor() ], pTS, mask );
@@ -1662,7 +1662,7 @@ void CGScene::DrawLines( NGfx::CRenderContext *pRC )
 	pRC->SetAlphaCombine( NGfx::COMBINE_NONE );
 	pRC->SetDepth( NGfx::DEPTH_NORMAL );
 	pRC->SetStencil( NGfx::STENCIL_NONE );
-	typedef hash_map<CVec3, list<CPolyline*>, SVec3Hash> CColorHash;
+	typedef unordered_map<CVec3, list<CPolyline*>, SVec3Hash> CColorHash;
 	CColorHash hashSel;
 	for ( list< CPtr<CPolyline> >::iterator i = lines.begin(); i != lines.end(); )
 	{

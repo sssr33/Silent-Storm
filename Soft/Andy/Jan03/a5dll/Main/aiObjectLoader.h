@@ -60,7 +60,7 @@ public:
 		CEdgesInfo edges;
 		vector<NGScene::SVertexWeight> weights;
 	};
-	typedef hash_map<int, SBodypart> CBodypartsHash;
+	typedef unordered_map<int, SBodypart> CBodypartsHash;
 	CBodypartsHash parts;
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -31,7 +31,7 @@ void AddResourceDir( const char *pszName )
 		szDir += "\\";
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-typedef hash_map<string, CPtr<IFilesPackage> > CPackHash;
+typedef unordered_map<string, CPtr<IFilesPackage> > CPackHash;
 static CPackHash packages;
 static NWin32Helper::CCriticalSection packageWork;
 static IFilesPackage* GetPackage( const char *pszResName )

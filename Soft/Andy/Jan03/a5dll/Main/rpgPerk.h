@@ -40,7 +40,7 @@ class CPerksTree: public CObjectBase
 {
 	OBJECT_BASIC_METHODS( CPerksTree );
 	ZDATA
-	hash_map< int, CObj<CPerk> > perks;
+	unordered_map< int, CObj<CPerk> > perks;
 	int nPerkPoints;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&perks); f.Add(3,&nPerkPoints); return 0; }
 	//

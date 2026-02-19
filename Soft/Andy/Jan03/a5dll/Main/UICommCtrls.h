@@ -113,7 +113,7 @@ private:
 	NGfx::SPixel8888 sColor;
 	CObj<CObjectBase> pMouseCaptture;
 	CDBPtr<NDb::CSound> pClickSound;
-	hash_map<int,CObj<CWindow> > statesMap;
+	unordered_map<int,CObj<CWindow> > statesMap;
 public:
 	ZEND int operator&( CStructureSaver &f ) { f.Add(1,(CWindow*)this); f.Add(2,&nState); f.Add(3,&bPushed); f.Add(4,&bMouseEnter); f.Add(5,&szID); f.Add(6,&pGlow); f.Add(7,&pMountUp); f.Add(8,&pMountDown); f.Add(9,&pMountDisabled); f.Add(10,&sColor); f.Add(11,&pMouseCaptture); f.Add(12,&pClickSound); f.Add(13,&statesMap); return 0; }
 

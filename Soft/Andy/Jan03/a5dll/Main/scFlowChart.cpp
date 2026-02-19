@@ -1288,11 +1288,11 @@ bool CScenarioFlowChartPathFinder::CompareSize( CScenarioFlowChartState *pState1
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CScenarioFlowChartState* CScenarioFlowChartPathFinder::
-	GetBestState( const hash_map< int, list< CObj<CScenarioFlowChartState> > > &states,
+	GetBestState( const unordered_map< int, list< CObj<CScenarioFlowChartState> > > &states,
 	bool ( CScenarioFlowChartPathFinder::* Compare )( CScenarioFlowChartState *, CScenarioFlowChartState * ) )
 {
 	CObj<CScenarioFlowChartState> pBestState = 0;
-	for ( hash_map< int, list< CObj<CScenarioFlowChartState> > >::const_iterator i = states.begin();
+	for ( unordered_map< int, list< CObj<CScenarioFlowChartState> > >::const_iterator i = states.begin();
 		i != states.end(); ++i )
 	{
 		for ( list< CObj<CScenarioFlowChartState> >::const_iterator j = i->second.begin();
@@ -1510,7 +1510,7 @@ void CScenarioFlowChartPathFinder::
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CScenarioFlowChartPathFinder::MarkAsAccessible()
 {
-	for ( hash_map< int, list< CObj<CScenarioFlowChartState> > >::iterator i = passedStates.begin();
+	for ( unordered_map< int, list< CObj<CScenarioFlowChartState> > >::iterator i = passedStates.begin();
 		i != passedStates.end(); ++i )
 	{
 		for ( list< CObj<CScenarioFlowChartState> >::iterator j = i->second.begin();

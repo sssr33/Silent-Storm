@@ -194,7 +194,7 @@ class CWorld: public IWorld, public CTBSWorld<CUnitServer, CPlayer, CCommander>,
 		SUnitPtrHolder( CUnitServer *_pUS ): pCObjHolder( _pUS ), pCMObjHolder( _pUS ) {}
 	};
 	typedef CTBSWorld<CUnitServer, CPlayer, CCommander> TTBSWorld;
-	typedef hash_map< CPtr<NScenario::CScenarioClue>, SClueSlot, SPtrHash > ClueToSlot;
+	typedef unordered_map< CPtr<NScenario::CScenarioClue>, SClueSlot, SPtrHash > ClueToSlot;
 	//
 	NGlobal::CEventRegister< CWorld, NWorld::CEventOnNewPlayerFastTurnOrTime > registerOnNewPlayerFastTurnOrTime;
 	//
@@ -230,7 +230,7 @@ class CWorld: public IWorld, public CTBSWorld<CUnitServer, CPlayer, CCommander>,
 	int nAIUnitsCreated;
 	CPtr<NRPG::CGlobalGame> pGlobalGame;
 	CObj<CPlayer> pDeployedDeadUnitsPlayer;
-	hash_map< string, CObj<NAI::CAIRouteWaypoint> > waypoints;
+	unordered_map< string, CObj<NAI::CAIRouteWaypoint> > waypoints;
 	vector< CObj<CUnitGroup> > unitGroups;
 	vector<int> createFlags;
 	bool bForcedRealTime;
@@ -241,7 +241,7 @@ class CWorld: public IWorld, public CTBSWorld<CUnitServer, CPlayer, CCommander>,
 	CObj<CMineTracker> pMineTracker;
 	STime prevFastTurnTime;
 	vector<SUnitPtrHolder> pocket;
-	hash_map< string, CPtr<CObjectBase> > nameToObj;
+	unordered_map< string, CPtr<CObjectBase> > nameToObj;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(1,(TTBSWorld*)this); f.Add(2,&pShow); f.Add(3,&pShowUnits); f.Add(4,&uiCmdsList); f.Add(5,&eventHits); f.Add(6,&pTerrain); f.Add(7,&pTime); f.Add(8,&pAimTime); f.Add(9,&tPrev); f.Add(10,&tHiddenDelta); f.Add(11,&pAIMap); f.Add(12,&pPathNetwork); f.Add(13,&pRPGGame); f.Add(14,&pDefaultLight); f.Add(15,&units); f.Add(16,&objects); f.Add(17,&segmentObjects); f.Add(18,&miscObjects); f.Add(19,&buildings); f.Add(20,&pGlobalAck); f.Add(21,&pTerrainInfo); f.Add(22,&deploySpots); f.Add(23,&bLeanAndMean); f.Add(24,&nRootLayersGroup); f.Add(25,&nPartiesAdded); f.Add(26,&sMapSafeZone); f.Add(27,(CDebrisController*)this); f.Add(28,&pAIJobManager); f.Add(29,&pOwnScript); f.Add(30,&pAISignalManager); f.Add(31,&nAIUnitsCreated); f.Add(32,&pGlobalGame); f.Add(33,&pDeployedDeadUnitsPlayer); f.Add(34,&waypoints); f.Add(35,&unitGroups); f.Add(36,&createFlags); f.Add(37,&bForcedRealTime); f.Add(38,&nTurnID); f.Add(39,&prevTurnTime); f.Add(40,&pDiplomacy); f.Add(41,&trappedObjects); f.Add(42,&pMineTracker); f.Add(43,&prevFastTurnTime); f.Add(44,&pocket); f.Add(45,&nameToObj); return 0; }
 	
 	CObjectServerBase* AddObject( const SObjectPlace &pos, 
@@ -285,11 +285,11 @@ private:
 	CUnitServer* AddUnit( const NAI::SPathPlace &aiPos, NRPG::IUnitMission *_pRPG, CPlayer *pPlayer, const string &szName = "" );
 	void AddAIPlayer( const wstring &wsName, int nScenarioPlayerID );
 	void CreateAIUnits( const SMapInfo &mapInfo, const ClueToSlot &personClueToSlot, 
-		int nMobsLevel, hash_map< int, CPtr<CUnitServer> > *pIDToUnit, CVec3 ptDeltaPos = VNULL3 );
+		int nMobsLevel, unordered_map< int, CPtr<CUnitServer> > *pIDToUnit, CVec3 ptDeltaPos = VNULL3 );
 	virtual const bool IsForcedRealTime() const;
 	virtual void OnNewTurn();
 	void CreateUnitGroups( const SMapInfo &mapInfo, 
-		hash_map< int, CPtr<CUnitServer> > *pIDToUnit );
+		unordered_map< int, CPtr<CUnitServer> > *pIDToUnit );
 	void CreateObjects( const SMapInfo &mapInfo, CPostWorldCreateInfo *pPostInfo, CVec3 ptDeltaPos = VNULL3, bool bCreateBorder = true );
 	void UpdateAICommander( NAI::CAICommander *pAICommander );
 	void CheckForAcks();

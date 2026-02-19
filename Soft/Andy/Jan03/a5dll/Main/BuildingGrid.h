@@ -70,9 +70,9 @@ class CBuildingGrid : public CVersioningBase
 	//вычисляемые значения /ComputeAuxValues()/
 	SPlane6 box;
 	int nCutFloor; // for WYSIWYG
-	hash_map<int, bool> visibleLayers;
+	unordered_map<int, bool> visibleLayers;
 	bool bOnlyCutFloorVisible;
-	hash_map<SPart, bool, SPart> updatedParts;
+	unordered_map<SPart, bool, SPart> updatedParts;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&net); f.Add(3,&nDZ); f.Add(4,&ptBoxMin); f.Add(5,&ptBoxMax); f.Add(6,&pos); f.Add(7,&rooms); f.Add(8,&seed); f.Add(9,&bStabilityUpdate); f.Add(10,&nBaseFloor); f.Add(11,&box); f.Add(12,&nCutFloor); f.Add(13,&visibleLayers); f.Add(14,&bOnlyCutFloorVisible); f.Add(15,&updatedParts); return 0; }
 	CObj<CBuildingSchema> pSchema;
 	

@@ -12,7 +12,7 @@ namespace NAI
 class CPhysCollider: public NCollider::CUserCollider<SColliderUserInfo>, public IPrepareCollider
 {
 	int nMinFloor;
-	hash_map<CPtr<CObjectBase>,bool,SPtrHash> ignoredObjects;
+	unordered_map<CPtr<CObjectBase>,bool,SPtrHash> ignoredObjects;
 
 	void CollideSphere( SSphere *pSphere, const CVec3 &vel );
 public:

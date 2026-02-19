@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "DataAck.h"
+#include "DataFormat.h"
+#include "DataSound.h"
 
 namespace NDb
 {

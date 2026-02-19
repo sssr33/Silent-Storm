@@ -23,7 +23,7 @@ template <class TKey, class TValue, class THash = hash<TKey> >
 class CBasicShare: public CBasicShareBase
 {
 	bool bKeepData;
-	typedef hash_map< TKey, CPtr<TValue>, THash > CDataHash;
+	typedef unordered_map< TKey, CPtr<TValue>, THash > CDataHash;
 	CDataHash data;
 	//
 	virtual void CreateHolder( list<CObj<CObjectBase> > *pHolder )

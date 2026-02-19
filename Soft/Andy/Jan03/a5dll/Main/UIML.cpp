@@ -648,7 +648,7 @@ private:
 	ZDATA
 	wstring wsText;
 	CObj<CMLLayout> pLayout;
-	hash_map<wstring,CObj<IMLHandler> > tagsMap;
+	unordered_map<wstring,CObj<IMLHandler> > tagsMap;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&wsText); f.Add(3,&pLayout); f.Add(4,&tagsMap); return 0; }
 
 public:
@@ -761,7 +761,7 @@ void CML::Generate( NGScene::I2DGameView *pView, int nWidth )
 
 				if ( !paramsSet.empty() )
 				{
-					hash_map<wstring,CObj<IMLHandler> >::const_iterator iTemp = tagsMap.find( paramsSet.front() );
+					unordered_map<wstring,CObj<IMLHandler> >::const_iterator iTemp = tagsMap.find( paramsSet.front() );
 					if ( ( iTemp != tagsMap.end() ) && ( iTemp->second != 0 ) )
 						iTemp->second->Exec( pLayout, paramsSet );
 				}

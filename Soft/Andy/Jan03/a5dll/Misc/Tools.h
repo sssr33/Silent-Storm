@@ -624,10 +624,10 @@ inline float fabs2( const float x )
 {
 	return x*x;
 }
-inline float fabs( float x )
-{
-	return fabsf( x );
-}
+//inline float fabs( float x )
+//{
+//	return fabsf( x );
+//}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 template <class TYPE> 
 inline bool Normalize( TYPE &x, TYPE &y )
@@ -692,10 +692,10 @@ inline bool Normalize( TYPE &x, TYPE &y, TYPE &z, TYPE &w )
 	*pC = tc * rcsq;
 }*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-inline float cos( float fVal ) { return static_cast<float>( cos( double(fVal) ) ); }
-inline float sin( float fVal ) { return static_cast<float>( sin( double(fVal) ) ); }
-inline float acos( float fVal ) { return static_cast<float>( acos( double(fVal) ) ); }
-inline float asin( float fVal ) { return static_cast<float>( asin( double(fVal) ) ); }
+//inline float cos( float fVal ) { return static_cast<float>( cos( double(fVal) ) ); }
+//inline float sin( float fVal ) { return static_cast<float>( sin( double(fVal) ) ); }
+//inline float acos( float fVal ) { return static_cast<float>( acos( double(fVal) ) ); }
+//inline float asin( float fVal ) { return static_cast<float>( asin( double(fVal) ) ); }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*#define MINIMIZE_INT( nToMin, nHow )  \
 	_asm mov ecx, nToMin                \

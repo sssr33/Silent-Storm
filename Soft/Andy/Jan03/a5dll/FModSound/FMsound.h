@@ -58,7 +58,7 @@ struct SListener
 //	CVec3 position;
 //	CVec3 forward;
 //	CVec3 top;
-	SHMatrix toProjective;
+	SHMatrix toProjective{};
 	CVec3 vPosition;
 	
 	SListener() {}// position.Set(0,0,0); forward.Set(0,0,1.f); top.Set(0,1.f,0); }

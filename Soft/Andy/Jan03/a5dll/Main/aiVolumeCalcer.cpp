@@ -18,8 +18,8 @@ namespace NAI
 public:
 	ZDATA
 	vector<WORD> Points; // точки
-	hash_map< WORD, CVec3 > PointsCoords; // координаты точек
-	hash_map< WORD, vector<WORD> > Connectivities; // соединения между точками
+	unordered_map< WORD, CVec3 > PointsCoords; // координаты точек
+	unordered_map< WORD, vector<WORD> > Connectivities; // соединения между точками
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&Points); f.Add(3,&PointsCoords); f.Add(4,&Connectivities); return 0; }
 	//
 	CConnectedPoints() {}
@@ -568,7 +568,7 @@ float CalculateObjectVolume( const CGeometryInfo::SPiece &Piece )
 float CalculateObjectVolume( const CGeometryInfo &GeometryInfo )
 {
 	float fRes = 0;
-	hash_map<int, CGeometryInfo::SPiece>::const_iterator i;
+	unordered_map<int, CGeometryInfo::SPiece>::const_iterator i;
 	for ( i = GeometryInfo.pieces.begin(); i != GeometryInfo.pieces.end(); ++i )
 	{
 		float fTmpRes = CalculateObjectVolume( i->second.points, i->second.edges );
@@ -582,7 +582,7 @@ float CalculateObjectVolume( const CGeometryInfo &GeometryInfo )
 float CalculateObjectVolume( const CFileSkinPoints &FileSkinPoints )
 {
 	float fRes = 0;
-	hash_map<int, CFileSkinPoints::SBodypart>::const_iterator i;
+	unordered_map<int, CFileSkinPoints::SBodypart>::const_iterator i;
 	for ( i = FileSkinPoints.parts.begin(); i != FileSkinPoints.parts.end(); ++i )
 		fRes += CalculateObjectVolume( i->second.points, i->second.edges );
 	return fRes;

@@ -112,7 +112,7 @@ class CGrass: public CObjectBase
 {
 	OBJECT_BASIC_METHODS(CGrass);
 private:
-	typedef hash_map<CPtr<CFuncBase<STerrainInfo> >,CObj<CGrassTracker>,SPtrHash > TTrackersMap;
+	typedef unordered_map<CPtr<CFuncBase<STerrainInfo> >,CObj<CGrassTracker>,SPtrHash > TTrackersMap;
 	ZDATA
 	CPtr<NAI::IAIMap> pAIMap;
 	ZSKIP

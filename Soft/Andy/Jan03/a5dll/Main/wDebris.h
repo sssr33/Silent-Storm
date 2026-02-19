@@ -53,7 +53,7 @@ class CDFrozenItem: public IItem, public NRPG::IAttackable, public IVisObj, publ
 	OBJECT_NOCOPY_METHODS(CDFrozenItem);
 	ZDATA
 	SItemRenderInfo model;
-	SHMatrix m;
+	SHMatrix m{};
 	int nFloor;
 	CObj<NRPG::IInventoryItem> pInvItem;
 	CSyncSrcBind<IVisObj> bindGlobal;

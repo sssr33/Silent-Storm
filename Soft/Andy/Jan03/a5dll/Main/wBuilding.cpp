@@ -66,7 +66,7 @@ public:
 	void SetFragmentCount()
 	{
 		const NBuilding::SBuildingInfo& info = pParent->pBInfo->GetInfo();
-		hash_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i = info.info.find( part );
+		unordered_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i = info.info.find( part );
 		if ( i != info.info.end() )
 		{
 			nWallFrags = i->second.walls.size();
@@ -95,7 +95,7 @@ CBuilding::CBuilding( CSyncSrc<IVisObj> *_pShow, const SMapBuilding &_info, IWor
 	pBInfo->UpdateInfo();
 	const NBuilding::SBuildingInfo& info = pBInfo->GetInfo();
 
-	hash_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i;
+	unordered_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i;
 	for ( i = info.info.begin(); i != info.info.end(); ++i )
 	{
 		parts[i->first.nID] = new CBuildingPart( i->first, this, bNoAI );
@@ -163,7 +163,7 @@ void CBuilding::UpdateAllParts()
 			parts[part.nID]->Update();
 	}
 	//
-	hash_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i;
+	unordered_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i;
 	for ( i = info.info.begin(); i != info.info.end(); ++i )
 	{
 		if ( parts.find( i->first.nID ) == parts.end() )
@@ -180,7 +180,7 @@ void CBuilding::Update()
 	{
 		NBuilding::SPart pid;
 		pid.nID = i->first;
-		hash_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator it = info.info.find( pid );
+		unordered_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator it = info.info.find( pid );
 
 		if ( it == info.info.end() )
 		{
@@ -202,7 +202,7 @@ void CBuilding::Update()
 		}
 	}
 	//
-	hash_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i;
+	unordered_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i;
 	for ( i = info.info.begin(); i != info.info.end(); ++i )
 	{
 		if ( parts.find( i->first.nID ) == parts.end() )
@@ -334,7 +334,7 @@ void CBuildingPart::Visit( IAIVisitor* p )
 	SFBTransform place = bInfo.pos;
 	const NBuilding::SBuildingInfo &info = pParent->pBInfo->GetInfo();
 
-	hash_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i = info.info.find( part );
+	unordered_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i = info.info.find( part );
 	if ( i == info.info.end() )
 		return;
 	const NBuilding::SStoreyInfo &storey = i->second;

@@ -2039,13 +2039,13 @@ bool CPathNetwork::IsNotOnDoor( const SPathPlace &p ) const
 	if ( t.nFlipper )
 	{
 		const SFlipper &fl = *GetFlipper( t.nFlipper - 1 );
-		const hash_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> *pHash;
+		const unordered_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> *pHash;
 		if ( fl.bOpen )
 			pHash = &fl.locksOpen;
 		else
 			pHash = &fl.locksClosed;
 		SPathPlace test( p.GetX(), p.GetY(), p.GetLayer() );
-		hash_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash>::const_iterator it = pHash->find( test );
+		unordered_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash>::const_iterator it = pHash->find( test );
 		if ( it != pHash->end() )
 			return IsTilePassable( p, it->second );
 	}
@@ -2358,7 +2358,7 @@ bool CPathNetwork::IsBlockedByFlipper(
 		char nPassableO, nPassableC;
 		SPathPlace test( to.GetX(), to.GetY(), to.GetLayer() );
 		*bIsNowOpen = flipper.bOpen;
-		hash_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash>::iterator it;
+		unordered_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash>::iterator it;
 		it = flipper.locksOpen.find( test );
 		if ( it == flipper.locksOpen.end() )
 			nPassableO = t.nPassable;

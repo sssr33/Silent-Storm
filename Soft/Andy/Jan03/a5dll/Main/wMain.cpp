@@ -1087,7 +1087,7 @@ void CWorld::AddAIPlayer( const wstring &wsName, int nScenarioPlayerID )
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CWorld::CreateAIUnits( const SMapInfo &mapInfo, const ClueToSlot &personClueToSlot, 
-	int nMobsLevel, hash_map< int, CPtr<CUnitServer> > *pIDToUnit, CVec3 ptDeltaPos )
+	int nMobsLevel, unordered_map< int, CPtr<CUnitServer> > *pIDToUnit, CVec3 ptDeltaPos )
 {
 	//return; // uncomment this if you wanna have real "noai"! without any interrupts, turnbased mode etc.
 	nAIUnitsCreated = 0;
@@ -1186,9 +1186,9 @@ void CWorld::UpdateAICommander( NAI::CAICommander *pAICommander )
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CWorld::CreateUnitGroups( const SMapInfo &mapInfo, 
-	hash_map< int, CPtr<CUnitServer> > *pIDToUnit )
+	unordered_map< int, CPtr<CUnitServer> > *pIDToUnit )
 {
-	for ( hash_map< int, SUnitGroup >::const_iterator 
+	for ( unordered_map< int, SUnitGroup >::const_iterator 
 		i = mapInfo.groups.begin(); i != mapInfo.groups.end(); ++i )
 	{
 		CPtr<CUnitGroup> pUnitGroup = GetUnitGroup( i->first );
@@ -1266,7 +1266,7 @@ bool CWorld::PlaceTemplate( int nTemplateID, CVec3 ptPos )
 		AddWaypoint( *i );
 	}
 	//
-	hash_map< int, CPtr<NWorld::CUnitServer> > idToUnit;
+	unordered_map< int, CPtr<NWorld::CUnitServer> > idToUnit;
 	int nLevel = GetGlobalGame()->pDifficulty->nAIUnitsLevel;
 	CreateAIUnits( mapInfo, ClueToSlot(), nLevel, &idToUnit, ptPos );
 	CreateUnitGroups( mapInfo, &idToUnit );
@@ -1347,7 +1347,7 @@ void CWorld::CreateRandom( int nVariantID, const vector<string> &params,
 		pDeployedDeadUnitsPlayer = new CPlayer( L"Deployed dead units fake player", pGlobalGame, 0, -1 );
 		pDeployedDeadUnitsPlayer->SetCommander( new NWorld::CCommander );
 		//
-		hash_map< int, CPtr<CUnitServer> > idToUnit;
+		unordered_map< int, CPtr<CUnitServer> > idToUnit;
 		CreateAIUnits( mapInfo, personClueToSlot, nMobsLevel, &idToUnit );
 		CreateUnitGroups( mapInfo, &idToUnit );
 		PlaceItemSlotsToInventory( itemClueToSlot );
@@ -2092,7 +2092,7 @@ bool CWorld::UsePassageObject( CUnitServer *pUS, int nPassageZoneID )
 	GetPassageObjects( nPassageZoneID, &passageObjects );
 	// проверяем все ли стоят рядом с найденными объектами перехода
 	bool bCanPass = true;
-	hash_map< CPtr<CUnitServer>, CPtr<IPassageObject>, SPtrHash > passagesForUnits;
+	unordered_map< CPtr<CUnitServer>, CPtr<IPassageObject>, SPtrHash > passagesForUnits;
 	for ( list< CObj<CUnitServer> >::iterator i = units.begin(); i != units.end(); ++i )
 	{
 		if ( !(*i)->IsUnconscious() && 
@@ -2144,7 +2144,7 @@ bool CWorld::UsePassageObject( CUnitServer *pUS, int nPassageZoneID )
 					deployData.bPassage = true;
 					deployData.nPassageZoneID = nPassageZoneID;
 					//
-					hash_map< CPtr<CUnitServer>, CPtr<IPassageObject>, SPtrHash >::iterator u;
+					unordered_map< CPtr<CUnitServer>, CPtr<IPassageObject>, SPtrHash >::iterator u;
 					for ( u = passagesForUnits.begin(); u != passagesForUnits.end(); ++u )
 						deployData.unitsDeployData[ u->first->GetUnitRPG()->GetRPGUnit() ].nPassageObjectID =
 							u->second->GetPassageObjectID();
@@ -2536,13 +2536,13 @@ const bool CWorld::IsForcedRealTime() const
 	return bForcedRealTime;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-static bool GetNameFromHash( const hash_map< string, CPtr<CObjectBase> > &hash, CObjectBase *pObject, string *pName )
+static bool GetNameFromHash( const unordered_map< string, CPtr<CObjectBase> > &hash, CObjectBase *pObject, string *pName )
 {
 	ASSERT( pName != 0 && pObject != 0 );
 	if ( pName == 0 || pObject == 0 )
 		return false;
 	//
-	for ( hash_map< string, CPtr<CObjectBase> >::const_iterator i = hash.begin(); i != hash.end(); ++i )
+	for ( unordered_map< string, CPtr<CObjectBase> >::const_iterator i = hash.begin(); i != hash.end(); ++i )
 	{
 		if ( i->second == pObject )
 		{

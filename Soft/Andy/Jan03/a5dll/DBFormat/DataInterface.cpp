@@ -1,6 +1,7 @@
 #include "StdAfx.h"
 #include "DataFormat.h"
 #include "DataInterface.h"
+#include "DataSound.h"
 
 namespace NDb
 {

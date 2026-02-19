@@ -19,7 +19,7 @@ namespace NAI
 struct SAlways;
 class CMultiMovesTable : public CPathPlaceTable
 {
-	typedef hash_map<SPathPlace, SMove, SPathPlaceHash> CMovesHash;
+	typedef unordered_map<SPathPlace, SMove, SPathPlaceHash> CMovesHash;
 	ZDATA_(CPathPlaceTable)
 	SPathPlace src;
 	CPtr<IPathNetwork> pNet;

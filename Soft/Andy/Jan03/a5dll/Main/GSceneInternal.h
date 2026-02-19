@@ -385,7 +385,7 @@ struct SRayInfo
 class CGScene;
 class CDynamicLightCache
 {
-	typedef hash_map<CVec3, SDynamicAmbientInfo, SVec3Hash> CHash;
+	typedef unordered_map<CVec3, SDynamicAmbientInfo, SVec3Hash> CHash;
 	ZDATA
 	CDGPtr<CVersioningBase> pStaticChanged;
 	CHash data;

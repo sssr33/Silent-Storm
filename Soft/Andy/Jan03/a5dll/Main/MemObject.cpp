@@ -25,7 +25,7 @@ struct SMemBuilderVertexHash
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CMemObjectBuilder
 {
-	typedef hash_map<SMemBuilderVertex, int, SMemBuilderVertexHash> CPointsHash;
+	typedef unordered_map<SMemBuilderVertex, int, SMemBuilderVertexHash> CPointsHash;
 	CPointsHash points;
 	CMemObject *p;
 public:

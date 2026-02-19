@@ -21,7 +21,7 @@ class CCannon;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CCriticalsBan
 {
-	hash_map< int, hash_map< int, list<NDb::ECritical> > > commandsBans;
+	unordered_map< int, unordered_map< int, list<NDb::ECritical> > > commandsBans;
 	//
 	int GetParam( CUnitServer *pUS, CCmd *pCmd );
 	int GetObjectID( CObjectBase *pObject );

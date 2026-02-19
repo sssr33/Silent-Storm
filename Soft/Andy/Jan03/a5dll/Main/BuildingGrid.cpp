@@ -291,7 +291,7 @@ void CBuildingGrid::GetUpdatedParts( vector<SPart> *pParts )
 		ASSERT(0);
 		return;
 	}
-	for ( hash_map<SPart, bool, SPart>::const_iterator i = updatedParts.begin(); i != updatedParts.end(); ++i )
+	for (unordered_map<SPart, bool, SPart>::const_iterator i = updatedParts.begin(); i != updatedParts.end(); ++i )
 //		if ( i->second )
 		pParts->push_back( i->first );
 	updatedParts.clear();

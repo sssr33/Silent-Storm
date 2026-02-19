@@ -102,7 +102,7 @@ void CMLText::SetText( const wstring &_wsText, bool bProcessTAGs )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CMLText::GetVal( const wstring &szID, wstring *pVal )
 {
-	hash_map<wstring,wstring>::const_iterator iTemp = valuesMap.find( szID );
+	unordered_map<wstring,wstring>::const_iterator iTemp = valuesMap.find( szID );
 	if ( iTemp == valuesMap.end() )
 		return false;
 

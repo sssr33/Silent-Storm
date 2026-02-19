@@ -35,7 +35,7 @@ void MergePositions( vector<WORD> *pMatches, vector<CVec3> *pPositions )
 	vector<WORD> &posIndices = *pMatches;
 	posIndices.resize( positions.size() );
 	mergedPositions.reserve( pPositions->size() );
-	typedef hash_map<CVec3,int,SVec3Hash> CPosHash;
+	typedef unordered_map<CVec3,int,SVec3Hash> CPosHash;
 	CPosHash posHash;
 	for ( int k = 0; k < positions.size(); ++k )
 	{
@@ -230,7 +230,7 @@ void CObjectInfo::MergePositions()
 	mergedPositions.reserve( positions.size() );
 	mergedWeights.reserve( weights.size() );
 	posIndices.resize( positions.size() );
-	typedef hash_map<SCompoundPosKey,int,CalcCompoundKeyHash> CPosHash;
+	typedef unordered_map<SCompoundPosKey,int,CalcCompoundKeyHash> CPosHash;
 	CPosHash posHash;
 	for ( int k = 0; k < positions.size(); ++k )
 	{

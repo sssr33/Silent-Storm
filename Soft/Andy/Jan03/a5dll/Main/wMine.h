@@ -56,7 +56,7 @@ class CMineTracker : public CObjectBase
 {
 	OBJECT_NOCOPY_METHODS(CMineTracker);
 	typedef vector<CObj<CMine> > CMineSet;
-	typedef hash_map<CVec3, CMineSet, SVec3Hash> CPlaceMinesHash;
+	typedef unordered_map<CVec3, CMineSet, SVec3Hash> CPlaceMinesHash;
 	ZDATA
 	CPlaceMinesHash mines;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&mines); return 0; }

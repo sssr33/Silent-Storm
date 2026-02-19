@@ -260,8 +260,8 @@ public:
 		char nLadder;
 		char nLayerGroup;	
 	};
-	typedef hash_map<SPathPlace, STransitionSet, SPathPlaceHash > CTransitionsHash;
-	typedef hash_map<SPathPlace, SLadderTransition, SPathPlaceHash> CLadderHash;
+	typedef unordered_map<SPathPlace, STransitionSet, SPathPlaceHash > CTransitionsHash;
+	typedef unordered_map<SPathPlace, SLadderTransition, SPathPlaceHash> CLadderHash;
 	ZDATA
 	// Layer - specific
 	int nLayer;
@@ -349,7 +349,7 @@ class CPathNetwork: public IPathNetwork
 		SLockInfo() {}
 		SLockInfo( const vector<SPathPlace> &_p ): places(_p), bLocked(true) {}
 	};
-	typedef hash_map<CPtr<CObjectBase>, SLockInfo, SPtrHash> CLocksHash;
+	typedef unordered_map<CPtr<CObjectBase>, SLockInfo, SPtrHash> CLocksHash;
 	struct SDynLockInfo
 	{
 		ZDATA
@@ -367,15 +367,15 @@ public:
 	{
 		ZDATA
 		int nFlipper;
-		hash_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> locksOpen;
-		hash_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> locksClosed;
+		unordered_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> locksOpen;
+		unordered_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> locksClosed;
 		bool bOpen;
 		int nFixedFlags;
 		ZEND int operator&( CStructureSaver &f ) { f.Add(2,&nFlipper); f.Add(3,&locksOpen); f.Add(4,&locksClosed); f.Add(5,&bOpen); f.Add(6,&nFixedFlags); return 0; }
 		SFlipper() {}
 	};
-	typedef hash_map<CPtr<CObjectBase>, SDynLockInfo, SPtrHash> CDynLocksHash;
-	typedef hash_map<CPtr<CObjectBase>, int, SPtrHash> CFlippersHash;
+	typedef unordered_map<CPtr<CObjectBase>, SDynLockInfo, SPtrHash> CDynLocksHash;
+	typedef unordered_map<CPtr<CObjectBase>, int, SPtrHash> CFlippersHash;
 private:
 	ZDATA
 	CPtr<IAIMap> pMap;

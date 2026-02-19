@@ -408,7 +408,7 @@ LUA_API void lua_startThread( lua_State *L, int nArgs )
 	// pop parameters
 	ASSERT( stackOld == L->pCT->top ); // stack corrupted
 	lua_pop( L, nArgs + 1 );
-	ASSERT( L->pCT == pOld ); // old thread was't restored
+	ASSERT(L->pCT == CObj<CLuaThread>{pOld}); // old thread was't restored
 }
 
 LUA_API int LuaCFuncStartThread( lua_State *L )
@@ -476,7 +476,7 @@ LUA_API void lua_executeThreads( lua_State *L )
 			}
 			//
 			lua_setThread( L, pThread );
-			ASSERT( L->pCT == pThread );
+			ASSERT(L->pCT == CObj<CLuaThread>{pThread});
 			//
 			luaV_stepExecute( L );
 			//

@@ -28,7 +28,7 @@ class CLayerColorConstraints
 		return pCosts[ 4 - 2 * nPose ]; 
 	}
 public:
-	hash_map<SPathPlace, SPathPlace, SPathPlaceHash> finalPoints;
+	unordered_map<SPathPlace, SPathPlace, SPathPlaceHash> finalPoints;
 	CLayerColorConstraints( CPathNetwork* _pNet, bool _bMoveOnly, const int *_pCosts ): 
 			pNet( _pNet ), bMoveOnly( _bMoveOnly ), pCosts( _pCosts ), bDoNotCheck( false ), bHasCheckZones( false )
 	{

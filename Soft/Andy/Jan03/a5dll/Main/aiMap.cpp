@@ -309,7 +309,7 @@ public:
 class CAIMap: public IAIMap, public COrdinarySyncDst<NWorld::IVisObj,CAIMap>, public NWorld::IAIVisitor
 {
 	OBJECT_BASIC_METHODS(CAIMap);
-	//typedef hash_map<int, CObj<CVolumeNode> > CVolumeNodesHash;
+	//typedef unordered_map<int, CObj<CVolumeNode> > CVolumeNodesHash;
 	typedef COrdinarySyncDst<NWorld::IVisObj,CAIMap> TParent;
 	//
 	ZDATA_(TParent)

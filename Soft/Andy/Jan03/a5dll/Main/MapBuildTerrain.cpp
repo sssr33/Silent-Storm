@@ -129,7 +129,7 @@ public:
 	CArray2D<unsigned short> alpha;
 };
 
-//typedef hash_map<int, CObj<CVarTerrain> > CTerrainCache;
+//typedef unordered_map<int, CObj<CVarTerrain> > CTerrainCache;
 //static CTerrainCache terrCache;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 static CMETerrainInfo* LoadTerrInfo( int nVarID, SRand *pRand, const vector<int> &flags )

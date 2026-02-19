@@ -10,7 +10,7 @@ namespace NAI
 class CPathPlaceTable
 {
 	typedef SMoveInfo<SPathPlace, WORD> SMove;
-	typedef hash_map<SPathPlace, SMove, SPathPlaceHash> CMovesHash;
+	typedef unordered_map<SPathPlace, SMove, SPathPlaceHash> CMovesHash;
 public:
 	ZDATA
 	CMovesHash data;
@@ -18,7 +18,7 @@ public:
 	SMove& operator[]( const SPathPlace &_pt ) { return data[ _pt ]; }
 	WORD GetCost( const SPathPlace &pt ) 
 	{ 
-		hash_map<SPathPlace, SMove, SPathPlaceHash>::const_iterator i = data.find( pt );
+		unordered_map<SPathPlace, SMove, SPathPlaceHash>::const_iterator i = data.find( pt );
 		if ( i == data.end() ) 
 			return 65535;
 		return (i->second).cost;

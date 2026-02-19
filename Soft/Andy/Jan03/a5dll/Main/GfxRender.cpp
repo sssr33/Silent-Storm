@@ -24,7 +24,7 @@ struct SRenderParam
 	void Set( const T &_a ) { if ( _a == value ) return; value = _a; Apply( _a ); }
 	void DoApply() { Apply( value ); }
 };
-typedef hash_map<int, NWin32Helper::com_ptr<IDirect3DSurface9> > CDepthHash;
+typedef unordered_map<int, NWin32Helper::com_ptr<IDirect3DSurface9> > CDepthHash;
 
 const int N_MAX_REGISTERS =	5;
 static int nScreenRegisters;
@@ -45,11 +45,11 @@ static bool bLastUsedAddressMode[8], bPointAddress[8];
 static NWin32Helper::com_ptr<IDirect3DPixelShader9> pixelShaders[200];
 static NWin32Helper::com_ptr<IDirect3DVertexShader9> vertexShaders[200];
 static NWin32Helper::com_ptr<IDirect3DVertexDeclaration9> vertexDeclarations[200];
-//static hash_map<int, CVertexShader> vxShaders;
-//static hash_map<int, CVertexDeclaration> vxDeclarations;
+//static unordered_map<int, CVertexShader> vxShaders;
+//static unordered_map<int, CVertexDeclaration> vxDeclarations;
 static int nLastUsedVShader, nLastUsedVDeclaration;
 static const SPShader *pCurrentPixelShader;
-typedef hash_map<SRenderStateKey, DWORD, SRenderStateKeyHash> CRenderStatesHash;
+typedef unordered_map<SRenderStateKey, DWORD, SRenderStateKeyHash> CRenderStatesHash;
 static CRenderStatesHash renderStates, samplerStates;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 EHardwareLevel GetHardwareLevel()
@@ -1148,12 +1148,12 @@ bool InitZBuffer( D3DFORMAT format )
 		for ( int k = 0; k < nScreenRegisters; ++k )
 			pRegisters[k] = MakeRenderTarget( nXSize, nYSize, SPixel8888::ID );
 	}
-	for ( hash_map<int,int>::iterator i = rtInfo.targets.begin(); i != rtInfo.targets.end(); ++i )
+	for (unordered_map<int,int>::iterator i = rtInfo.targets.begin(); i != rtInfo.targets.end(); ++i )
 	{
 		if ( !AddZBuffer( format, i->first ) )
 			return false;
 	}
-	for ( hash_map<int,int>::iterator i = rtInfo.cubeTargets.begin(); i != rtInfo.cubeTargets.end(); ++i )
+	for (unordered_map<int,int>::iterator i = rtInfo.cubeTargets.begin(); i != rtInfo.cubeTargets.end(); ++i )
 	{
 		if ( !AddZBuffer( format, i->first ) )
 			return false;

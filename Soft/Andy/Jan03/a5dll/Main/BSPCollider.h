@@ -23,8 +23,8 @@ struct SCollideParamsHash
 int operator()( const SCollideParams &a ) const { const int *p = (const int*)&a; return p[0] ^ p[1] ^ p[2] ^ p[3] ^ p[4] ^ p[5]; }
 };
 const float F_SELECTED_SPHERE_RADIUS = 0.31f;
-externA5 hash_map<CVec3, bool, SVec3Hash> colliderHash;
-externA5 hash_map<SCollideParams, bool, SCollideParamsHash> colliderHashMov;
+externA5 unordered_map<CVec3, bool, SVec3Hash> colliderHash;
+externA5 unordered_map<SCollideParams, bool, SCollideParamsHash> colliderHashMov;
 externA5 int nRepeatedCalls;
 externA5 int nTotalCalls;
 externA5 int nRepeatedCallsMov;

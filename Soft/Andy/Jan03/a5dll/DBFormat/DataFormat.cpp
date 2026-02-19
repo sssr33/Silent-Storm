@@ -406,7 +406,7 @@ CAnimation* SAnimationVector::GetAnimation( int nFlags,
 	{
 		for ( int i=0; i<anims.size(); ++i )
 		{
-			if ( anims[i]->pSide && anims[i]->pSide != pSide )
+			if (anims[i]->pSide && anims[i]->pSide != CPtr<CSide>{pSide})
 				continue;
 			if ( (~anims[i]->nPoseWeaponFlags & nFlags) == 0 &&
 					 (~anims[i]->nClassSexFlags & nClassSexFlags) == 0 &&
@@ -418,7 +418,7 @@ CAnimation* SAnimationVector::GetAnimation( int nFlags,
 	{
 		for ( int i=0; i<anims.size(); ++i )
 		{
-			if ( anims[i]->pSide && anims[i]->pSide != pSide )
+			if ( anims[i]->pSide && anims[i]->pSide != CPtr<CSide>{pSide})
 				continue;
 			if ( (~anims[i]->nPoseWeaponFlags & nFlags) == 0 && 
 					 (~anims[i]->nClassSexFlags & nClassSexFlags) == 0 &&

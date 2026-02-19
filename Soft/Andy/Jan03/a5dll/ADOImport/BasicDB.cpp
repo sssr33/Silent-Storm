@@ -7,6 +7,7 @@
 #import "C:\Program Files\Common Files\System\ADO\msado15.dll" no_namespace rename("EOF", "EndOfFile")
 #include <ole2.h>
 #include <conio.h>
+#include <algorithm>
 
 struct SInitBasicDB
 {
@@ -270,7 +271,7 @@ namespace NDatabase
 		static CClassFactory<CDBRecord> recordTypes;
 		return recordTypes;
 	}
-	typedef hash_map< int, CDBTableBase > CTablesHash;
+	typedef unordered_map< int, CDBTableBase > CTablesHash;
 	CTablesHash& GetTables() 
 	{
 		static CTablesHash tables; // maps record type to table
@@ -328,7 +329,7 @@ void NDatabase::AddTable( int nTableID, const char *pszTableName,
 	}
 	ASSERT( pszTableName[ strlen( pszTableName ) - 1 ] == 's' );
 	GetRecordTypes().RegisterTypeSafe( nTableID, newf );
-	STableDescr &t = *tableDescrs.insert( tableDescrs.end() );
+	STableDescr& t = *tableDescrs.insert( tableDescrs.end(), {} );
 	t.nTableID = nTableID;
 	t.szTable = pszTableName;
 	tables[nTableID];
@@ -358,7 +359,7 @@ static CDBTableBase* NDatabase::GetTableByName( const char *pszTable )
 void NDatabase::AddRelation( const char *pszTableName )
 {
 	list< SRelation > &relations = GetRelations();
-	SRelation &rel = *relations.insert( relations.end() );
+	SRelation &rel = *relations.insert( relations.end(), {});
 	rel.szTable = pszTableName;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -405,7 +406,7 @@ void NDatabase::Import()
 		// load data into SRelation
 		for ( ; !table.IsEof(); table.MoveNext() )
 		{
-			SRelation::SElement &res = *t.data.insert( t.data.end() );
+			SRelation::SElement &res = *t.data.insert( t.data.end(), {});
 			//
 			res.nLeft = table.GetInt( 0 );
 			res.nRight = table.GetInt( 1 );

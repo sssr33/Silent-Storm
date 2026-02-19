@@ -17,9 +17,9 @@ namespace NInput
 {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global vars
-typedef hash_map<int, SActionInfo> TActionsMap;
-typedef hash_map<string, SCommand> TCommandsMap;
-typedef hash_map<string, SBindCommand> TBindCommandsMap;
+typedef unordered_map<int, SActionInfo> TActionsMap;
+typedef unordered_map<string, SCommand> TCommandsMap;
+typedef unordered_map<string, SBindCommand> TBindCommandsMap;
 
 static string szSection;
 static list<SEvent> events;
@@ -156,7 +156,7 @@ void GetBind( const string &szCmd, list<SBind> *pRes )
 	SCommand &sCommand = sCommandsMap[szCmd];
 	for ( list<SMapping>::iterator iTempMapping = sCommand.mappingsList.begin(); iTempMapping != sCommand.mappingsList.end(); ++iTempMapping )
 	{
-		SBind &sBind = *( pRes->insert( pRes->end() ) );
+		SBind& sBind = *(pRes->insert(pRes->end(), {}));
 		sBind.eType = iTempMapping->mType;
 		sBind.szSection = iTempMapping->szSection;
 
@@ -172,14 +172,14 @@ void UpdateBinds()
 {
 	TCommandsMap &sCommandsMap = GetCommands();
 
-	for ( hash_map<string, SCommand>::iterator iTempCommand = sCommandsMap.begin(); iTempCommand != sCommandsMap.end(); ++iTempCommand )
+	for (unordered_map<string, SCommand>::iterator iTempCommand = sCommandsMap.begin(); iTempCommand != sCommandsMap.end(); ++iTempCommand )
 	{
 		SCommand &sCommand = iTempCommand->second;
 		for ( list<SMapping>::iterator iTempMapping = sCommand.mappingsList.begin(); iTempMapping != sCommand.mappingsList.end(); ++iTempMapping )
 			iTempMapping->blockingGroupsSet.clear();
 	}
 
-	for ( hash_map<string, SCommand>::iterator iTempCommand = sCommandsMap.begin(); iTempCommand != sCommandsMap.end(); ++iTempCommand )
+	for (unordered_map<string, SCommand>::iterator iTempCommand = sCommandsMap.begin(); iTempCommand != sCommandsMap.end(); ++iTempCommand )
 	{
 		SCommand &sCommand = iTempCommand->second;
 
@@ -192,12 +192,12 @@ void UpdateBinds()
 		}
 	}
 
-	for ( hash_map<string, SCommand>::iterator iTempCommand1 = sCommandsMap.begin(); iTempCommand1 != sCommandsMap.end(); ++iTempCommand1 )
+	for (unordered_map<string, SCommand>::iterator iTempCommand1 = sCommandsMap.begin(); iTempCommand1 != sCommandsMap.end(); ++iTempCommand1 )
 	{
 		SCommand &sCommand1 = iTempCommand1->second;
-		hash_map<string, SCommand>::iterator iNext = iTempCommand1;
+		unordered_map<string, SCommand>::iterator iNext = iTempCommand1;
 		iNext++;
-		for ( hash_map<string, SCommand>::iterator iTempCommand2 = iNext; iTempCommand2 != sCommandsMap.end(); ++iTempCommand2 )
+		for (unordered_map<string, SCommand>::iterator iTempCommand2 = iNext; iTempCommand2 != sCommandsMap.end(); ++iTempCommand2 )
 		{
 			SCommand &sCommand2 = iTempCommand2->second;
 
@@ -420,7 +420,7 @@ static void ProcessMessage( const NInput::SMessage &mMsg )
 	sEvent.commands.clear();
 	sEvent.mMessage = mMsg;
 		
-	for ( hash_map<string, SCommand>::iterator iTempCommand = sCommands.begin(); iTempCommand != sCommands.end(); ++iTempCommand )
+	for (unordered_map<string, SCommand>::iterator iTempCommand = sCommands.begin(); iTempCommand != sCommands.end(); ++iTempCommand )
 	{
 		SCommand &sCommand = iTempCommand->second;
 		SBindCommand &sBindCommand = sBindCommands[iTempCommand->first];

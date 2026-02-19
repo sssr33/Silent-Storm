@@ -124,7 +124,7 @@ struct SLRNeighbs
 class CSolidAndWallMap : public CVersioningBase
 {
 	OBJECT_NOCOPY_METHODS(CSolidAndWallMap);
-	hash_map<int, CNodeMap<SSolidElement> > solidMap;
+	unordered_map<int, CNodeMap<SSolidElement> > solidMap;
 	CArray2D<float> bottom;
 	CNodeMap<SGridNode> wallGrid;
 	vector<SLRNeighbs> neighbs;
@@ -146,7 +146,7 @@ public:
 	CSolidAndWallMap() {}
 	CSolidAndWallMap( CPtrFuncBase<CBuildInfo> *_pBuildInfo, const SRandomSeed &_seed )
 		: pBuildInfo(_pBuildInfo), seed(_seed) {}
-	const hash_map<int, CNodeMap<SSolidElement> >& GetSolidMap() const { return solidMap; }
+	const unordered_map<int, CNodeMap<SSolidElement> >& GetSolidMap() const { return solidMap; }
 	const CNodeMap<SGridNode>& GetWallGrid() const { return wallGrid; }
 	const vector<SLRNeighbs>& GetNeighbs() const { return neighbs; }
 	const CArray2D<float>& GetBottom() const { return bottom; }

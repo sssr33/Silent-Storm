@@ -38,13 +38,13 @@ void ConvertFlags( vector<int> *pFlags, const vector<string> &strParams )
 	CDBTable<NDb::CAttribute> *pAttrTable = NDatabase::GetTable<NDb::CAttribute>();
 	if ( pAttrTable )
 	{
-		hash_map<string, int> attrmap;
+		unordered_map<string, int> attrmap;
 		CDBIterator<NDb::CAttribute> it( *pAttrTable );
 		while ( it.MoveNext() )
 			attrmap[it.Get()->szName] = it.Get()->GetRecordID();
 		for ( int i = 0; i < strParams.size(); ++i )
 		{
-			hash_map<string, int>::const_iterator it = attrmap.find( strParams[i] );
+			unordered_map<string, int>::const_iterator it = attrmap.find( strParams[i] );
 			if ( it != attrmap.end() )
 				pFlags->push_back( it->second );
 		}
@@ -96,7 +96,7 @@ class CMapBuilder
 	CPtr<NAI::IPathNetwork> pNet;
 	int nRoom;
 	SRand rand;
-	hash_map<int, CObj<CMapWaypoint> > waypoints;
+	unordered_map<int, CObj<CMapWaypoint> > waypoints;
 	int nMaxDepth;
 	SLayerPlace rootPlace;
 	NAI::CLayersGroup *pRootLayersGroup;
@@ -542,7 +542,7 @@ static void SetOnLayer( SMapInfo *pInfo, SMapInfo *pFree, int nMaxFloor )
 		pInfo->rpgitems.push_back( *i );
 	for ( vector<SClueSlot>::const_iterator i = pFree->slots.begin(); i != pFree->slots.end(); ++i )
 		pInfo->slots.push_back( *i );
-	for ( hash_map<int, SUnitGroup>::const_iterator i = pFree->groups.begin(); i != pFree->groups.end(); ++i )
+	for (unordered_map<int, SUnitGroup>::const_iterator i = pFree->groups.begin(); i != pFree->groups.end(); ++i )
 	{
 		SUnitGroup &g = pInfo->groups[i->first];
 		g.units.insert( g.units.end(), i->second.units.begin(), i->second.units.end() );
@@ -566,7 +566,7 @@ static void Transfer( SMapInfo *pDst, SMapInfo *pSrc )
 	pDst->rpgitems.insert( pDst->rpgitems.end(), pSrc->rpgitems.begin(), pSrc->rpgitems.end() );
 	pDst->scripts.insert( pDst->scripts.end(), pSrc->scripts.begin(), pSrc->scripts.end() );
 	pDst->slots.insert( pDst->slots.end(), pSrc->slots.begin(), pSrc->slots.end() );
-	for ( hash_map<int, SUnitGroup>::const_iterator i = pSrc->groups.begin(); i != pSrc->groups.end(); ++i )
+	for ( unordered_map<int, SUnitGroup>::const_iterator i = pSrc->groups.begin(); i != pSrc->groups.end(); ++i )
 	{
 		SUnitGroup &g = pDst->groups[i->first];
 		g.units.insert( g.units.end(), i->second.units.begin(), i->second.units.end() );
@@ -1074,7 +1074,7 @@ void CMapBuilder::ResolveRoute( CPtrFuncBase<NAI::CUnitAIInfo> *pLoader, vector<
 	if ( !IsValid( pU ) || pU->routes.empty() )
 		return;
 	//
-	hash_map<int, CPtr<CMapWaypoint> > routeHash;
+	unordered_map<int, CPtr<CMapWaypoint> > routeHash;
 	for ( int j = 0; j < route.size(); ++j )
 		if ( route[j]->bExists )
 			routeHash[route[j]->pName->GetRecordID()] = route[j];
@@ -1109,7 +1109,7 @@ void CMapBuilder::ResolveRoutes( SMapInfo *pInfo )
 	// если на карте появились новые подходящие флажки - вставляем в нужном порядке в маршрут
 	for ( list<SMapUnit>::iterator i = pInfo->units.begin(); i != pInfo->units.end(); ++i )
 		ResolveRoute( shareUnits.Get( i->nUnitID ), &i->route );
-	for ( hash_map<int, SUnitGroup>::iterator i = pInfo->groups.begin(); i != pInfo->groups.end(); ++i )
+	for ( unordered_map<int, SUnitGroup>::iterator i = pInfo->groups.begin(); i != pInfo->groups.end(); ++i )
 		ResolveRoute( shareUnitGroups.Get( i->first ), &i->second.route );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////

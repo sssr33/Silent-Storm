@@ -14,13 +14,13 @@ static struct SExecutionTracker
 } tracker;
 //
 typedef vector<IEventRegister*> CCallInfoHash;
-static hash_map< int, CCallInfoHash > *pEventHandlers = 0;
+static unordered_map< int, CCallInfoHash > *pEventHandlers = 0;
 static int nEventHandlersCount = 0;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-inline hash_map< int, CCallInfoHash > &GetEventHandlers()
+inline unordered_map< int, CCallInfoHash > &GetEventHandlers()
 {
 	if ( pEventHandlers == 0 )
-		pEventHandlers = new hash_map< int, CCallInfoHash >();
+		pEventHandlers = new unordered_map< int, CCallInfoHash >();
 	return *pEventHandlers;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -47,7 +47,7 @@ public:
 class CMaterialShare: public CObjectBase
 {
 	OBJECT_BASIC_METHODS( CMaterialShare );
-	typedef hash_map<int, CObj<IMaterial> > CMatHashmap;
+	typedef unordered_map<int, CObj<IMaterial> > CMatHashmap;
 	ZDATA
 	CMatHashmap materials;
 	CObj<CSkyAdapter> pSky;
@@ -67,7 +67,7 @@ public:
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CColorMaterialShare
 {
-	typedef hash_map<CVec3, CObj<IMaterial>, SColorHash> CMatHashmap;
+	typedef unordered_map<CVec3, CObj<IMaterial>, SColorHash> CMatHashmap;
 	CMatHashmap materials;
 public:
 	IMaterial* CreateMaterial( const CVec3 &color );
@@ -85,7 +85,7 @@ struct STransparentHash
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CTransparentMaterialShare
 {
-	typedef hash_map<CVec4, CObj<IMaterial>, STransparentHash> CMatHashmap;
+	typedef unordered_map<CVec4, CObj<IMaterial>, STransparentHash> CMatHashmap;
 	CMatHashmap materials;
 public:
 	IMaterial* CreateMaterial( const CVec4 &color );

@@ -393,12 +393,12 @@ void Assign( CPointsContainer *pRes, const CUnitsContainer &units, bool bThisIsB
 			{
 				CPathNetwork::SFlipper *pFlipper = pNet->GetFlipper( *i );
 				ASSERT( pFlipper->nFixedFlags );
-				const hash_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> *pHash;
+				const unordered_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash> *pHash;
 				if ( pFlipper->bOpen )
 					pHash = &pFlipper->locksOpen;
 				else
 					pHash = &pFlipper->locksClosed;
-				hash_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash>::const_iterator it;
+				unordered_map<SPathPlace, CNodesLayer::STile, SPathPlaceHash>::const_iterator it;
 				for ( it = pHash->begin(); it != pHash->end(); ++it )
 					pRes->push_back( it->first );
 			}
@@ -604,7 +604,7 @@ CPath* SPathFinder2::FindPath( CPathNetwork *pNet, const SPathPlace &src, const 
 		// preparing constraints
 		CUpperNetWay way;
 		SZone srcZone( pNet, src );   
-		hash_map<SZone, bool, SZoneHash> checkedZones;
+		unordered_map<SZone, bool, SZoneHash> checkedZones;
 		vector<SZone> zonesDst;
 		vector<CVec3> dstCP;
 		for ( vector<SPathPlace>::const_iterator i = dst.begin(); i != dst.end(); ++i )

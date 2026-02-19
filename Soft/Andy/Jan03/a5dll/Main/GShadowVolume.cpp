@@ -478,7 +478,7 @@ class CShadowVolumeBuilder
 	vector<CVec3> &resPoints;
 	vector<STriangle> &resTris;
 
-	typedef hash_map<CVec3, int, SVec3Hash> CPointHash;
+	typedef unordered_map<CVec3, int, SVec3Hash> CPointHash;
 	CPointHash pointHash;
 	vector<STriangle> tris;
 
@@ -626,7 +626,7 @@ struct SEdgeHash
 {
 	int operator()( const SEdge &a ) const { return ( a.nStart << 10 ) ^ a.nFinish; }
 };
-typedef hash_map<SEdge, int, SEdgeHash> CEdgesHash;
+typedef unordered_map<SEdge, int, SEdgeHash> CEdgesHash;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 struct SEdgeTracker
 {

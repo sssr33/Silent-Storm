@@ -53,7 +53,7 @@ public:
 class CSetRender: public COrdinarySyncDst<NWorld::IVisObj,CSetRender>, public NWorld::IRenderVisitor
 {
 	typedef COrdinarySyncDst<NWorld::IVisObj,CSetRender> TParent;
-	typedef hash_map<CPtr<CObjectBase>, CPtr<CSelection>, SPtrHash> CSelectionHash;
+	typedef unordered_map<CPtr<CObjectBase>, CPtr<CSelection>, SPtrHash> CSelectionHash;
 	ZDATA_(TParent)
 	CPtr<NGScene::IGameView> pScene;
 	CPtr<NGScene::CGrass> pGrass;

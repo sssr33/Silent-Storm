@@ -255,7 +255,7 @@ struct ObjectHash
 
 struct Hash 
 {
-	typedef hash_map<TObject, TObject, ObjectHash> CObjHash;
+	typedef unordered_map<TObject, TObject, ObjectHash> CObjHash;
   struct Hash *mark;  /* marked tables (point to itself when not marked) */
 
 	ZDATA

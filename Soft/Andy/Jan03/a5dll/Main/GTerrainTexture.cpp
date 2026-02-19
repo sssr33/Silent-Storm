@@ -359,7 +359,7 @@ bool CTerrainTexture::CalcNewTexture( int nSize )
 	vector<int> vRandomTextures( nrRegion.Width() );
 	vector<CSWRectLayout::ERectOrient> vRandomTextureOrients( nrRegion.Width() );
 
-	//for ( hash_map<int, NDb::CTerrainTile*>::const_iterator iTempTile = tiles.begin(); iTempTile != tiles.end(); iTempTile++ )
+	//for ( unordered_map<int, NDb::CTerrainTile*>::const_iterator iTempTile = tiles.begin(); iTempTile != tiles.end(); iTempTile++ )
 	for ( vector<NDb::CTerrainTile*>::const_iterator iTempTile = tilesList.begin(); iTempTile != tilesList.end(); iTempTile++ )
 	{
 		NDb::CTerrainTile *pTile = *iTempTile;

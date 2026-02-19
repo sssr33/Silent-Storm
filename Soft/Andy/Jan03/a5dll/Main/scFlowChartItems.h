@@ -50,7 +50,7 @@ public:
 	CDBPtr<NDb::CDBScenarioZone> pDBZone;
 	vector< CPtr<CScenarioClue> > clues;
 	vector< CPtr<CScenarioObjective> > blockers;
-	hash_map< int, STemplate > templates;
+	unordered_map< int, STemplate > templates;
 	bool bPassed;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&nInnerID); f.Add(3,&nDifficulty); f.Add(4,&bDifCalculated); f.Add(5,&bInaccessible); f.Add(6,&nDistance); f.Add(7,&nOpenOrder); f.Add(8,&bInitial); f.Add(9,&bInShortestPath); f.Add(10,&pDBZone); f.Add(11,&clues); f.Add(12,&blockers); f.Add(13,&templates); f.Add(14,&bPassed); return 0; }
 	//

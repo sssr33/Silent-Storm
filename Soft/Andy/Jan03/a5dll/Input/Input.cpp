@@ -248,8 +248,8 @@ struct SInputDataFormat
 typedef vector<SInputEvent> CEventList;
 typedef vector<SInputDevice> CDevicesList;
 ///
-static hash_map<string, int> nameIDs;
-static hash_map<DWORD, SKey> actionIDs;
+static unordered_map<string, int> nameIDs;
+static unordered_map<DWORD, SKey> actionIDs;
 ///
 static int nCounter[4] = { 0, 0, 0, 0 };
 static HWND hWindow = 0;
@@ -527,7 +527,7 @@ void ResyncDevice( const SInputDevice &sDevice )
 
 	sDevice.pdiDevice->GetDeviceState( sDevice.dwFormatSize, &( sBuffer[0] ) );
 
-	for ( hash_map<DWORD, SKey>::iterator iTemp = actionIDs.begin(); iTemp != actionIDs.end(); iTemp++ )
+	for (unordered_map<DWORD, SKey>::iterator iTemp = actionIDs.begin(); iTemp != actionIDs.end(); iTemp++ )
 	{
 		SKey &sKey = iTemp->second;
 		if ( sKey.nDevType == GET_DIDEVICE_TYPE( sDevice.dwDevType ) )
@@ -540,7 +540,7 @@ void ResyncDevice( const SInputDevice &sDevice )
 			else
 				dwData = *(DWORD*)pData;
 
-			SMessage &sMessage = *messages.insert( messages.end() );
+			SMessage& sMessage = *messages.insert(messages.end(), {});
 			sMessage.cType = sKey.eType;
 			sMessage.tTime = GetTickCount();
 			sMessage.nAction = sKey.nAction;

@@ -178,7 +178,7 @@ class CSetSyncSrc: public CSyncSrc<T>
 {
 	OBJECT_BASIC_METHODS( CSetSyncSrc );
 	typedef CSyncSrc<T> TParent;
-	typedef hash_map<CPtr<T>, int, SPtrHash> CStuffHash;
+	typedef unordered_map<CPtr<T>, int, SPtrHash> CStuffHash;
 	ZDATA_(TParent)
 	CStuffHash stuff;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(1,(TParent*)this); f.Add(2,&stuff); return 0; }
@@ -257,7 +257,7 @@ class CBoolSyncSrc: public CSyncSrc<T>
 		int nMask;
 		int nTrackID;
 	};
-	typedef hash_map<CPtr<T>, SObjectInfo, SPtrHash> CObjectsHash;
+	typedef unordered_map<CPtr<T>, SObjectInfo, SPtrHash> CObjectsHash;
 	typedef CSyncSrc<T> TParent;
 	ZDATA_(TParent)
 	CObjectsHash objects;

@@ -2,6 +2,8 @@
 //
 #include "DataFormat.h"
 #include "DataPerk.h"
+#include "DataInterface.h"
+#include "DataAck.h"
 //
 namespace NDb
 {

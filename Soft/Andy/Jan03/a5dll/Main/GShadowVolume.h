@@ -28,7 +28,7 @@ void MakeShadowVolumes( IRender *pRender, CTransformStack *pTS, const CVec3 &vCe
 	float *pHullRadius,
 	CFilterPartsHash *pIgnore = 0 );
 
-typedef hash_map<CPtr<CObjectBase>,CPartFlags,SPtrHash> CIgnorePartsHash;
+typedef unordered_map<CPtr<CObjectBase>,CPartFlags,SPtrHash> CIgnorePartsHash;
 void MakeInvisibleElementsList( IRender *pRender, CTransformStack *pTS, 
 	const SGroupSelect &mask, const CVec2 &screenSize, CIgnorePartsHash *pIgnore, 
 	CObj<IHZBuffer> *pHZBuffer );

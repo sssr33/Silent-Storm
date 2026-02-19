@@ -512,7 +512,7 @@ struct SD3DFormatHash
 {
 	int operator()( D3DFORMAT f ) const { return (int)f; }
 };
-typedef hash_map<D3DFORMAT, CPtr<CSurfaceRing>, SD3DFormatHash > CFormatRingMap;
+typedef unordered_map<D3DFORMAT, CPtr<CSurfaceRing>, SD3DFormatHash > CFormatRingMap;
 static CFormatRingMap sysTextures;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CTextureLocker::CTextureLocker( IDirect3DSurface9 *_pObj, const CTRect<int> &_rect, EAccess _access, D3DFORMAT format )
@@ -1206,14 +1206,14 @@ struct SGeometryTypeHash
 // all DX buffers
 static list< CMObj<CObjectBase> > lostable;
 static list< CMObj<CObjectBase> > managed;
-typedef hash_map<CPtr<CTB>, CObj<CTexture>, SPtrHash> CTexContainerHash;
+typedef unordered_map<CPtr<CTB>, CObj<CTexture>, SPtrHash> CTexContainerHash;
 static CTexContainerHash texContainers;
-typedef hash_map<int, CTextureBuffersSet> CRTCache;
+typedef unordered_map<int, CTextureBuffersSet> CRTCache;
 static CRTCache rtCache;
-typedef hash_map<int, CCubemapBufferSet> CCMCache;
+typedef unordered_map<int, CCubemapBufferSet> CCMCache;
 static CCMCache cmCache;
 static CTextureCache textureCache, transparentCache;
-typedef hash_map<SGeometryType, CObj<CGeometryBuffer>,SGeometryTypeHash > CGeometryCacheHash;
+typedef unordered_map<SGeometryType, CObj<CGeometryBuffer>,SGeometryTypeHash > CGeometryCacheHash;
 static CGeometryCacheHash geometries;
 static CDynamicTrisIndices32 dynamicTris32;
 static CDynamicTrisIndices16 dynamicTris16;
@@ -1321,9 +1321,9 @@ void InitBuffers()
 	textureCache.Init( new CTB( 1024, 1024, 1, PixelID2D3DFormat(SPixel8888::ID), REGULAR ) );
 	transparentCache.Init( new CTB( 1024, 1024, 4, PixelID2D3DFormat(SPixel8888::ID), REGULAR ) );
 
-	for ( hash_map<int,int>::iterator i = rtInfo.targets.begin(); i != rtInfo.targets.end(); ++i )
+	for (unordered_map<int,int>::iterator i = rtInfo.targets.begin(); i != rtInfo.targets.end(); ++i )
 		rtCache[ i->first ].Init( i->first, i->second );
-	for ( hash_map<int,int>::iterator i = rtInfo.cubeTargets.begin(); i != rtInfo.cubeTargets.end(); ++i )
+	for (unordered_map<int,int>::iterator i = rtInfo.cubeTargets.begin(); i != rtInfo.cubeTargets.end(); ++i )
 		cmCache[ i->first ].Init( i->first, i->second );
 	// buffers for dynamic textures
 	sysTextures[D3DFMT_A8R8G8B8] = new CSurfaceRing( D3DFMT_A8R8G8B8, N_SYSMEM_TEXTURES );

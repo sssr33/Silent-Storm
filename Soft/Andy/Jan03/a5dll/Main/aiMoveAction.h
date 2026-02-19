@@ -57,8 +57,8 @@ class CAIChoosePlaceForActionsJob: public CAIJob
 	int nCurPlace, nCurAction;
 	vector< CPtr<CAIAction> > actions;
 	vector<SPlaceWithAP> places;
-	hash_map< CPtr<CAIAction>, int, SPtrHash > actionToPlace;
-	hash_map< CPtr<CAIAction>, bool, SPtrHash > actionToChosen;
+	unordered_map< CPtr<CAIAction>, int, SPtrHash > actionToPlace;
+	unordered_map< CPtr<CAIAction>, bool, SPtrHash > actionToChosen;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,(CAIJob *)this); f.Add(3,&nCurPlace); f.Add(4,&nCurAction); f.Add(5,&actions); f.Add(6,&places); f.Add(7,&actionToPlace); f.Add(8,&actionToChosen); return 0; }
 	//
 public:

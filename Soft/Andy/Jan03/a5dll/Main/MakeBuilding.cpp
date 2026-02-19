@@ -442,7 +442,7 @@ bool operator==( const SProjectedSpot &a, const SProjectedSpot &b )
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 static void MakeBuilding( SBuildingInfo *pInfo, const CBuildingGrid &grid, CBuildInfo *pBuildInfo, 
-	CSolidAndWallMap *_pSWMap, bool bParts, hash_map<SPart, bool, SPart> *pSelect = 0 )
+	CSolidAndWallMap *_pSWMap, bool bParts, unordered_map<SPart, bool, SPart> *pSelect = 0 )
 {
 	ASSERT( pInfo && pBuildInfo );
 	CDGPtr<CSolidAndWallMap> pSWMap( _pSWMap );
@@ -451,7 +451,7 @@ static void MakeBuilding( SBuildingInfo *pInfo, const CBuildingGrid &grid, CBuil
 	SRand rand(0), randStart( grid.GetSeed() );
 	if ( pSelect )
 	{
-		for ( hash_map<SPart, bool, SPart>::iterator i = pSelect->begin(); i != pSelect->end(); ++i )
+		for (unordered_map<SPart, bool, SPart>::iterator i = pSelect->begin(); i != pSelect->end(); ++i )
 			pInfo->Erase( i->first );
 	}
 	else
@@ -459,8 +459,8 @@ static void MakeBuilding( SBuildingInfo *pInfo, const CBuildingGrid &grid, CBuil
 	const int nCutFloor = grid.GetCutFloor();
 
   // Сплошные объекты
-	const hash_map<int, CNodeMap<SSolidElement> > &solids = swMap.GetSolidMap();
-	for ( hash_map<int, CNodeMap<SSolidElement> >::const_iterator it = solids.begin(); it != solids.end(); ++it )
+	const unordered_map<int, CNodeMap<SSolidElement> > &solids = swMap.GetSolidMap();
+	for (unordered_map<int, CNodeMap<SSolidElement> >::const_iterator it = solids.begin(); it != solids.end(); ++it )
 	{
 		const vector<SSolidElement> &frags = it->second.GetValues();
 		for ( int i = 0; i < frags.size(); ++i )
@@ -594,7 +594,7 @@ void AddPieces( CBuildingSchema *pSchema, const vector<int> &parts, const vector
 	NDb::CAIGeometry *pAIG = NDb::GetAIGeometry( nAIGeomID );
 	if ( !pGI || !pAIG )
 		return;
-	hash_map<int, bool> addedParts;
+	unordered_map<int, bool> addedParts;
 	//
 	for ( vector<int>::const_iterator it = parts.begin(); it != parts.end(); ++it )
 	{
@@ -756,12 +756,12 @@ void MakeBuildingSchema( CBuildingSchema *pSchema, CBuildingGrid *pGrid, CBuildI
 	const CSolidAndWallMap &swMap = *_pSWMap;
 
 	// Сплошные объекты
-	const hash_map<int, CNodeMap<SSolidElement> > &solidMap = swMap.GetSolidMap();
+	const unordered_map<int, CNodeMap<SSolidElement> > &solidMap = swMap.GetSolidMap();
 
 	CArray2D<bool> cellarWalls;
 	MarkCellarWalls( &cellarWalls, pBuildInfo->cellar, swMap.GetBottom() );
 
-	for ( hash_map<int, CNodeMap<SSolidElement> >::const_iterator it = solidMap.begin(); it != solidMap.end(); ++it )
+	for (unordered_map<int, CNodeMap<SSolidElement> >::const_iterator it = solidMap.begin(); it != solidMap.end(); ++it )
 	{
 		const vector<SSolidElement> &frags = it->second.GetValues();
 		for ( int i = 0; i < frags.size(); ++i )
@@ -943,8 +943,8 @@ void BuildingHP( CBuildInfo *pBuildInfo, CBuildingGrid *pGrid, CSolidAndWallMap 
 	fTotalHP = 0;
 	nTotalNodes = 0;
   // Сплошные объекты
-	const hash_map<int, CNodeMap<SSolidElement> > &solidMap = swMap.GetSolidMap();
-	for ( hash_map<int, CNodeMap<SSolidElement> >::const_iterator it = solidMap.begin(); it != solidMap.end(); ++it )
+	const unordered_map<int, CNodeMap<SSolidElement> > &solidMap = swMap.GetSolidMap();
+	for (unordered_map<int, CNodeMap<SSolidElement> >::const_iterator it = solidMap.begin(); it != solidMap.end(); ++it )
 	{
 		const vector<SSolidElement> &frags = it->second.GetValues();
 		for ( int i = 0; i < frags.size(); ++i )
@@ -1018,7 +1018,7 @@ void CBuildingInfoHold::UpdateInfo( const vector<SPart> &_parts )
 #ifndef _MAPEDIT
 		ASSERT( bGrid );
 #endif
-		hash_map<SPart, bool, SPart> parts;
+		unordered_map<SPart, bool, SPart> parts;
 		for ( int i = 0; i < _parts.size(); ++i )
 			parts[ _parts[i] ] = true;
 		MakeBuilding( &info, *pBuildingGrid, pBuildInfo->GetValue(), pSWMap, bSplitParts, &parts );

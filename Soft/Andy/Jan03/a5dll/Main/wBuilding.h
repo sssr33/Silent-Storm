@@ -23,7 +23,7 @@ class CBuilding: public NRPG::IAttackable, public IDynamicObject, public IBuildi
 {
 	OBJECT_NOCOPY_METHODS(CBuilding);
 public:
-	typedef hash_map<int, CObj<CBuildingPart> > CPartsHash;
+	typedef unordered_map<int, CObj<CBuildingPart> > CPartsHash;
 private:
 	void ToggleUpdateFlag();
 	void UpdateBuildingParts();

@@ -44,7 +44,7 @@ bool CGlobalPlayer::IsUnitRescued( CUnit *pUnit )
 	if ( !IsValid( pUnit ) )
 		return false;
 	//
-	hash_map< CPtr<NRPG::CUnit>, SUnitDeployData, SPtrHash >::iterator i;
+	unordered_map< CPtr<NRPG::CUnit>, SUnitDeployData, SPtrHash >::iterator i;
 	for ( i = deployData.unitsDeployData.begin(); i != deployData.unitsDeployData.end(); ++i )
 		if ( i->second.pCorpse == pUnit )
 			return true;
@@ -108,7 +108,7 @@ void CGlobalPlayer::GetAliveUnits( vector< CPtr<NRPG::CUnit> > *pUnits )
 			pUnits->push_back( (*i).GetPtr() );
 	}
 	//
-	hash_map< CPtr<NRPG::CUnit>, SUnitDeployData, SPtrHash >::iterator i;
+	unordered_map< CPtr<NRPG::CUnit>, SUnitDeployData, SPtrHash >::iterator i;
 	for ( i = deployData.unitsDeployData.begin(); i != deployData.unitsDeployData.end(); ++i )
 		if ( IsValid( i->second.pCorpse ) && !i->second.pCorpse->IsDead() && 
 			find( pUnits->begin(), pUnits->end(), i->second.pCorpse.GetPtr() ) == pUnits->end() )

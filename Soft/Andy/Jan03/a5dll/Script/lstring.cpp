@@ -54,7 +54,7 @@ int luaS_createudata (lua_State *L, CObjectBase *pData, int tag)
 		UserData *p = L->userdatas[it];
 		if ( !p )
 			continue;
-		if ( ( p->tag == tag || tag == LUA_ANYTAG ) && ( p->pPtr == pData || p->pObj == pData ) )
+		if ((p->tag == tag || tag == LUA_ANYTAG) && (p->pPtr == CPtr<CObjectBase>{pData} || p->pObj == CObj<CObjectBase>{pData}))
 			return it;
 	}
 	if ( tag == LUA_ANYTAG )

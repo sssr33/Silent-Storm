@@ -144,7 +144,7 @@ public:
 };
 //////////////////////////////////////////////////////////////////////////
 typedef list<CObj<CLuaThread> > CThreads;
-typedef hash_map<TString, bool, TStringHash> CLuaStrings;
+typedef unordered_map<TString, bool, TStringHash> CLuaStrings;
 //////////////////////////////////////////////////////////////////////////
 struct lua_State 
 {

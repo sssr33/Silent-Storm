@@ -64,7 +64,7 @@ struct SVisionQueryHash
 class CVisionTracker : public IVisionTracker
 {
 	OBJECT_NOCOPY_METHODS( CVisionTracker );
-	typedef hash_map<SVisionQuery, bool, SVisionQueryHash> CVisionHash;
+	typedef unordered_map<SVisionQuery, bool, SVisionQueryHash> CVisionHash;
 	ZDATA
 		CVisionHash visionCache;
 	CArray3D<CObj<CVisionCube> > grid;

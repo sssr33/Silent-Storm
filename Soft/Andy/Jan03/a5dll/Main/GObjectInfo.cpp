@@ -59,13 +59,13 @@ static void AlignPlaneToGrid( SPlane *p )
 static void StripOppositeFacingPolygons( SFacesVector *pRes, const SFacesVector &src )
 {
 	// merge by positions
-	hash_map<CVec3, int, SVec3Hash> posHash;
+	unordered_map<CVec3, int, SVec3Hash> posHash;
 	vector<int> posIndices( src.points.size(), -1 );
 	for ( int k = 0; k < src.points.size(); ++k )
 	{
 		CVec3 vPos( src.points[k].pos );
 		AlignPositionToGrid( &vPos );
-		hash_map<CVec3, int, SVec3Hash>::iterator i = posHash.find( vPos );
+		unordered_map<CVec3, int, SVec3Hash>::iterator i = posHash.find( vPos );
 		if ( i != posHash.end() )
 			posIndices[k] = i->second;
 		else
@@ -474,7 +474,7 @@ static void CalcCross( SLoadVertex *pRes, const SLoadVertex &vCur, const SLoadVe
 struct SClipHelper
 {
 	SFacesVector *pRes;
-	hash_map< SLoadVertex, int, SLoadVertexHash > pointHash;
+	unordered_map< SLoadVertex, int, SLoadVertexHash > pointHash;
 	SClipHelper( SFacesVector *_pRes, const SFacesVector &src ) : pRes(_pRes)
 	{
 		pRes->points = src.points;
@@ -491,7 +491,7 @@ struct SClipHelper
 	{
 		SLoadVertex vCross;
 		CalcCross( &vCross, vPrev, vCur, fPrevDot, fCurDot );
-		hash_map< SLoadVertex, int, SLoadVertexHash >::iterator i = pointHash.find( vCross );
+		unordered_map< SLoadVertex, int, SLoadVertexHash >::iterator i = pointHash.find( vCross );
 		if ( i == pointHash.end() )
 		{
 			int n = pRes->points.size();
@@ -541,7 +541,7 @@ static void OptimizeVertices( SFacesVector *pRes, const SFacesVector &src )
 	pRes->points.resize(0);
 	pRes->polys.Clear();
 	vector<int> posIndices( src.points.size(), -1 );
-	hash_map< SLoadVertex, int, SLoadVertexHash > pointHash;
+	unordered_map< SLoadVertex, int, SLoadVertexHash > pointHash;
 	for ( int k = 1; k < src.polys.polys.size(); ++k )
 	{
 		for ( int i = src.polys.polys[ k - 1 ]; i < src.polys.polys[ k ]; ++i )
@@ -557,7 +557,7 @@ static void OptimizeVertices( SFacesVector *pRes, const SFacesVector &src )
 				vertex.tex.u = Float2Int( vertex.tex.u * N_TEXTURE_PRECISION ) * ( 1.0f / N_TEXTURE_PRECISION );
 				vertex.tex.v = Float2Int( vertex.tex.v * N_TEXTURE_PRECISION ) * ( 1.0f / N_TEXTURE_PRECISION );
 
-				hash_map< SLoadVertex, int, SLoadVertexHash >::iterator i = pointHash.find( vertex );
+				unordered_map< SLoadVertex, int, SLoadVertexHash >::iterator i = pointHash.find( vertex );
 				if ( i == pointHash.end() )
 				{
 					int nIndex = pRes->points.size();
@@ -578,7 +578,7 @@ struct SPlaneHash
 {
 	int operator()( const SPlane &a ) const { return SVec3Hash()( a.n ) ^ ((int*)&a.d)[0]; }
 };
-static void SeparateOnPerPlaneFaces( hash_map<SPlane, SPolygonIndices, SPlaneHash> *pRes, const SFacesVector &src )
+static void SeparateOnPerPlaneFaces(unordered_map<SPlane, SPolygonIndices, SPlaneHash> *pRes, const SFacesVector &src )
 {
 	for ( int k = 1; k < src.polys.polys.size(); ++k )
 	{
@@ -595,7 +595,7 @@ static void SeparateOnPerPlaneFaces( hash_map<SPlane, SPolygonIndices, SPlaneHas
 			if ( p.Set( v1, v2, v3 ) )
 			{
 				AlignPlaneToGrid( &p );
-				hash_map<SPlane, SPolygonIndices, SPlaneHash>::iterator k = pRes->find( p );
+				unordered_map<SPlane, SPolygonIndices, SPlaneHash>::iterator k = pRes->find( p );
 				SPolygonIndices *pDst;
 				if ( k == pRes->end() )
 				{
@@ -852,13 +852,13 @@ void CWallObjectInfoClipper::ClipWall()
 		Clip( &res1, res, clipRight );
 		res = res1;
 	}
-	hash_map<SPlane,SPolygonIndices,SPlaneHash> perPlane;
+	unordered_map<SPlane,SPolygonIndices,SPlaneHash> perPlane;
 	StripOppositeFacingPolygons( &res1, res );
 	OptimizeVertices( &res, res1 );
 	SeparateOnPerPlaneFaces( &perPlane, res );
 	res1.points = res.points;
 	res1.polys.Clear();
-	for ( hash_map<SPlane,SPolygonIndices,SPlaneHash>::iterator i = perPlane.begin(); i != perPlane.end(); ++i )
+	for (unordered_map<SPlane,SPolygonIndices,SPlaneHash>::iterator i = perPlane.begin(); i != perPlane.end(); ++i )
 	{
 		if ( RemoveInternalPoints( res.points, &i->second, i->first ) )
 			RemoveInternalPoints( res.points, &i->second, i->first );

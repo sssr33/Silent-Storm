@@ -79,7 +79,7 @@ class CBuilding : public CObjectBase
 {
 	OBJECT_BASIC_METHODS(CBuilding);
 
-	typedef hash_map<int, CPtr<CLocalAmbientCalcer> > CRoomLightsHash;
+	typedef unordered_map<int, CPtr<CLocalAmbientCalcer> > CRoomLightsHash;
 	ZDATA
 	CObj<CFBTransform> pPlace;
 	CDGPtr<NBuilding::CBuildingGrid> pBuildingGrid;

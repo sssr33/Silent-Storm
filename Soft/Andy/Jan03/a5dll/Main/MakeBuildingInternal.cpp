@@ -31,12 +31,12 @@ struct SFloor
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 struct SFloorGroup
 {
-	hash_map<int, SFloor> floors;
+	unordered_map<int, SFloor> floors;
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void MakeFloorGroupHash( hash_map<int, SFloorGroup> *pGID2Floors, const vector<NBuilding::SLayerGroup> &groups )
+void MakeFloorGroupHash(unordered_map<int, SFloorGroup> *pGID2Floors, const vector<NBuilding::SLayerGroup> &groups )
 {
-	hash_map<int, SFloorGroup> &hash = *pGID2Floors;
+	unordered_map<int, SFloorGroup> &hash = *pGID2Floors;
 	for ( int i = 0; i < groups.size(); ++i )
 	{
 		const NBuilding::SLayerGroup g = groups[i];
@@ -48,9 +48,9 @@ void MakeFloorGroupHash( hash_map<int, SFloorGroup> *pGID2Floors, const vector<N
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void MakeLayerGroupHash( hash_map<int, int> *pID2GID, const vector<NBuilding::SLayerGroup> &groups )
+void MakeLayerGroupHash(unordered_map<int, int> *pID2GID, const vector<NBuilding::SLayerGroup> &groups )
 {
-	hash_map<int, int> &hash = *pID2GID;
+	unordered_map<int, int> &hash = *pID2GID;
 	for ( int i = 0; i < groups.size(); ++i )
 	{
 		const NBuilding::SLayerGroup g = groups[i];
@@ -70,8 +70,8 @@ void CSolidAndWallMap::MakeSolidMap( SRand *pRand, const vector<SBuildFragment> 
 	CNodeMap<SSolidElement> pattern;
 	pattern.Resize( nMinFloor, nMaxFloor, nXSize, nYSize );
 
-	hash_map<int, int> gids;
-	hash_map<int, SFloorGroup> linkedfloors; // linkedfloors[ gid ]
+	unordered_map<int, int> gids;
+	unordered_map<int, SFloorGroup> linkedfloors; // linkedfloors[ gid ]
 
 	bottom.SetSizes( nXSize, nYSize );
 	bottom.FillZero();

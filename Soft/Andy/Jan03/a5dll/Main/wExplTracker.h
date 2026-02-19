@@ -165,7 +165,7 @@ class CVoxelExplTracker: public IDynamicObject
 {
 	OBJECT_BASIC_METHODS( CVoxelExplTracker );
 public:
-	typedef hash_map< CPtr<CObjectBase>, bool, SPtrHash> CDecalsHash;
+	typedef unordered_map< CPtr<CObjectBase>, bool, SPtrHash> CDecalsHash;
 private:
 	ZDATA
 	int nWave;
@@ -179,7 +179,7 @@ private:
 	CObj<CVoxelExpl> pExpl;
 public:
 	list< CPtr<CUnitServer> > damagedUnits;
-	hash_map< CPtr<CObjectBase>, list<int>, SPtrHash > damagedObjects;
+	unordered_map< CPtr<CObjectBase>, list<int>, SPtrHash > damagedObjects;
 	CDecalsHash drawDecals;
 private:
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&nWave); f.Add(3,&ptCenter); f.Add(4,&pGrenade); f.Add(5,&pThrower); f.Add(6,&nEnemyUnitsKilled); f.Add(7,&nObjectsDestroyed); f.Add(8,&pAction); f.Add(9,&pWorld); f.Add(10,&pExpl); f.Add(11,&damagedUnits); f.Add(12,&damagedObjects); f.Add(13,&drawDecals); return 0; }

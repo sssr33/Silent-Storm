@@ -76,7 +76,7 @@ void CPerksTree::LoadTree( int nTreeID )
 void CPerksTree::GetAllPerks( vector< CPtr<CPerk> > *pPerks ) const
 {
 	pPerks->clear();
-	for ( hash_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
+	for ( unordered_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
 	{
 		if ( !IsValid( i->second ) )
 		{
@@ -91,7 +91,7 @@ void CPerksTree::GetAllPerks( vector< CPtr<CPerk> > *pPerks ) const
 void CPerksTree::GetTakenPerks( vector< CPtr<CPerk> > *pPerks ) const
 {
 	pPerks->clear();
-	for ( hash_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
+	for ( unordered_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
 	{
 		if ( !IsValid( i->second ) )
 		{
@@ -111,7 +111,7 @@ void CPerksTree::GetAvailablePerks( vector< CPtr<CPerk> > *pPerks ) const
 	if ( nPerkPoints <= 0 )
 		return;
 
-	for ( hash_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
+	for ( unordered_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
 	{
 		if ( !IsValid( i->second ) )
 		{
@@ -141,7 +141,7 @@ void CPerksTree::Draw( string szFileName )
 	file.open( str.c_str(), ios_base::out | ios_base::trunc );
 	file << "digraph g\n{\n  concentrate=true;\n  nodesep=.3;\n  ranksep=.3;\n";
 	// 
-	for ( hash_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
+	for ( unordered_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
 	{
 		char szID[128];
 		sprintf( szID, "ID_%d", i->first );
@@ -153,7 +153,7 @@ void CPerksTree::Draw( string szFileName )
 		file << " label = \"" << i->second->GetDBPerk()->szUserName << "\"];" << endl;
 	}
 	//
-	for ( hash_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
+	for ( unordered_map< int, CObj<CPerk> >::const_iterator i = perks.begin(); i != perks.end(); ++i )
 	{
 		char szID1[128], szID2[128];
 		sprintf( szID1, "ID_%d", i->first );

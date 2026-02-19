@@ -26,13 +26,13 @@ struct SVideoMode
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 struct SRenderTargetsInfo
 {
-	hash_map<int,int> targets; // resolution to number
-	hash_map<int,int> cubeTargets; // resolution to number
+	unordered_map<int,int> targets; // resolution to number
+	unordered_map<int,int> cubeTargets; // resolution to number
 	int nRegisters;
 	SRenderTargetsInfo() : nRegisters(0) {}
 
 	void Clear() { targets.clear(); nRegisters = 0; }
-	void Add( hash_map<int,int> *pRes, int nResolution, int nTargets ) 
+	void Add(unordered_map<int,int> *pRes, int nResolution, int nTargets )
 	{ 
 		if ( pRes->find( nResolution ) == pRes->end() )
 			(*pRes)[ nResolution ] = nTargets;

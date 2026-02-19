@@ -20,8 +20,8 @@ struct SFileHash
 class IFilesPackage : public CObjectBase
 {
 protected:
-	typedef hash_map< FILE_ID, SFileInfo, SFileHash > CFileInfoHash;
-	typedef hash_map< FILE_ID, FILETIME, SFileHash > CFileTimeHash;
+	typedef unordered_map< FILE_ID, SFileInfo, SFileHash > CFileInfoHash;
+	typedef unordered_map< FILE_ID, FILETIME, SFileHash > CFileTimeHash;
 	CFileInfoHash files;
 public:
 	virtual void Read( unsigned int nPos, void *pDest, unsigned int nSize ) = 0;
@@ -127,7 +127,7 @@ bool CFilesPackage::RescanDir( CDataStream *pErr, const char *pszDir,
 	CDataStream &err = *pErr;
 	WIN32_FIND_DATA ff;
 	HANDLE hf = FindFirstFile( (string(pszDir) + "\\*.*").c_str(), &ff );
-	hash_map<FILE_ID, bool, SFileHash> foundFiles;
+	unordered_map<FILE_ID, bool, SFileHash> foundFiles;
 	if ( hf != INVALID_HANDLE_VALUE )
 	{
 		for(;;)

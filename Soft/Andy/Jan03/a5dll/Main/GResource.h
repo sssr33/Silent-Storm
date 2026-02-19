@@ -146,7 +146,7 @@ public:
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CResourceTracker
 {
-	typedef hash_map<SPartKey, bool, SPartHash> CCheckHash;
+	typedef unordered_map<SPartKey, bool, SPartHash> CCheckHash;
 	CCheckHash check;
 	string szResourceName;
 

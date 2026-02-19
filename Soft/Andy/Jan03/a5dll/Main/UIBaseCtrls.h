@@ -50,7 +50,7 @@ private:
 	int nSize;
 	wstring wsText;
 	CObj<IML> pText;
-	hash_map<wstring,wstring> valuesMap;
+	unordered_map<wstring,wstring> valuesMap;
 public:
 	ZEND int operator&( CStructureSaver &f ) { f.Add(1,(CWindow*)this); f.Add(2,&nSize); f.Add(3,&wsText); f.Add(4,&pText); f.Add(5,&valuesMap); return 0; }
 

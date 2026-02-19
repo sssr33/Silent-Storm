@@ -18,11 +18,13 @@
 
 // normal stdafx.h
 #include "stl_user_config.h"
-#include <stl/_config.h>
+//#include <stl/_config.h>
 
 #include <windows.h>
 #include <objbase.h>
 #include <assert.h>
+#include <new>
+#include <exception>
 
 
 #ifdef _DEBUG
@@ -36,5 +38,5 @@
 #endif
 
 
-#include <hash_map>
+#include <unordered_map>
 #endif // !defined(AFX_STDAFX_H__99C19B29_7D10_46A8_9B06_01AEC226210E__INCLUDED_)

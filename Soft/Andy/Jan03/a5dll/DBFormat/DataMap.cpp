@@ -10,6 +10,11 @@
 #include "DataScenario.h"
 #include "DataSound.h"
 #include "DataText.h"
+#include "DataInterface.h"
+#include "DataAck.h"
+#include "DataLight.h"
+#include "DataObject.h"
+#include "DataAI.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 externA5 CVec3 GetColor( DWORD dwColor );
@@ -24,7 +29,7 @@ inline void DebugStringInt( const char *str, int i )
 template<class T> inline bool PushItem( vector<CPtr<T> > *pItems, T *p )
 {
 	ASSERT( pItems );
-	vector<CPtr<T> >::const_iterator i = find( pItems->begin(), pItems->end(), p );
+	vector<CPtr<T> >::const_iterator i = find(pItems->begin(), pItems->end(), CPtr<T>{p});
 	if ( i == pItems->end() )
 	{
 		pItems->push_back( p );
@@ -767,7 +772,7 @@ void AssignItems( L *p = 0 )
 			SItemAssign item;
 			item.nQuantity = pW->nQuantity;
 			item.pItem = pW->pItem;
-			if ( CDynamicCast<CRPGClip4Pers> pClip4Pers( pW ) )
+			if ( auto pClip4Pers = CDynamicCast<CRPGClip4Pers>( pW ) )
 				item.pAmmo = pClip4Pers->pAmmo;
 			pW->pPers->items.push_back(item);
 		}

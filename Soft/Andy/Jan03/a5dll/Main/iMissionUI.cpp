@@ -655,7 +655,7 @@ void CMissionUI::UpdateItems( NGScene::I2DGameView *pView )
 	{
 		list<CObj<CItemText> > newItemTextsList;
 
-		hash_map<CPtr<NRPG::IInventoryItem>, CPtr<CItemText>, SPtrHash> itemsMap;
+		unordered_map<CPtr<NRPG::IInventoryItem>, CPtr<CItemText>, SPtrHash> itemsMap;
 		for ( list<CObj<CItemText> >::const_iterator iTemp = itemTextsList.begin(); iTemp != itemTextsList.end(); iTemp++ )
 		{
 			CItemText *pItemText = *iTemp;
@@ -678,7 +678,7 @@ void CMissionUI::UpdateItems( NGScene::I2DGameView *pView )
 				if ( !IsValid( sItem.pWorldItem ) )
 					continue;
 
-				hash_map<CPtr<NRPG::IInventoryItem>, CPtr<CItemText>, SPtrHash>::iterator iFindRes = itemsMap.find( sItem.pItem );
+				unordered_map<CPtr<NRPG::IInventoryItem>, CPtr<CItemText>, SPtrHash>::iterator iFindRes = itemsMap.find( sItem.pItem );
 				if ( iFindRes == itemsMap.end() )
 					newItemTextsList.push_back( new CItemText( SWindowInfo( this, SPoint( 0, 0 ), SPoint( 0, 0 ), "", STYLE_ENABLED | STYLE_VISIBLE ), pMission, this, sItem ) );
 				else
@@ -807,7 +807,7 @@ void CMissionUI::UpdateEnemies()
 		return;
 	}
 
-	hash_map<CPtr<NWorld::CUnit>,bool,SPtrHash> enemySet;
+	unordered_map<CPtr<NWorld::CUnit>,bool,SPtrHash> enemySet;
 	for ( int nTemp = 0; nTemp < unitsSet.size(); nTemp++ )
 	{
 		list<CPtr<NWorld::CUnit> > visibleUnits;
@@ -823,7 +823,7 @@ void CMissionUI::UpdateEnemies()
 
 	list<CObj<CEnemyIcon> > newEnemyIconsList;
 	list<CObj<CEnemyIcon> >::iterator iOldIcons = enemyIconsList.begin();
-	for ( hash_map<CPtr<NWorld::CUnit>,bool,SPtrHash>::iterator iTemp = enemySet.begin(); iTemp != enemySet.end(); iTemp++ )
+	for (unordered_map<CPtr<NWorld::CUnit>,bool,SPtrHash>::iterator iTemp = enemySet.begin(); iTemp != enemySet.end(); iTemp++ )
 	{
 		bool bVisible = iTemp->second;
 		CPtr<NWorld::CUnit> pEnemy = iTemp->first;

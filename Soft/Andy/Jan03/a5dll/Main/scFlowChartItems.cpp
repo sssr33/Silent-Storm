@@ -67,7 +67,7 @@ int CScenarioZone::GetDefaultTemplateID()
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int CScenarioZone::GetTemplateIDByVariantID( int nVariantID )
 {
-	for ( hash_map< int, STemplate >::iterator i = templates.begin();
+	for ( unordered_map< int, STemplate >::iterator i = templates.begin();
 		i != templates.end(); ++i )
 			if ( i->second.nVariantID == nVariantID )
 				return i->first;
@@ -289,7 +289,7 @@ void CScenarioZone::GetTemplatesIDs( vector<int> *pIDs )
 		return;
 	//
 	pIDs->clear();
-	for ( hash_map< int, STemplate >::iterator i = templates.begin(); i != templates.end(); ++i )
+	for ( unordered_map< int, STemplate >::iterator i = templates.begin(); i != templates.end(); ++i )
 		pIDs->push_back( i->first );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////

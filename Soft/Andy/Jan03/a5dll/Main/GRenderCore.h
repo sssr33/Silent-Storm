@@ -393,7 +393,7 @@ private:
 	CPool<SRenderGeometryInfo,128> geometryInfos;
 	CPool<SRenderFragmentInfo,128> fragmentInfos;
 	
-	typedef hash_map<SRenderFragmentKey, int, SRenderFragmentHash> CFragmentHash;
+	typedef unordered_map<SRenderFragmentKey, int, SRenderFragmentHash> CFragmentHash;
 	CFragmentHash fragmentHash;
 	vector<SRenderStaticInfo*> statics;
 	vector<SRenderGeometryInfo*> geometries;
@@ -498,7 +498,7 @@ public:
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // bit set to 1 means part is ignored
-typedef hash_map<CPtr<CObjectBase>,CPartFlags,SPtrHash> CFilterPartsHash;
+typedef unordered_map<CPtr<CObjectBase>,CPartFlags,SPtrHash> CFilterPartsHash;
 struct SLightmappedFilter
 {
 	bool operator()( SRenderFragmentInfo *pF ) const { return pF->pLightmap == 0; }

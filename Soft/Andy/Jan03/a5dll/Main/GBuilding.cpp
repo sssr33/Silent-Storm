@@ -88,7 +88,7 @@ void CBuilding::Build( IGScene *pScene, CMaterialShare *pMaterials )
 	const SBuildingInfo &info = pBInfo->GetInfo();
 	NBuilding::SPart part;
 	part.nID = nPartID;
-	hash_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i = info.info.find( part );
+	unordered_map<NBuilding::SPart, NBuilding::SStoreyInfo, NBuilding::SPart>::const_iterator i = info.info.find( part );
 	if ( info.info.end() == i )
 		return;
 	{

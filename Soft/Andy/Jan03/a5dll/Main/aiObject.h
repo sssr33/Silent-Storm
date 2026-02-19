@@ -45,7 +45,7 @@ struct SJunction
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CBSPTree;
-typedef hash_map<int, CPtr<CBSPTree> > CBSPPieces;
+typedef unordered_map<int, CPtr<CBSPTree> > CBSPPieces;
 class CGeometryInfo: public CObjectBase
 {
 	OBJECT_BASIC_METHODS(CGeometryInfo);
@@ -58,7 +58,7 @@ public:
 		vector<SJunction> juncs;
 		vector<CPtr<CBSPTree> > trees;
 	};
-	typedef std::hash_map<int, SPiece> CPieceMap;
+	typedef std::unordered_map<int, SPiece> CPieceMap;
 
 	SBound bound;
 	vector<SMassSphere> spheres;

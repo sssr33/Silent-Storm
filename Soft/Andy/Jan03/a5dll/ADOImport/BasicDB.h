@@ -71,7 +71,7 @@ public:
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CDBTableBase
 {
-	typedef std::hash_map<int, CObj<CDBRecord> > CRecordHash;
+	typedef std::unordered_map<int, CObj<CDBRecord> > CRecordHash;
 	CRecordHash records;
 	//
 	void PreCreate( int nTypeID );

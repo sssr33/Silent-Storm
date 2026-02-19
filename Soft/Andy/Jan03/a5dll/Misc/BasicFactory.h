@@ -4,6 +4,9 @@
 #pragma once
 #endif // _MSC_VER > 1000
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <typeinfo>
+
 struct SDefaultPtrHash
 {
 	int operator()( const void *pData ) const { return (int)pData; }
@@ -18,8 +21,8 @@ public:
 	typedef const type_info *VFT;
 private:
 	typedef T* (*newFunc)();
-	typedef std::hash_map<int, newFunc> CTypeNewHash;                // typeID->newFunc()
-	typedef std::hash_map<VFT, int, SDefaultPtrHash> CTypeIndexHash; // vftable->typeID
+	typedef std::unordered_map<int, newFunc> CTypeNewHash;                // typeID->newFunc()
+	typedef std::unordered_map<VFT, int, SDefaultPtrHash> CTypeIndexHash; // vftable->typeID
 
 	CTypeIndexHash typeIndex;
 	CTypeNewHash typeInfo;

@@ -70,7 +70,7 @@ struct SDeployData
 	ZDATA
 	bool bPassage;
 	int nPassageZoneID;
-	hash_map< CPtr<NRPG::CUnit>, SUnitDeployData, SPtrHash > unitsDeployData;
+	unordered_map< CPtr<NRPG::CUnit>, SUnitDeployData, SPtrHash > unitsDeployData;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&bPassage); f.Add(3,&nPassageZoneID); f.Add(4,&unitsDeployData); return 0; }
 	//
 	SDeployData(): bPassage( false ), nPassageZoneID( 0 ) {}

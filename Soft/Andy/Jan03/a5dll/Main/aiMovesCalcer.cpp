@@ -123,7 +123,7 @@ CMovesCalcer::STile &CMovesCalcer::GetFlipperTile(
 	CPtr<CObjectBase> iHateVCPP( analyzer.pSrc );
 	CPathNetwork::SFlipper &flipper = *pNet->GetFlipper( iHateVCPP );
 	*pNFlipper = flipper.nFlipper + 1;
-	typedef hash_map<SPathPlace, STile,SPathPlaceHash> CFHash;
+	typedef unordered_map<SPathPlace, STile,SPathPlaceHash> CFHash;
 	CFHash *pHash;
 	if ( analyzer.bInClosed )
 		pHash = &flipper.locksClosed;

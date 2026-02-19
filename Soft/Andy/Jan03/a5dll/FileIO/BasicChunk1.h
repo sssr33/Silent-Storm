@@ -7,6 +7,9 @@
 #include "Streams.h"
 #include "..\Misc\Basic2.h"
 #include "..\Misc\BasicFactory.h"
+
+#include <unordered_map>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 externA5 CClassFactory<CObjectBase> *pSSClasses;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,9 +81,9 @@ private:
 	bool bIsReading;
 	// maps objects addresses during save(first) to addresses during load(second) - during loading
 	// or serves as a sign that some object has been already stored - during storing
-	typedef std::hash_map<void*,CPtr<CObjectBase>,SDefaultPtrHash> CObjectsHash;
+	typedef std::unordered_map<void*,CPtr<CObjectBase>,SDefaultPtrHash> CObjectsHash;
 	CObjectsHash objects;
-	typedef std::hash_map<void*,bool,SDefaultPtrHash> CPObjectsHash;
+	typedef std::unordered_map<void*,bool,SDefaultPtrHash> CPObjectsHash;
 	CPObjectsHash storedObjects;
 	std::list<CObjectBase*> toStore;
 
@@ -118,7 +121,7 @@ private:
 	template<class T1, class T2>
 		int __cdecl TestDataPath( std::list<T1,T2>* ) { return 0; }
 	template<class T1, class T2, class T3, class T4>
-		int __cdecl TestDataPath( std::hash_map<T1,T2,T3,T4>* ) { return 0; }
+		int __cdecl TestDataPath( std::unordered_map<T1,T2,T3,T4>* ) { return 0; }
 	//
 	template<class T>
 		void __cdecl CallObjectSerialize( const chunk_id idChunk, int nChunkNumber, T *p, ... )
@@ -176,7 +179,7 @@ private:
 			FinishChunk();
 		}
 	template<class T,class T1, class T2, class T3, class T4>
-		void __cdecl AddInternal( const chunk_id idChunk, int nChunkNumber, T *p, std::hash_map<T1,T2,T3,T4> *pHash ) 
+		void __cdecl AddInternal( const chunk_id idChunk, int nChunkNumber, T *p, std::unordered_map<T1,T2,T3,T4> *pHash )
 		{
 			if ( !StartChunk( idChunk, nChunkNumber ) )
 				return;
@@ -240,7 +243,7 @@ private:
 	}
 	// hash_map
 	template <class T1,class T2,class T3,class T4> 
-		void DoHashMap( std::hash_map<T1,T2,T3,T4> &data )
+		void DoHashMap( std::unordered_map<T1,T2,T3,T4> &data )
 	{
 		if ( IsReading() )
 		{
@@ -256,7 +259,7 @@ private:
 		else
 		{
 			int i = 1;
-			for ( std::hash_map<T1,T2,T3,T4>::iterator pos = data.begin(); pos != data.end(); ++pos, ++i )
+			for ( std::unordered_map<T1,T2,T3,T4>::iterator pos = data.begin(); pos != data.end(); ++pos, ++i )
 			{
 				T1 idx = pos->first;
 				Add( 1, &idx, i );

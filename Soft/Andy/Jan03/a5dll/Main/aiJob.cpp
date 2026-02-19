@@ -12,7 +12,7 @@ const float F_AI_MAX_OVERRUN_TIME = 0.200f;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CAIJobManager: public IAIJobManager
 {
-	typedef hash_map< CPtr<IAIJob>, list< CPtr<IAIJob> >, SPtrHash > DependencesHash;
+	typedef unordered_map< CPtr<IAIJob>, list< CPtr<IAIJob> >, SPtrHash > DependencesHash;
 	//
 	OBJECT_BASIC_METHODS(CAIJobManager);
 	ZDATA

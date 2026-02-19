@@ -188,7 +188,7 @@ public:
 			nUserID( _nUserID ), pUserData( _pUserData ), pArmor( _pArmor ), 
 			bTerrain( _bTerrain ) {}
 	};
-	typedef hash_map<SVoxelObjectKey, SExplObject, SVoxelObjectHash> CObjectsHash;
+	typedef unordered_map<SVoxelObjectKey, SExplObject, SVoxelObjectHash> CObjectsHash;
 
 private:
 	int nCurrentObjectID;

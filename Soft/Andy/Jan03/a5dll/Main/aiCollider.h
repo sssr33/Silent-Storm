@@ -13,7 +13,7 @@ namespace NAI
 class CCollider : public NCollider::CBSPCollider<SColliderUserInfo>, public IPrepareCollider, public CObjectBase
 {
 	OBJECT_NOCOPY_METHODS(CCollider);
-	hash_map<CPtr<CObjectBase>,bool,SPtrHash> ignoredObjects;
+	unordered_map<CPtr<CObjectBase>,bool,SPtrHash> ignoredObjects;
 public:
 	virtual void AddConvexHull( const SConvexHull &h );
 	virtual void SetBoundAndResolution( const SBound &b, float fLeng );

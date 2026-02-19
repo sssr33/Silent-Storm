@@ -25,7 +25,7 @@ struct SPieceLinks
 	vector<CVec3> links;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&nPieceHashID); f.Add(3,&links); return 0; }
 };
-typedef hash_map<int, SPieceLinks> SPieceLinksHash;
+typedef unordered_map<int, SPieceLinks> SPieceLinksHash;
 void String2PieceLinks( SPieceLinksHash *pLinks, const string &szStr );
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CAIGeometry: public CDBRecord

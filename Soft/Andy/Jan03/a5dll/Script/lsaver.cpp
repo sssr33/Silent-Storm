@@ -2,8 +2,8 @@
 #include "lsaver.h"
 #include "lstring.h"
 //////////////////////////////////////////////////////////////////////////
-typedef hash_map<CLuaFuncID, int> CLuaIDToFuncMap;
-typedef hash_map<int, CLuaFuncID> CLuaFuncToIDMap;
+typedef unordered_map<CLuaFuncID, int> CLuaIDToFuncMap;
+typedef unordered_map<int, CLuaFuncID> CLuaFuncToIDMap;
 CLuaFuncToIDMap luaFuncToIDMap;
 CLuaIDToFuncMap luaIDToFuncMap;
 lua_State *pLUASaverState;

@@ -245,7 +245,7 @@ void CalcHeightMap( NAI::IAIMap *pMap, CHeightMapBlockInfo *pRes, const float fH
 	pMap->TraceGrid( &render, NWorld::TS_PASS_BLOCKER, IAIMap::STH_NOSORT, CFloorsSet() );
 
 	// Get info about source for every special point
-	hash_map<int, bool> hSources;
+	unordered_map<int, bool> hSources;
 	for ( list<CVec3>::const_iterator i = specialPoints.begin(); i != specialPoints.end(); ++i )
 	{
 		int nX = Float2Int( i->x / HEIGHT_MAP_SAMPLE_SIZE );

@@ -61,7 +61,7 @@ struct SStoreyInfo
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 struct SBuildingInfo
 {
-	hash_map<SPart, SStoreyInfo, SPart> info;
+	unordered_map<SPart, SStoreyInfo, SPart> info;
 	SStoreyInfo& GetPart( const SPart &part )
 	{
 		SStoreyInfo &s = info[part];
@@ -72,7 +72,7 @@ struct SBuildingInfo
 	void Clear() { info.clear(); }
 	void Erase( const SPart &part )
 	{
-		hash_map<SPart, SStoreyInfo, SPart>::iterator i = info.find( part );
+		unordered_map<SPart, SStoreyInfo, SPart>::iterator i = info.find( part );
 		if ( i != info.end() )
 			info.erase( i );
 	}

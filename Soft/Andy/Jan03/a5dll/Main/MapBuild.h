@@ -167,7 +167,7 @@ struct SMapInfo
 	CPtr<NDb::CAmbientLightReal> pDefaultLight;
 	vector<SDeploySpot> deploySpots;
 	vector<SClueSlot> slots;
-	hash_map<int, SUnitGroup> groups;
+	unordered_map<int, SUnitGroup> groups;
 	bool bShowTerrain;
 
 	SMapInfo() {}

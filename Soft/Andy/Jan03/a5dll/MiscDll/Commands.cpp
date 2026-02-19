@@ -19,7 +19,7 @@ struct SRecord
 
 	SRecord(): pCmdContext( 0 ), pCmdHandler( 0 ), bSave( false ), pVarContext( 0 ), pVarHandler( 0 ) {}
 };
-typedef hash_map<string, SRecord> TRecordsMap;
+typedef unordered_map<string, SRecord> TRecordsMap;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CRecordsMap : public CObjectBase
 {

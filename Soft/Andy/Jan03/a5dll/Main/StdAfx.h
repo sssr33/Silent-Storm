@@ -13,7 +13,7 @@
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 #define _STLP_NO_THREADS
 #include "stl_user_config.h"
-#include <stl/_config.h>
+//#include <stl/_config.h>
 
 /* // simplified windows.h :) 
 typedef unsigned long DWORD;
@@ -48,7 +48,7 @@ externA5 "C" __declspec(dllimport) DWORD __stdcall  GetTickCount();
 #include <string>
 #include <vector>
 #include <crtdbg.h>
-#include <hash_map>
+#include <unordered_map>
 #include "..\Misc\basic2.h"
 #include "..\Misc\tools.h"
 

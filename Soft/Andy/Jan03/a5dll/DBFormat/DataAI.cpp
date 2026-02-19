@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "DataAI.h"
+#include "DataSound.h"
 
 namespace NDb
 {

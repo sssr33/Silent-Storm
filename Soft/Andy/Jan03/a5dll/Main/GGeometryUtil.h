@@ -202,7 +202,7 @@ class CSquarePacker
 	vector<STriInfo> squares;
 	CObjectInfo &info;
 	float fTexelsPerMeter;
-	typedef hash_map<SEdgeInfo, int, SEdgeInfoHash> CEdgesHash;
+	typedef unordered_map<SEdgeInfo, int, SEdgeInfoHash> CEdgesHash;
 	CEdgesHash edgesInfo;
 	int nMaxSize;
 

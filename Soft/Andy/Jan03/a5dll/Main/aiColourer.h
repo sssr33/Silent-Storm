@@ -115,7 +115,7 @@ struct SDistanceInfo
 
 	SDistanceInfo(): isInList(false), isProceeded(false), distance(65535) {}
 };
-typedef hash_map<SZone, SDistanceInfo, SZoneHash> CZonesToDistInfo;
+typedef unordered_map<SZone, SDistanceInfo, SZoneHash> CZonesToDistInfo;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CMapColourer : public CObjectBase
 {

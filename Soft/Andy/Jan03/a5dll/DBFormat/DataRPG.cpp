@@ -5,6 +5,8 @@
 #include "DataAnimation.h"
 #include "DataSound.h"
 #include "DataObject.h"
+#include "DataInterface.h"
+#include "DataAck.h"
 #include "..\Misc\RandomGen.h"
 #include "..\Main\AIPosition.h"
 #include "DataPerk.h"

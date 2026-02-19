@@ -649,14 +649,14 @@ inline void Multiply( SHMatrix *p, const SHMatrix &a, const SHMatrix &b )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 inline const SHMatrix operator*( const SHMatrix &a, const SHMatrix &b )
 {
-  SHMatrix ret;
+  SHMatrix ret{};
   Multiply( &ret, a, b );
   return ret;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 inline SFBTransform operator*( const SFBTransform &a, const SFBTransform &b ) 
 { 
-	SFBTransform res;
+	SFBTransform res{};
 	res.forward = a.forward * b.forward;
 	res.backward = b.backward * a.backward;
 	return res;

@@ -157,7 +157,7 @@ private:
 	SBound currentBound;
 	SGroupSelect groupSelect;
 	SHMatrix mPrevView;
-	typedef hash_map<SPointLightPos,CObj<NGfx::CCubeTexture>, SPointLightPosHash> CPointDepthHash;
+	typedef unordered_map<SPointLightPos,CObj<NGfx::CCubeTexture>, SPointLightPosHash> CPointDepthHash;
 	CPointDepthHash pointDepths;
 private:
 	struct SLightmapTargetGeom

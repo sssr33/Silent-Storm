@@ -218,17 +218,17 @@ class CScenarioFlowChartPathFinder: public CObjectBase
 	OBJECT_BASIC_METHODS( CScenarioFlowChartPathFinder );
 	ZDATA
 	CPtr<CScenarioFlowChartBase> pFlowChart;
-	hash_map< int, list< CObj<CScenarioFlowChartState> > > passedStates;
-	hash_map< int, list< CObj<CScenarioFlowChartState> > > finalStates;
+	unordered_map< int, list< CObj<CScenarioFlowChartState> > > passedStates;
+	unordered_map< int, list< CObj<CScenarioFlowChartState> > > finalStates;
 	list< CObj<CScenarioFlowChartState> > states;
-	hash_map< CPtr<CScenarioClue>, int, SPtrHash > minParentToOpen;
+	unordered_map< CPtr<CScenarioClue>, int, SPtrHash > minParentToOpen;
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&pFlowChart); f.Add(3,&passedStates); f.Add(4,&finalStates); f.Add(5,&states); f.Add(6,&minParentToOpen); return 0; }
 	//
 	bool IsStatePassed( CScenarioFlowChartState *pState );
 	void PassState( CScenarioFlowChartState *pState );
 	void FinalState( CScenarioFlowChartState *pState );
 	void CalculateMinParentToOpen();
-	CScenarioFlowChartState* GetBestState( const hash_map< int, list< CObj<CScenarioFlowChartState> > > &states,
+	CScenarioFlowChartState* GetBestState( const unordered_map< int, list< CObj<CScenarioFlowChartState> > > &states,
 		bool ( CScenarioFlowChartPathFinder::* Compare )( CScenarioFlowChartState *, CScenarioFlowChartState * ) );
 	bool CompareSize( CScenarioFlowChartState *pState1, CScenarioFlowChartState *pState2 );
 	//
