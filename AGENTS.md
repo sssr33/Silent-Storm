@@ -127,7 +127,7 @@ passed for MemoryMngrDll, MemoryMngr, Misc, FileIO, ADOImport, MiscDll, Input,
 DBFormat, FModSound, and Script. This is not a clean-build verification.
 **Main still fails compilation; Game has not reached compilation or linking.**
 
-The current compatibility batch fixes 293 active `CDynamicCast` declarations in
+The syntax compatibility batch fixes 293 active `CDynamicCast` declarations in
 conditions by using brace initialization, qualifies member-function pointers,
 includes complete player-event types where registration templates need them,
 and gives `ZSHIFT` its explicit `int` type. These are syntax/declaration changes
@@ -141,17 +141,32 @@ Logs are ignored local artifacts in `a5dll/__BUILD/vs2026/`:
 `game-debug-build-1.log`, `game-debug-build-2.log`, and
 `game-debug-wUnitAttack.log`.
 
+The subsequent matrix compatibility fix adds a `SHMatrix()` constructor that
+explicitly initializes all 16 scalar elements to zero. `SFBTransform` retains
+its implicit constructor, which now constructs both matrices successfully.
+Ordinary declarations and brace initialization both produce zero matrices;
+call `Identity()` explicitly when an identity matrix is required. The Win32/v143
+runtime probe against the edited header passed 22 checks for initialization,
+arrays, template members, copying, and basic matrix operations. Static checks
+confirmed 64-byte matrices, 128-byte transforms, 4-byte alignment, and preserved
+standard layout and trivial copying. Probe outputs remain ignored in `__BUILD/`.
+A repeated Game Debug|Win32 build reported 741 errors, with no remaining C2280
+diagnostics for `SHMatrix` or `SFBTransform`. Main still fails on other issues;
+see the ignored `a5dll/__BUILD/vs2026/game-debug-matrix-constructor.log`.
+
 The next work needs separate, focused investigation:
 
-- **C2280:** `SHMatrix` / `SFBTransform` default constructors are deleted with
-  the current union/vector declarations in `Misc/Geom.h`; errors surface in
-  `Main/DG.h` and many graphics/world translation units. Preserve matrix layout
-  and initialization behavior when fixing this core type.
 - **C1083:** `Main/LSHead.h` cannot find `LifeStudioHeadAPI.h`. Restoring the SDK
   or designing an isolated substitute remains outside the syntax batch.
 - **C2666 and other STL/type errors:** `CPtr` comparisons are ambiguous in the
   MSVC standard library; legacy container insertion calls and incomplete or
   missing types also remain. Do not alter pointer ownership to silence errors.
+- **Other C2280 diagnostics:** `NAI::SMove` in `Main/aiPosition.h` still has
+  deleted default construction and copy assignment involving union members.
+  These errors were also present before the matrix-constructor change.
+- **Existing inverse status bug:** `SHMatrix::HomogeneousInverse()` returns
+  `false` even after successfully computing an inverse. Matrix-result checks
+  pass; the return-value defect is separate from the constructor fix.
 
 ## Known build issues to address
 

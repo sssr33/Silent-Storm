@@ -295,6 +295,12 @@ public :
 		};
 	};
 public :
+	SHMatrix()
+		: _11(0), _12(0), _13(0), _14(0),
+		  _21(0), _22(0), _23(0), _24(0),
+		  _31(0), _32(0), _33(0), _34(0),
+		  _41(0), _42(0), _43(0), _44(0) {}
+
 	// matrix-vector multiplication 
 	void RotateVector( CVec3 *pResult, const CVec3 &pt ) const;
 	void RotateVectorTransposed( CVec3 *pResult, const CVec3 &pt ) const;
