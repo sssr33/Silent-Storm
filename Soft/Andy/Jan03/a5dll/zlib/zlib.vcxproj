@@ -258,10 +258,6 @@
     <ClInclude Include="zutil.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\!!!BUILD\ZERO_CHECK.vcxproj">
-      <Project>{89a8a2af-9056-3119-b0a1-87a589209c83}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\MemoryMngr\MemoryMngr.vcxproj">
       <Project>{d4add8f2-3e39-3b00-a1a6-178b7afe98db}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

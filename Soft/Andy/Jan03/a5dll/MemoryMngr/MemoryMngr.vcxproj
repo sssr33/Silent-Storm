@@ -228,10 +228,6 @@
     <ClInclude Include="stl_user_config.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\!!!BUILD\ZERO_CHECK.vcxproj">
-      <Project>{89a8a2af-9056-3119-b0a1-87a589209c83}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\MemoryMngrDll\MemoryMngrDll.vcxproj">
       <Project>{95b058f2-3f3a-4c38-9b2a-c7fe4cc79064}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

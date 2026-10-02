@@ -1,18 +1,26 @@
 cmake_minimum_required(VERSION 3.20)
 
-# Wrapper CMake project that reuses original Visual Studio .vcproj files.
-# The intent is to preserve legacy build settings/paths from the original projects.
-project(A5_VCProj_Wrapper NONE)
-
-if(NOT CMAKE_GENERATOR MATCHES "Visual Studio")
-  message(WARNING
-    "This CMakeLists wraps legacy .vcproj files and is intended for Visual Studio generators.")
+# Wrap the converted .vcxproj files while preserving their build settings.
+# These external projects only support the Win32 platform.
+if(NOT CMAKE_GENERATOR MATCHES "^Visual Studio ")
+  message(FATAL_ERROR "The A5 wrapper requires a Visual Studio generator.")
 endif()
 
-include(ExternalProject)
+if(NOT CMAKE_GENERATOR_PLATFORM)
+  set(CMAKE_GENERATOR_PLATFORM Win32 CACHE STRING "A5 target platform" FORCE)
+elseif(NOT CMAKE_GENERATOR_PLATFORM STREQUAL "Win32")
+  message(FATAL_ERROR "The A5 projects only support Win32. Configure with -A Win32.")
+endif()
+
+# Replace CMake's default configurations, including values in an existing cache.
+set(CMAKE_CONFIGURATION_TYPES "Debug;FastDebug;ReleaseDll;Release"
+    CACHE STRING "Configurations supported by the A5 projects" FORCE)
+
+project(A5_VCProj_Wrapper NONE)
 
 function(a5_add_vcproj target relpath)
-  include_external_msproject(${target} "${CMAKE_CURRENT_LIST_DIR}/${relpath}")
+  include_external_msproject(${target} "${CMAKE_CURRENT_LIST_DIR}/${relpath}"
+                            PLATFORM Win32)
 endfunction()
 
 # Projects from A5.sln
@@ -48,6 +56,10 @@ a5_add_vcproj(ADOFake "ADOFake/ADOFake.vcxproj")
 
 # Extra project present in folder but not listed in A5.sln
 a5_add_vcproj(AItest "AItest/AItest.vcxproj")
+# AItest has only Debug and Release; map the additional solution configurations.
+set_target_properties(AItest PROPERTIES
+  MAP_IMPORTED_CONFIG_FASTDEBUG Debug
+  MAP_IMPORTED_CONFIG_RELEASEDLL Release)
 
 # Dependencies mirrored from A5.sln (GlobalSection(ProjectDependencies))
 add_dependencies(DBFormat MemoryMngr ADOImport Misc FileIO)
@@ -76,4 +88,3 @@ add_dependencies(Scintilla MemoryMngr)
 add_dependencies(MiscDll FileIO Misc MemoryMngr)
 add_dependencies(ADOImport MemoryMngr FileIO Misc)
 add_dependencies(ADOFake MemoryMngr Misc)
-

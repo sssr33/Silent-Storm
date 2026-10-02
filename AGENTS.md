@@ -80,12 +80,16 @@ at the start of subsequent work.
 - `Soft/Andy/Jan03/a5dll/A5.sln` is the **original legacy solution** (format 7.00)
   and still references `.vcproj` files. It does not select the converted projects.
 - The sibling `CMakeLists.txt` uses `include_external_msproject` to wrap the
-  checked-in `.vcxproj` files. Despite its comments and function names mentioning
-  `.vcproj`, its actual inputs are `.vcxproj`. It does not define compilation
-  sources with normal CMake targets and is intended for Visual Studio generators.
+  checked-in `.vcxproj` files. It does not define compilation sources with normal
+  CMake targets and requires a Visual Studio generator. Win32 is selected by
+  default; unsupported platforms are rejected.
 - The converted `.vcxproj` files currently specify **`v143`** and only **Win32**
   configurations. Most have Debug, FastDebug, ReleaseDll, and Release; there are
   a few project-specific exceptions. Start with **Debug|Win32**.
+- The wrapper exposes exactly Debug, FastDebug, ReleaseDll, and Release, replacing
+  CMake's default configuration list even in an existing cache. AItest maps
+  FastDebug to Debug and ReleaseDll to Release because it only has two project
+  configurations. A5ExportModel's extra SlowRelease remains project-specific.
 - A VS 2026 generator does not by itself retarget the wrapped projects' explicit
   `PlatformToolset` values. Distinguish IDE migration from compiler migration.
 - The local audit found Visual Studio Community 2026 18.10.3, installed `v143`
@@ -93,31 +97,42 @@ at the start of subsequent work.
   versions again rather than hardcoding a machine-specific installation path.
 - CMake's `Visual Studio 18 2026` generator requires CMake 4.2 or newer and uses
   `v145` by default. Its [official documentation](https://cmake.org/cmake/help/latest/generator/Visual%20Studio%2018%202026.html)
-  is the reference for generator/toolset selection. The wrapper's existing
-  `cmake_minimum_required(VERSION 3.20)` is not sufficient for that generator.
+  is the reference for generator/toolset selection. The wrapper retains a 3.20
+  minimum for older Visual Studio generators; use CMake 4.2+ for VS 2026.
 - The ignored `a5dll/__BUILD/CMakeCache.txt` found during the audit selected
   VS 2022 and its old installation path. Use a fresh subdirectory for VS 2026;
   do not reuse that cache with a different generator.
 
-For the migration, establish a modern solution referencing the converted projects
-or repair and retain the existing CMake wrapper. Preserve the old solution and
-`.vcproj` files as references unless the task explicitly calls for removing them.
-Keep project dependencies in one consistent graph; inspect `git diff` after
-conversion or generation so generated metadata does not get mixed into sources.
+The CMake integration was repaired and verified on **2026-10-02**. The generated
+VS 2026 entry point is
+`Soft/Andy/Jan03/a5dll/__BUILD/vs2026/A5_VCProj_Wrapper.slnx` with the locally
+installed CMake 4.4.3. Regenerate it from the wrapper rather than editing it.
+Validation covered all 120 external-project configuration mappings, all 101
+remaining project references (including GUIDs), and all 162 generated dependency
+paths. MSBuild accepted all four solution configurations; the FastDebug
+ZERO_CHECK target succeeded. Configuring without `-A` also selected Win32 and
+replaced an old default configuration list correctly. **This verifies generation
+and build metadata, not C++ compilation or game linking.**
+
+Preserve the old solution and `.vcproj` files as references unless the task
+explicitly calls for removing them. Keep project dependencies in one consistent
+graph; inspect `git diff` after conversion or generation so generated metadata
+does not get mixed into sources.
 
 ## Known build issues to address
 
 These are static audit findings, not a complete compiler-error inventory:
 
-1. **Stale project references:** all 30 converted projects reference
-   `..\!!!BUILD\ZERO_CHECK.vcxproj`, which does not exist in the checkout.
-   The other 101 project references resolve. Remove or correctly regenerate
-   these stale CMake references while preserving real library dependencies.
-2. **DLL exports:** many projects specify `$(Configuration).def`, but most lack
+The stale `..\!!!BUILD\ZERO_CHECK.vcxproj` references were removed from all 30
+converted projects. CMake supplies the regeneration dependencies in the generated
+solution, using its actual build directory. Do not reintroduce references to
+generated projects inside the checked-in `.vcxproj` files.
+
+1. **DLL exports:** many projects specify `$(Configuration).def`, but most lack
    `Debug.def`. Only `FileIO/Debug.def` is tracked; some ignored build outputs may
    exist locally. Check `.def` handling, symbol decoration, and export/import
    declarations when linking; do not assume an old `.def` fits a new compiler.
-3. **FMOD:** `FModSound/FMSound.cpp` already contains the silent `NFMSound` stub.
+2. **FMOD:** `FModSound/FMSound.cpp` already contains the silent `NFMSound` stub.
    Initialization reports false and resource/playback functions return null.
    Nevertheless, FModSound and Game still link `fmodvc.lib`. Keep the stub's
    API consistent and remove the library requirement in stub configurations.
@@ -125,30 +140,30 @@ These are static audit findings, not a complete compiler-error inventory:
    initial check pass. Later sound-mode setup calls `NFMSound::Init`, which fails
    when sound is enabled. Review `SetModeFromConfig` and null-result callers
    during runtime work; successful linking does not restore audio.
-4. **LifeStudio:** Main's `LSHead.h` includes `LifeStudioHeadAPI.h` and
+3. **LifeStudio:** Main's `LSHead.h` includes `LifeStudioHeadAPI.h` and
    `LifeStudioHeadAPIMMTS.h`; Main and Game link `lifeStudioHeadAPI.lib`. The audit
    found historical runtime DLLs but no tracked SDK headers/import library for
    this API. An isolated substitute may be needed for the compilation milestone.
-5. **Graphics:** the primary renderer includes `D3D9.h` and links `d3d9.lib`;
+4. **Graphics:** the primary renderer includes `D3D9.h` and links `d3d9.lib`;
    Game also links DirectInput 8. README references and startup error messages
    mentioning DirectX 8 do not describe all current source requirements. Check
    actual includes/link inputs before installing or replacing an SDK. Bink DLLs
    exist in the runtime archives, but no Bink references were found in the primary
    C++ projects during the audit.
-6. **Shader generation:** Main retains a custom command pointing to
+5. **Shader generation:** Main retains a custom command pointing to
    `w:\tools\ShaderCompiler`. It is currently excluded in all four configurations,
    and `Main/GfxShaders.h/.cpp` are tracked. Keep those sources usable; if shader
    regeneration is needed, build/use a repository-local tool and correct its
    output paths before enabling the command.
-7. **ADO:** `ADOImport/BasicDB.cpp` imports `msado15.dll` through an absolute
+6. **ADO:** `ADOImport/BasicDB.cpp` imports `msado15.dll` through an absolute
    `C:\Program Files\Common Files\System\ADO\` path. Validate COM/type-library
    availability and architecture; do not confuse this with the proprietary SDKs.
-8. **Partial STL migration:** some projects, including Game, still use
+7. **Partial STL migration:** some projects, including Game, still use
    `<hash_map>` and STLport configuration includes. Review hash/equality functors,
    old container insertion APIs, precompiled headers, and the `#define for`
    workaround where compiler errors point to them. Preserve object ownership and
    allocator behavior when adjusting the standard-library boundary.
-9. **Configurations and outputs:** the projects mix static/DLL configurations and
+8. **Configurations and outputs:** the projects mix static/DLL configurations and
    write to `a5dll/Binary/$(Configuration)` with intermediates in project-local
    configuration folders. Match CRT and import/export settings across libraries.
    The current ignore rules cover `__BUILD/`, `Binary/`, `Debug/`, and `.vs/`;
@@ -176,7 +191,7 @@ These are static audit findings, not a complete compiler-error inventory:
    remaining first meaningful compiler/linker errors. Distinguish generation,
    compilation, linking, and runtime verification in reports.
 
-Example commands from the repository root, **after repairing the project graph**:
+Example commands from the repository root:
 
 ```powershell
 # Inspect the migration and source ownership.

@@ -276,10 +276,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\!!!BUILD\ZERO_CHECK.vcxproj">
-      <Project>{89a8a2af-9056-3119-b0a1-87a589209c83}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\FileIO\FileIO.vcxproj">
       <Project>{2a23875e-4630-36b7-a476-060e97910e70}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
