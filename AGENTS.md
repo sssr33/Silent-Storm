@@ -12,6 +12,12 @@ Prefer focused compatibility fixes over engine rewrites, dependency upgrades,
 or changes to gameplay and file formats. Keep this guide in English and update
 its build-status notes when verified progress changes the baseline.
 
+Preserve the original code and runtime behavior as closely as possible, including
+existing bugs, during the compilation migration. Record behavior-related findings
+in [BUGS.md](BUGS.md) and defer their fixes until they can be investigated on a
+working game. Later fixes must be focused and checked against the original
+behavior for gameplay regressions.
+
 ## Which source tree to edit
 
 **Use `Soft/Andy/Jan03/a5dll/` as the primary migration baseline.** It contains
@@ -169,7 +175,10 @@ The next work needs separate, focused investigation:
   These errors were also present before the matrix-constructor change.
 - **Existing inverse status bug:** `SHMatrix::HomogeneousInverse()` returns
   `false` even after successfully computing an inverse. Matrix-result checks
-  pass; the return-value defect is separate from the constructor fix.
+  pass; the return-value defect is separate from the constructor fix. Preserve
+  this behavior during the compilation migration: changing the result affects
+  debris inertia selection. See [BUG-001 in BUGS.md](BUGS.md#bug-001-homogeneousinverse-reports-failure-after-successful-inversion)
+  for the source evidence and deferred runtime validation.
 
 ## Known build issues to address
 
