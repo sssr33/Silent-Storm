@@ -28,6 +28,7 @@ project files and relative includes before editing a similarly named file.
 | `Soft/Andy/Apr03/p2pa7/`, `Soft/Andy/Jan03/pd/` | Separate P2P and particle-dynamics projects, outside the initial game build. |
 | `Soft/Monster/` | Separate legacy game/exporter/test projects using `.dsp`/`.dsw`; not referenced by the primary build. |
 | `Soft/SDK/stlport/` | Historical STLport sources and project. Existing migration work is moving the main build toward the MSVC standard library. |
+| `Tests/` | Maintained repository checks. Short standalone regressions belong in `Tests/Small/`; other categories use separate sibling directories. |
 | `Soft/Serialize7/` | Historical VS/VB macro artifacts, not a replacement game solution. The `.vbproj` contains no source-file entries. |
 | `Complete/`, `Data/`, `cfg/`, `scripts/` | Game resources, databases, configuration, and scripts. Do not treat them as alternative C++ source roots. |
 | `bin/`, `Versions/Current/` | Historical executable/resource distributions. `Current` is an archive label, not evidence of the newest source. |
@@ -149,7 +150,9 @@ call `Identity()` explicitly when an identity matrix is required. The Win32/v143
 runtime probe against the edited header passed 22 checks for initialization,
 arrays, template members, copying, and basic matrix operations. Static checks
 confirmed 64-byte matrices, 128-byte transforms, 4-byte alignment, and preserved
-standard layout and trivial copying. Probe outputs remain ignored in `__BUILD/`.
+standard layout and trivial copying. The maintained check now lives in
+`Tests/Small/MatrixInitialization.cpp`; generated test outputs are ignored in
+`Tests/__BUILD/`.
 A repeated Game Debug|Win32 build reported 741 errors, with no remaining C2280
 diagnostics for `SHMatrix` or `SFBTransform`. Main still fails on other issues;
 see the ignored `a5dll/__BUILD/vs2026/game-debug-matrix-constructor.log`.
@@ -217,6 +220,23 @@ generated projects inside the checked-in `.vcxproj` files.
    configuration folders. Match CRT and import/export settings across libraries.
    The current ignore rules cover `__BUILD/`, `Binary/`, `Debug/`, and `.vs/`;
    check ignores before using other configurations.
+
+## Focused repository checks
+
+Keep maintained checks under `Tests/`, not inside ignored game build directories.
+Use `Tests/Small/` for short, standalone checks without game data or proprietary
+SDK requirements. Add separate sibling categories for other work, such as
+`Tests/Integration/` or `Tests/Performance/`, when those checks are introduced.
+See `Tests/README.md` for the layout, requirements, and how to add a check.
+
+Run `Tests/Small/Run.ps1` from PowerShell. It configures the independent test
+CMake project for VS 2026/Win32 using Main's Debug|Win32 `PlatformToolset`, builds
+the small-test targets, and runs their CTest label. Use `-Test MatrixInitialization`
+for one check and `-Configuration Release` for the optimized configuration.
+The existing `__BUILD/` ignore rule covers all generated test projects and logs.
+Small-test success does not imply that Main/Game compile, link, or launch.
+The maintained matrix check passed all 22 runtime checks in Debug and Release
+on Win32/v143 on 2026-10-02, including a selected-test run from another directory.
 
 ## Workflow for subsequent migration work
 
