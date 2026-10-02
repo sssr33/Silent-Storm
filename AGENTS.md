@@ -119,6 +119,40 @@ explicitly calls for removing them. Keep project dependencies in one consistent
 graph; inspect `git diff` after conversion or generation so generated metadata
 does not get mixed into sources.
 
+## Verified compilation status (2026-10-02)
+
+The generated VS 2026 `.slnx` was built with MSBuild, **Debug|Win32**, and the
+projects' existing **v143** compiler (14.44.35207). Incremental dependency builds
+passed for MemoryMngrDll, MemoryMngr, Misc, FileIO, ADOImport, MiscDll, Input,
+DBFormat, FModSound, and Script. This is not a clean-build verification.
+**Main still fails compilation; Game has not reached compilation or linking.**
+
+The current compatibility batch fixes 293 active `CDynamicCast` declarations in
+conditions by using brace initialization, qualifies member-function pointers,
+includes complete player-event types where registration templates need them,
+and gives `ZSHIFT` its explicit `int` type. These are syntax/declaration changes
+in the primary Main project; preserve the legacy source encodings.
+
+MSBuild reported 1911 errors before this batch and 888 after the broad syntax
+pass. These counts include cascades, not independent defects. A final missed
+conditional declaration in `wUnitAttack.cpp` was fixed and checked with a
+selected-file compilation: only C2280 for `SFBTransform` remained in that file.
+Logs are ignored local artifacts in `a5dll/__BUILD/vs2026/`:
+`game-debug-build-1.log`, `game-debug-build-2.log`, and
+`game-debug-wUnitAttack.log`.
+
+The next work needs separate, focused investigation:
+
+- **C2280:** `SHMatrix` / `SFBTransform` default constructors are deleted with
+  the current union/vector declarations in `Misc/Geom.h`; errors surface in
+  `Main/DG.h` and many graphics/world translation units. Preserve matrix layout
+  and initialization behavior when fixing this core type.
+- **C1083:** `Main/LSHead.h` cannot find `LifeStudioHeadAPI.h`. Restoring the SDK
+  or designing an isolated substitute remains outside the syntax batch.
+- **C2666 and other STL/type errors:** `CPtr` comparisons are ambiguous in the
+  MSVC standard library; legacy container insertion calls and incomplete or
+  missing types also remain. Do not alter pointer ownership to silence errors.
+
 ## Known build issues to address
 
 These are static audit findings, not a complete compiler-error inventory:
@@ -204,6 +238,14 @@ rg -n 'ClCompile|ClInclude|ProjectReference' Soft/Andy/Jan03/a5dll/Game/Game.vcx
 # own PlatformToolset until those project properties are explicitly migrated.
 cmake -S Soft/Andy/Jan03/a5dll -B Soft/Andy/Jan03/a5dll/__BUILD/vs2026 -G "Visual Studio 18 2026" -A Win32
 cmake --build Soft/Andy/Jan03/a5dll/__BUILD/vs2026 --config Debug --target Game
+
+# Reproduce the logged Debug game build with the installed MSBuild.
+$vswherePath = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
+$vsPath = & $vswherePath -latest -products '*' -property installationPath
+$msbuildPath = Join-Path $vsPath 'MSBuild\Current\Bin\MSBuild.exe'
+$solutionPath = (Resolve-Path 'Soft/Andy/Jan03/a5dll/__BUILD/vs2026/A5_VCProj_Wrapper.slnx').Path
+$buildLog = Join-Path (Split-Path $solutionPath -Parent) 'game-debug-build.log'
+& $msbuildPath $solutionPath '/t:Game' '/p:Configuration=Debug;Platform=Win32' '/m:1' '/nologo' '/noconsolelogger' '/fl' "/flp:LogFile=$buildLog;Verbosity=normal;Encoding=UTF-8"
 ```
 
 Do not default to building every wrapper target: the exporter/editor/tool projects

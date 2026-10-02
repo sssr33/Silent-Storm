@@ -237,7 +237,7 @@ int CBuilding::ProcessAttack( int nUserID, NRPG::CAttackPortion *pAttack, NDb::C
 void CBuilding::ToggleUpdateFlag()
 {
 	nSegemntCnt = 0;
-	if ( CDynamicCast<CWorld> p( pWorld ) )
+	if ( CDynamicCast<CWorld> p{ pWorld } )
 		pAction = p->GetActiveCounter( 10 );
 	//OutputDebugString( "Building action acquired\n" );
 }

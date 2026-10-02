@@ -72,7 +72,7 @@ CUnitTab::CUnitTab( const SWindowInfo &sInfo, NGame::IMission *_pMission ):
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CUnitTab::CanHandleState( NGame::IState *pState ) const
 {
-	if ( CDynamicCast<NGame::CStateMove> pMove( pState ) )
+	if ( CDynamicCast<NGame::CStateMove> pMove{ pState } )
 		return false;
 
 	return true;
@@ -589,7 +589,7 @@ void CInfoPanelSlot::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 	pFade->SetStyle( STYLE_VISIBLE, pInventory->GetActiveSlot() != eType );
 
 	CPtr<NRPG::IInventoryItem> pItem = pInventory->Get( eType );
-	if ( CDynamicCast<NRPG::IWeaponItemInfo> pWeapon( pItem ) )
+	if ( CDynamicCast<NRPG::IWeaponItemInfo> pWeapon{ pItem } )
 	{
 		CPtr<NRPG::IClipItem> pRPGClipItem = pWeapon->GetInnerClip();
 		pReload->SetStyle( STYLE_VISIBLE, true );

@@ -2,3 +2,4 @@ __BUILD/
 Binary/
 Debug/
 .vs/
+*.vcxproj.user

@@ -10,6 +10,7 @@
 #include "TerrainInfo.h"
 #include "aiPosition.h"
 #include "..\Misc\EventsBase.h"
+#include "eventPlayer.h"
 #include "wVision.h"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 struct SMapUnit;

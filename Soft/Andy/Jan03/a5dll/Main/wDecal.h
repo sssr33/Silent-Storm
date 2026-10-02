@@ -27,7 +27,7 @@ class CDecal : public IVisObj
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&pWorld); f.Add(3,&bindGlobal); f.Add(4,&pDecalTarget); f.Add(5,&info); f.Add(6,&pMaterial); f.Add(7,&targets); return 0; }
 	NGlobal::CEventRegister< CDecal, NWorld::CShowBloodUpdated > r1;
 public:
-	CDecal() : r1(this,OnShowBloodUpdated) {}
+	CDecal() : r1(this,&CDecal::OnShowBloodUpdated) {}
 	CDecal( CWorld *pWorld, const CVec3 &vCenter, const CVec3 &vNormal, float fSize, NDb::CMaterial *pMaterial, CObjectBase *pTarget );
 	CDecal( CWorld *pWorld, const CVec3 &vCenter, float fSize, NDb::CMaterial *pMaterial, vector<CObjectBase*> &_targets );
 	void Visit( IRenderVisitor *p );

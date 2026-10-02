@@ -10,6 +10,7 @@
 #include "wVision.h"
 #include "wInterface.h"
 #include "..\Misc\EventsBase.h"
+#include "eventPlayer.h"
 namespace NDb
 {
 	class CAISound;
