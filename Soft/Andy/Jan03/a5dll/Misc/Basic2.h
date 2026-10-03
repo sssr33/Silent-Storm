@@ -3,6 +3,7 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
+#include <type_traits>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CStructureSaver;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,6 +154,8 @@ public:
 template<class T> inline bool IsValid( T *p ) { return p != 0 && !CastToObjectBase(p)->IsRefInvalid(); }
 template<class T, class TRef> inline bool IsValid( const CPtrBase< T, TRef > &p ) { return p.GetPtr() && !p.GetBarePtr()->IsRefInvalid(); }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+// Match mutable T* without competing pointer conversions in modern STL.
+// Template deduction keeps null constants on the original const T* overloads.
 #define BASIC_PTR_DECLARE( TPtrName, TRef )                                                 \
 template<class T>                                                                           \
 class TPtrName: public CPtrBase< T, TRef >                                                  \
@@ -167,8 +170,12 @@ public:                                                                         
 	inline TPtrName& operator=( const TPtrName &a ) { SetObject( a.Get() ); return *this; }   \
 	inline bool operator==( const TPtrName &a ) const { return Get() == a.Get(); }            \
 	inline bool operator==( const T *a ) const { return Get() == a; }                         \
+	template<class U> inline typename std::enable_if<std::is_same<U, T>::value, bool>::type \
+		operator==( U *a ) const { return Get() == a; }                              \
 	inline bool operator!=( const TPtrName &a ) const { return Get() != a.Get(); }            \
 	inline bool operator!=( const T *a ) const { return Get() != a; }                         \
+	template<class U> inline typename std::enable_if<std::is_same<U, T>::value, bool>::type \
+		operator!=( U *a ) const { return Get() != a; }                              \
 	inline bool operator< ( const TPtrName &a ) const { return Get() < a.Get(); }             \
 	inline bool operator> ( const TPtrName &a ) const { return Get() > a.Get(); }             \
 	inline bool operator<=( const TPtrName &a ) const { return Get() <= a.Get(); }            \

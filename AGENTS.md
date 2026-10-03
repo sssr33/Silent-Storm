@@ -181,10 +181,35 @@ or errors naming the LifeStudio/GDP SDK. Game compilation/linking was not
 reached. See `a5dll/__BUILD/vs2026/game-debug-lifestudio-sdk.log`;
 unrelated compiler fixes remain outside the SDK restoration batch.
 
+The pointer-comparison compatibility batch adds constrained mutable-`T*`
+equality/inequality overloads to `BASIC_PTR_DECLARE` in `Misc/Basic2.h`, shared
+by CPtr, CObj and CMObj. Only an exact pointee-type match enables the new
+templates. Existing const-pointer/wrapper overloads and implicit pointer
+conversion remain; null constants use the original overloads. Object layout,
+ownership, reference-counting, validity and serialization code are unchanged.
+`Tests/Small/PointerComparison.cpp` reproduced C2666 against the original header,
+then passed 91 runtime checks in Debug and Release on Win32/v143 against the
+edited header and the original `Basic2.cpp` runtime. The matrix check also passed
+in both configurations. The checks include reference/owner counts, container
+removal, invalidated weak-reference comparisons and exactly-once deletion.
+
+A repeated generated-solution build with MSBuild `/t:Game`,
+`/p:Configuration=Debug;Platform=Win32` and `/m:1` reported **683 errors**
+on Win32/v143 (14.44.35207), down from 741. There were no C2666 or C1083
+diagnostics. Main still fails; Game compilation/linking was not reached.
+The first error is C2027 in `ADOImport/BasicDB.h:99`: `typeid(T)` in
+`CDBTable<T>::GetRecord()` requires a complete `NDb::CAnimation` definition,
+but only its forward declaration is visible in the affected compilation unit.
+Other DB types have similar diagnostics. See the ignored log
+`a5dll/__BUILD/vs2026/game-debug-pointer-comparison.log`.
+
 The next work needs separate, focused investigation:
-- **C2666 and other STL/type errors:** `CPtr` comparisons are ambiguous in the
-  MSVC standard library; legacy container insertion calls and incomplete or
-  missing types also remain. Do not alter pointer ownership to silence errors.
+- **Incomplete DB types:** the C2027 errors above arise during instantiation
+  of `CDBPtr<T>` serialization and table access. Check definitions and include
+  dependencies without changing serialization, pointer ownership or runtime
+  type checks merely to suppress the diagnostics.
+- **Other STL/type errors:** legacy container insertion calls and other missing
+  types remain after resolving the ambiguous pointer comparisons.
 - **Other C2280 diagnostics:** `NAI::SMove` in `Main/aiPosition.h` still has
   deleted default construction and copy assignment involving union members.
   These errors were also present before the matrix-constructor change.

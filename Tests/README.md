@@ -27,6 +27,7 @@ From the repository root in PowerShell:
 ```powershell
 .\Tests\Small\Run.ps1
 .\Tests\Small\Run.ps1 -Test MatrixInitialization
+.\Tests\Small\Run.ps1 -Test PointerComparison
 .\Tests\Small\Run.ps1 -Configuration Release
 ```
 
@@ -52,6 +53,15 @@ size/alignment, matrix offsets, default construction, and copy/layout traits.
 The inverse check validates the calculated matrix, not the return flag:
 `SHMatrix::HomogeneousInverse()` currently returns false even on success. That
 existing defect remains separate from the matrix-constructor fix.
+
+`Small/PointerComparison.cpp` includes the primary-tree `Misc/Basic2.h` and
+links the original `Misc/Basic2.cpp` reference-counting runtime. Its 91 checks
+cover CPtr/CObj/CMObj address equality and inequality, const/raw pointers,
+zero/NULL/nullptr, mutable and const STL searches, container removal, unchanged
+reference/owner counts, invalidated weak references and last-reference deletion.
+Compile-time checks protect pointer-sized layout and implicit pointer conversion.
+The check reproduced C2666 before the fix and passes on Win32/v143 in both
+Debug and Release. It requires neither game data nor proprietary dependencies.
 
 ## Add a small check
 

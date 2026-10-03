@@ -6,6 +6,11 @@ foreach(source IN LISTS small_test_sources)
     get_filename_component(test_name "${source}" NAME_WE)
     set(target "Small_${test_name}")
     add_executable("${target}" "${source}")
+    if(test_name STREQUAL "PointerComparison")
+        # Exercise the original intrusive-reference runtime, not test substitutes.
+        target_sources("${target}" PRIVATE
+            "${CMAKE_CURRENT_SOURCE_DIR}/../../Soft/Andy/Jan03/a5dll/Misc/Basic2.cpp")
+    endif()
     target_compile_features("${target}" PRIVATE cxx_std_14)
     add_dependencies(SmallTests "${target}")
     add_test(NAME "Small.${test_name}" COMMAND "$<TARGET_FILE:${target}>")
