@@ -34,6 +34,7 @@ project files and relative includes before editing a similarly named file.
 | `Soft/Andy/Apr03/p2pa7/`, `Soft/Andy/Jan03/pd/` | Separate P2P and particle-dynamics projects, outside the initial game build. |
 | `Soft/Monster/` | Separate legacy game/exporter/test projects using `.dsp`/`.dsw`; not referenced by the primary build. |
 | `Soft/SDK/stlport/` | Historical STLport sources and project. Existing migration work is moving the main build toward the MSVC standard library. |
+| `Soft/SDK/LifeStudioHead-2.5/` | Original SDK headers and x86 import libraries retrieved from Internet Archive, with shared Win32 project settings and recorded provenance. |
 | `Tests/` | Maintained repository checks. Short standalone regressions belong in `Tests/Small/`; other categories use separate sibling directories. |
 | `Soft/Serialize7/` | Historical VS/VB macro artifacts, not a replacement game solution. The `.vbproj` contains no source-file entries. |
 | `Complete/`, `Data/`, `cfg/`, `scripts/` | Game resources, databases, configuration, and scripts. Do not treat them as alternative C++ source roots. |
@@ -126,7 +127,7 @@ explicitly calls for removing them. Keep project dependencies in one consistent
 graph; inspect `git diff` after conversion or generation so generated metadata
 does not get mixed into sources.
 
-## Verified compilation status (2026-10-02)
+## Verified compilation status (through 2026-10-03)
 
 The generated VS 2026 `.slnx` was built with MSBuild, **Debug|Win32**, and the
 projects' existing **v143** compiler (14.44.35207). Incremental dependency builds
@@ -163,10 +164,24 @@ A repeated Game Debug|Win32 build reported 741 errors, with no remaining C2280
 diagnostics for `SHMatrix` or `SFBTransform`. Main still fails on other issues;
 see the ignored `a5dll/__BUILD/vs2026/game-debug-matrix-constructor.log`.
 
-The next work needs separate, focused investigation:
+The LifeStudio SDK was restored on **2026-10-03**. All compilation items in
+all 16 configurations of Main, Game, MapEdit and LSConverter resolve the shared
+SDK include path. The SDK file hashes, transitive includes and inherited library
+paths were checked. A selected-file MSBuild `ClCompile` of Main's `LSHead.cpp`
+passed on Debug|Win32/v143 with zero errors. The old C1083 missing-header blocker
+is resolved; this selected-file result is not a full Main/Game build or runtime
+verification. The log is `a5dll/__BUILD/vs2026/main-debug-lifestudio-sdk.log`.
+An isolated Win32/v143 compile-and-link check also resolved `IAnimator`,
+`IMMTree`, `ISequencer` and `IGDPFile` factory imports through the shared
+property sheet and both original import libraries. Its EXE was not run.
+The subsequent generated-solution Game Debug|Win32/v143 build still failed in
+Main with **741 reported errors**, beginning with C2666 ambiguous `CPtr`
+comparisons in the MSVC STL. There were no C1083 missing-header diagnostics
+or errors naming the LifeStudio/GDP SDK. Game compilation/linking was not
+reached. See `a5dll/__BUILD/vs2026/game-debug-lifestudio-sdk.log`;
+unrelated compiler fixes remain outside the SDK restoration batch.
 
-- **C1083:** `Main/LSHead.h` cannot find `LifeStudioHeadAPI.h`. Restoring the SDK
-  or designing an isolated substitute remains outside the syntax batch.
+The next work needs separate, focused investigation:
 - **C2666 and other STL/type errors:** `CPtr` comparisons are ambiguous in the
   MSVC standard library; legacy container insertion calls and incomplete or
   missing types also remain. Do not alter pointer ownership to silence errors.
@@ -202,9 +217,12 @@ generated projects inside the checked-in `.vcxproj` files.
    when sound is enabled. Review `SetModeFromConfig` and null-result callers
    during runtime work; successful linking does not restore audio.
 3. **LifeStudio:** Main's `LSHead.h` includes `LifeStudioHeadAPI.h` and
-   `LifeStudioHeadAPIMMTS.h`; Main and Game link `lifeStudioHeadAPI.lib`. The audit
-   found historical runtime DLLs but no tracked SDK headers/import library for
-   this API. An isolated substitute may be needed for the compilation milestone.
+   `LifeStudioHeadAPIMMTS.h`; Main and Game link `lifeStudioHeadAPI.lib`.
+   The original SDK headers and x86 import libraries are now retained in
+   `Soft/SDK/LifeStudioHead-2.5/`. Main, Game, MapEdit and LSConverter import its
+   `LifeStudioHead.props` for all Win32 configurations. LSConverter also uses
+   the GDP header and `GDPFile.lib`. Runtime interface/data compatibility remains
+   unverified; matching factory exports alone does not establish it.
 4. **Graphics:** the primary renderer includes `D3D9.h` and links `d3d9.lib`;
    Game also links DirectInput 8. README references and startup error messages
    mentioning DirectX 8 do not describe all current source requirements. Check
@@ -229,6 +247,43 @@ generated projects inside the checked-in `.vcxproj` files.
    configuration folders. Match CRT and import/export settings across libraries.
    The current ignore rules cover `__BUILD/`, `Binary/`, `Debug/`, and `.vs/`;
    check ignores before using other configurations.
+
+## LifeStudio sources and external reference projects
+
+The user explicitly requested the SDK addition on **2026-10-03**. The source is
+[LifeStudio HEAD 2.5 SDK on Internet Archive](https://archive.org/details/lifestudio_head_2_5_sdk).
+Its uploader describes it as coming from the Pathologic (2005) source code;
+treat that as the uploader's statement, not independently verified provenance.
+The package includes the original LifeMode headers, x86 import libraries,
+runtime DLLs, programmer documentation and samples. Only the current build's
+required headers/import libraries and the vendor ReadMe are retained here.
+See [the SDK README](Soft/SDK/LifeStudioHead-2.5/README.md) for contents, hashes,
+build integration and compatibility limits. Preserve the original files and
+copyright notices; do not replace the historical runtime DLLs as a side effect.
+
+Two external projects were inspected on **2026-10-03** and show substantial
+progress beyond this repository's compilation milestone:
+
+- [mrartanis/Silent-Storm-Reconstruction](https://github.com/mrartanis/Silent-Storm-Reconstruction/tree/develop/third_party/lifestudio),
+  inspected at `e783d5d1603a091b98b452bb1976c187c7394f97`: its code and reports
+  cover Windows x64 and Linux SDL3/bgfx builds, native LifeStudio animation and
+  FaceGen, and comparisons against the original x86 DLL. Reported tests include
+  all 136 game head streams with selected sequences and all 6,780 exported
+  sequences at sampled times for one saved custom head. This is bounded evidence,
+  not complete game/visual parity or a verified campaign playthrough.
+- [TanghaohanSC/silent-storm-port](https://github.com/TanghaohanSC/silent-storm-port/tree/main/src/stubs/lshead),
+  inspected at `57b49ef544d21385221bf54f27d001ba56b74c73`: its code and reports
+  cover Windows x86 mission rendering, SDL3/bgfx, miniaudio and RmlUi. Its
+  acceptance reports retain movement, AI, destruction and UI simplifications.
+  LifeStudio uses reconstructed declarations and the original DLL, not a native
+  replacement; those declarations differ from the SDK retained here.
+
+These are reference projects only. **Do not copy their implementations,
+reconstructed headers, stubs, gameplay changes or platform/renderer migrations
+into this repository at this stage.** The user explicitly chose the original
+SDK and preservation of the original code. Study external results as evidence
+and leads for later investigation; adopting their code requires a separate
+explicit user request and compatibility review.
 
 ## Focused repository checks
 

@@ -36,6 +36,9 @@ Soft/Andy/RussianPatch1/Game.pdb filter=lfs diff=lfs merge=lfs -text
 Soft/Bandures/NVStatInstall_12.60.exe filter=lfs diff=lfs merge=lfs -text
 Soft/SDK/stlport/lib/stlport_vc7_static.lib filter=lfs diff=lfs merge=lfs -text
 Soft/SDK/stlport/lib/stlport_vc7_stldebug_static.lib filter=lfs diff=lfs merge=lfs -text
+/Soft/SDK/LifeStudioHead-2.5/Include/*.h -text
+/Soft/SDK/LifeStudioHead-2.5/Lib/*.lib -text
+/Soft/SDK/LifeStudioHead-2.5/ReadMe.txt -text
 Complete/game.db filter=lfs diff=lfs merge=lfs -text
 Complete/Garbage/Textures/16781721 filter=lfs diff=lfs merge=lfs -text
 Versions/Current/Demo.exe filter=lfs diff=lfs merge=lfs -text
