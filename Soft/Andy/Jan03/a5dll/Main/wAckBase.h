@@ -1,5 +1,6 @@
 #ifndef __WACKBASE_H_
 #define __WACKBASE_H_
+#include "..\DBFormat\DataAck.h"
 
 namespace NDb
 {

@@ -203,16 +203,51 @@ but only its forward declaration is visible in the affected compilation unit.
 Other DB types have similar diagnostics. See the ignored log
 `a5dll/__BUILD/vs2026/game-debug-pointer-comparison.log`.
 
+The following DB/STL compatibility batch adds the complete DB definitions to
+headers that instantiate table lookups through inline `CDBPtr<T>` serialization.
+It preserves the original `typeid` assertions, field IDs, pointer ownership and
+source encodings. It also replaces 35 one-argument STLport `insert(position)`
+calls in Main: lists use `emplace(position)` for direct default construction;
+vectors pass an explicit default value, matching the bundled STLport overload
+in `Soft/SDK/stlport/stl/_vector.h`. Selected-file Debug|Win32/v143 compilations
+of `wUnitStates.cpp`, `wTerrain.cpp`, `wUnitCommands.cpp`, `wMisc.cpp`, `wMine.cpp`
+and `RPGUnitMission.cpp` passed with zero errors. The ignored logs are
+`a5dll/__BUILD/vs2026/main-debug-db-includes-selected.log`,
+`a5dll/__BUILD/vs2026/main-debug-default-insert-selected.log` and
+`a5dll/__BUILD/vs2026/main-debug-db-final-*.log`.
+
+The final generated-solution MSBuild `/t:Game` build with
+`/p:Configuration=Debug;Platform=Win32` and `/m:1` reported **469 errors**
+on v143 (14.44.35207), down from 683 before the DB/STL batch (481 after its
+first pass). There were no C2027 diagnostics for DB types and no C2661, C2666
+or C1083 diagnostics. Main still fails; Game compilation/linking was not
+reached. Counts include cascades and are not independent defect counts.
+The first reported error is C2248 at `Main/aiMultiMoves.h:22`, accessing the
+private `CPathPlaceTable::SMove` typedef. The log is
+`a5dll/__BUILD/vs2026/game-debug-db-stl-compatibility-final.log`; the first pass
+is recorded in `game-debug-db-stl-compatibility.log` in the same directory.
+
 The next work needs separate, focused investigation:
-- **Incomplete DB types:** the C2027 errors above arise during instantiation
-  of `CDBPtr<T>` serialization and table access. Check definitions and include
-  dependencies without changing serialization, pointer ownership or runtime
-  type checks merely to suppress the diagnostics.
-- **Other STL/type errors:** legacy container insertion calls and other missing
-  types remain after resolving the ambiguous pointer comparisons.
+- **Private nested types (C2248):** callers reference private typedefs/structs
+  in `CPathPlaceTable`, `CWorld`, `CATrailPath` and `CPassCalcer`. Check intended
+  type lookup and ownership before changing access or public interfaces.
+- **Missing event definition (C2027):** `NWorld::CShowBloodUpdated` has only
+  forward declarations in `Main/wDecal.h` and `Main/wDumbUnit.cpp`; no definition
+  was found in the repository's `Soft/` C++ snapshots. `Misc/EventsBase.h` uses
+  `typeid(T)` for event registration/dispatch, requiring a complete definition.
+  Preserve the intended event identity and subscription/dispatch behavior when
+  restoring this type in a separate change.
 - **Other C2280 diagnostics:** `NAI::SMove` in `Main/aiPosition.h` still has
   deleted default construction and copy assignment involving union members.
+  Its overlapping `dest/type` and `first/second` pairs contain `SPathPlace`,
+  which has a user-defined constructor and assignment operator. Establish and
+  check construction/copying semantics and layout before altering this union.
   These errors were also present before the matrix-constructor change.
+- **Other template/declaration errors:** dependent type names in `Main/Cache.h`,
+  `Main/Pool.h` and `Main/Interpolate.h`, legacy default-int declarations, and
+  other renderer/scripting errors remain. Some errors in newly included DB
+  headers are cascades from preceding malformed template declarations; inspect
+  the first error in each compilation unit before editing DB definitions.
 - **Existing inverse status bug:** `SHMatrix::HomogeneousInverse()` returns
   `false` even after successfully computing an inverse. Matrix-result checks
   pass; the return-value defect is separate from the constructor fix. Preserve

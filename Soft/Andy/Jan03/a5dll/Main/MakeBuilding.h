@@ -3,6 +3,8 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
+#include "..\DBFormat\DataRPG.h"
+#include "..\DBFormat\DataFormat.h"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "BuildingClip.h"
 #include "BuildingPart.h"

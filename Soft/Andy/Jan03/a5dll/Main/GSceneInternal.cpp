@@ -1249,7 +1249,7 @@ void CGScene::SSceneFragmentGroupInfo::AddDynamicLMElement( CCombinedPart *p,
 		{
 			//ASSERT(0);
 			// create special group
-			SDynamicLightGroup &g = *groups.insert( groups.end() );
+			SDynamicLightGroup &g = *groups.insert( groups.end(), SDynamicLightGroup() );
 			g.pAmbient = pList->AllocDynamicAmbient();
 			g.bv = partBVs[i];
 			CPartFlags f;

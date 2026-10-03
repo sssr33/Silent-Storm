@@ -259,7 +259,7 @@ void CPlayer::GetStoreItems( list<CPtr<NRPG::IInventoryItem> > *pItems )
 
 			if ( !bFound )
 			{
-				NRPG::SStoreItem &sItem = *storeItemsList.insert( storeItemsList.end() );
+				NRPG::SStoreItem &sItem = *storeItemsList.emplace( storeItemsList.end() );
 				sItem.eType = NRPG::SStoreItem::REGEN_QUANTITY;
 				sItem.nRating = pItem->nRating;
 				sItem.fQuantity = pItem->fQuantity;
@@ -277,7 +277,7 @@ void CPlayer::GetStoreItems( list<CPtr<NRPG::IInventoryItem> > *pItems )
 
 					if ( nCount > 0 )
 					{
-						NRPG::SStoreItem &sItem = *storeItemsList.insert( storeItemsList.end() );
+						NRPG::SStoreItem &sItem = *storeItemsList.emplace( storeItemsList.end() );
 						sItem.eType = NRPG::SStoreItem::CONST_QUANTITY;
 						sItem.nRating = -1;
 						sItem.fQuantity = Max( 0, pItem->pItem->sSize.y * ( N_STORESLOT_DEFWIDTH - pItem->pItem->sSize.x ) );
@@ -1983,7 +1983,7 @@ void CWorld::FindCloseGroundItems( CUnit *pU, vector<SItem> *pRes )
 		CVec3 from = (*it)->GetPos();
 		if ( fabs2( from - tracePos ) > sqr(F_UNIT_REACH_DISTANCE) )
 			continue;
-		SItem &item = *pRes->insert( pRes->end() );
+		SItem &item = *pRes->insert( pRes->end(), SItem() );
 		item.eType = SItem::GROUND;
 		item.pItem = (*it)->GetInvItem();
 		item.pWorldItem = (*it);

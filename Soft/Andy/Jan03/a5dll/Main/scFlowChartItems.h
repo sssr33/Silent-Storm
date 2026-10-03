@@ -1,5 +1,6 @@
 #ifndef __FLOWCHARTITEMS_H_
 #define __FLOWCHARTITEMS_H_
+#include "..\DBFormat\DataScenario.h"
 //
 namespace NDb
 {

@@ -61,7 +61,7 @@ STransparentInfo* CTransparentRenderer::AddFragment()
 		sourcePtrs.resize( sourcePtrs.size() + N_RESERVE_DEPTH_BUFFER * 2 );
 	}
 	infoStartIdx.push_back( nElementPtr );
-	return &*infos.insert( infos.end() ); 
+	return &*infos.insert( infos.end(), STransparentInfo() );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CTransparentRenderer::AllocParticlesWriteBuffer()

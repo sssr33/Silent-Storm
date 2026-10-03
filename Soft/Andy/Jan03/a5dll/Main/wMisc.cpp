@@ -1,4 +1,5 @@
 #include "StdAfx.h"
+#include "..\DBFormat\DataSound.h"
 #include "wMisc.h"
 #include "Transform.h"
 #include "GSceneUtils.h"

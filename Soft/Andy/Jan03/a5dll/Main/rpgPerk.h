@@ -1,5 +1,6 @@
 #ifndef __RPGPERK_H_
 #define __RPGPERK_H_
+#include "..\DBFormat\DataPerk.h"
 //
 #include "..\Misc\Set.h"
 //

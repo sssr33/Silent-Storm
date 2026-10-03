@@ -3,6 +3,7 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
+#include "..\DBFormat\DataFormat.h"
 
 #include "GResource.h"
 #include "..\Misc\2DArray.h"

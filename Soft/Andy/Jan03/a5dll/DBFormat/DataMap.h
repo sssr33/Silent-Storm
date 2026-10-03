@@ -3,6 +3,9 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
+#include "DataFormat.h"
+#include "DataRPG.h"
+#include "DataSound.h"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "..\ADOImport\BasicDB.h"
 #include "..\Misc\Geom.h"

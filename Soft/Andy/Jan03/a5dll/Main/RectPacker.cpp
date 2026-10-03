@@ -90,7 +90,7 @@ struct SStripeBuilder
 			ASSERT( r.nXSize <= nWidth );
 			if ( nXShift + r.nXSize > nWidth )
 				continue;
-			SStripe &stripe = *stripes.insert( stripes.end() );
+			SStripe &stripe = *stripes.insert( stripes.end(), SStripe() );
 			stripe.nXShift = nXShift;
 			stripe.nYShift = nYShift;
 			stripe.nHeight = r.nYSize;

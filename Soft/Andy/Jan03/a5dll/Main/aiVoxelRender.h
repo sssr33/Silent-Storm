@@ -1,5 +1,6 @@
 #ifndef __AIVOXELRENDER_H_
 #define __AIVOXELRENDER_H_
+#include "..\DBFormat\DataRPG.h"
 //
 #include "Transform.h"
 #include "Render.h"

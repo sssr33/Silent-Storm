@@ -1,5 +1,6 @@
 #ifndef __AITASKCOMMANDER_H_
 #define __AITASKCOMMANDER_H_
+#include "..\DBFormat\DataAnimation.h"
 
 #include "aiPosition.h"
 #include "time.h"

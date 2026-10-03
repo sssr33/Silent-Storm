@@ -276,7 +276,7 @@ void CStoreSlot::GetItemsList( vector<SItem> *pItemsSet )
 		{
 			ArrangePlace( sPos, *iTemp );
 
-			SItem &sItem = *itemsSet.insert( itemsSet.end() );
+			SItem &sItem = *itemsSet.insert( itemsSet.end(), SItem() );
 			sItem.sPos = sPos;
 			sItem.pItem = *iTemp;
 		}

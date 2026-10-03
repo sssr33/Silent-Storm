@@ -509,7 +509,7 @@ void CInfoPanelSlot::GetItemsList( vector<SItem> *pItemsSet )
 	CPtr<NRPG::IInventoryItem> pItem = pInfo->Get( eType );
 	if ( IsValid( pItem ) )
 	{
-		SItem &sItem = *pItemsSet->insert( pItemsSet->end() );
+		SItem &sItem = *pItemsSet->insert( pItemsSet->end(), SItem() );
 		sItem.sPos = CTPoint<int>( 0, 0 );
 		sItem.pItem = pItem;
 	}
